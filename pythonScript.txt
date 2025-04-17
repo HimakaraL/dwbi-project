@@ -1,0 +1,136 @@
+from faker import Faker
+import random
+import pandas as pd
+
+faker = Faker()
+
+sickness_to_specialization = {
+    'Fever': 'General Physician',
+    'Cold': 'General Physician',
+    'Headache': 'General Physician',
+    'Stomachache': 'Gastroenterologist',
+    'Cough': 'General Physician',
+    'Flu': 'General Physician',
+    'Allergy': 'General Physician',
+    'Infection': 'General Physician',
+    'Back Pain': 'Orthopedist',
+    'Joint Pain': 'Orthopedist',
+    'Diarrhea': 'Gastroenterologist',
+    'Nausea': 'Gastroenterologist',
+    'Vomiting': 'Gastroenterologist',
+    'Fatigue': 'General Physician',
+    'Dizziness': 'General Physician',
+    'Chest Pain': 'Cardiologist',
+    'Shortness of breath': 'Pulmonologist',
+    'Rash': 'Dermatologist',
+    'Skin Infection': 'Dermatologist',
+    'Muscle Pain': 'Orthopedist',
+    'Sore Throat': 'General Physician',
+    'Pneumonia': 'Pulmonologist',
+    'Bronchitis': 'Pulmonologist',
+    'Asthma': 'Pulmonologist',
+    'Diabetes': 'Endocrinologist',
+    'Hypertension': 'Cardiologist',
+    'Heart Disease': 'Cardiologist',
+    'Kidney Disease': 'Nephrologist',
+    'Liver Disease': 'Gastroenterologist',
+    'Thyroid Disorder': 'Endocrinologist',
+    'Gastroenteritis': 'Gastroenterologist',
+    'Urinary Tract Infection': 'Nephrologist',
+    'Constipation': 'Gastroenterologist',
+    'Hemorrhoids': 'Gastroenterologist',
+    'Anxiety': 'Psychiatrist'
+}
+
+medications = [
+    'Paracetamol', 'Ibuprofen', 'Amoxicillin', 'Metformin', 'Amlodipine',
+    'Simvastatin', 'Omeprazole', 'Levothyroxine', 'Lisinopril', 'Sertraline',
+    'Atorvastatin', 'Gabapentin', 'Albuterol', 'Fluticasone', 'Montelukast',
+    'Ciprofloxacin', 'Azithromycin', 'Hydrochlorothiazide', 'Furosemide',
+    'Warfarin', 'Clopidogrel', 'Insulin', 'Prednisone', 'Cetirizine',
+    'Diphenhydramine', 'Loratadine', 'Ranitidine', 'Esomeprazole',
+    'Pantoprazole', 'Duloxetine', 'Venlafaxine', 'Bupropion', 'Citalopram',
+    'Escitalopram', 'Fluoxetine', 'Paroxetine', 'Sertraline', 'Trazodone',
+    'Buspirone', 'Lorazepam', 'Diazepam', 'Alprazolam', 'Clonazepam',
+    'Zolpidem', 'Eszopiclone', 'Ramelteon', 'Melatonin', 'Sildenafil',
+    'Tadalafil', 'Finasteride', 'Dutasteride', 'Levitra', 'Cialis',
+    'Viagra', 'Nitroglycerin', 'Aspirin', 'Clonidine', 'Carvedilol',
+    'Metoprolol', 'Propranolol', 'Atenolol', 'Bisoprolol', 'Nebivolol',
+    'Diltiazem', 'Verapamil', 'Amlodipine', 'Nifedipine', 'Felodipine',
+]
+
+def generate_doctor_data(n):
+    for i in range(n):
+        return[{
+            'doctorId': i,
+            'registrationNo': faker.random_int(min=1000, max=9999),
+            'name': faker.name(),
+            'experience': faker.random_int(min=1, max=30),
+            'specialization': random.choice(list(sickness_to_specialization.values())),
+            'phoneNo': faker.phone_number(),
+            'address': faker.address()
+        }]
+
+doctors_data = generate_doctor_data(20)
+doctor_to_specialization = {doc['specialization']: doc['doctorId'] for doc in doctors_data}
+
+def generate_patient_data(n):
+    for i in range(n):
+        return[{
+            'patientId': 24+i,
+            'name': faker.name(),
+            'age': faker.random_int(min=1, max=100),
+            'phoneNo': faker.phone_number(),
+            'address': faker.address(),
+            'sickness': random.choice(sickness_to_specialization.keys()),
+        }]
+    
+patients_data = generate_patient_data(1000)
+patient_to_doctor = {pat['patientId']: doctor_to_specialization[sickness_to_specialization[pat['sickness']]] for pat in patients_data}
+    
+def generate_appointment_data(n):
+    for i in range(n):
+        return[{
+            'appointmentId': i,
+            'patientId': patient_to_doctor.keys()[i],
+            'doctorId': patient_to_doctor[patient_to_doctor.keys()[i]],
+            'date': faker.date(),
+            'time': faker.time(),
+            'status': random.choice(['Scheduled', 'Completed', 'Cancelled'])
+        }]
+    
+apointment_data = generate_appointment_data(2000)
+    
+def generate_prescription_data(n):
+    for i in range(n):
+        return[{
+            'prescriptionId': i,
+            'appointmentId': apointment_data[i]['appointmentId'],
+            'medication': [random.choice(medications) for _ in range(faker.random_int(min=1, max=3))],
+            'dosage': random.choice(['Once a day', 'Twice a day', 'Three times a day']),
+            'frequency': random.choice(['Morning', 'Afternoon', 'Evening']),
+            'duration': random.choice(['1 week', '2 weeks', '1 month']),
+        }]
+    
+def generate_billing_data(n):
+    for i in range(n):
+        return[{
+            'billingId': i,
+            'appointmentId': faker.random_int(min=0, max=n-1),
+            'amount': faker.random_int(min=100, max=10000),
+            'paymentStatus': random.choice(['Paid', 'Pending', 'Failed']),
+            'paymentMethod': random.choice(['Cash', 'Credit Card', 'Debit Card', 'Insurance'])
+        }]
+    
+df_doctors = pd.DataFrame(doctors_data)
+df_patients = pd.DataFrame(patients_data)
+df_appointments = pd.DataFrame(apointment_data)
+df_prescriptions = pd.DataFrame(generate_prescription_data(2000))
+df_billing = pd.DataFrame(generate_billing_data(2000))
+
+#Exports
+df_doctors.to_csv('doctors.csv', index=False)
+df_patients.to_csv('patients.csv', index=False)
+df_appointments.to_csv('appointments.csv', index=False)
+df_prescriptions.to_csv('prescriptions.csv', index=False)
+df_billing.to_csv('billing.csv', index=False)
