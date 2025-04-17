@@ -1,0 +1,1382 @@
+prescriptionId,appointmentId,medication,dosage,frequency,duration
+0,1986,Cetirizine,Once a day,Morning,1 week
+1,1093,Diazepam,Three times a day,Afternoon,1 week
+2,455,"Alprazolam, Hydrochlorothiazide",Twice a day,Morning,2 weeks
+3,219,Paroxetine,Three times a day,Afternoon,2 weeks
+4,776,Metformin,Twice a day,Morning,2 weeks
+5,1960,Loratadine,Twice a day,Morning,1 month
+6,1889,Paroxetine,Twice a day,Afternoon,1 week
+7,1083,Ciprofloxacin,Once a day,Morning,1 month
+8,1542,"Omeprazole, Clopidogrel",Twice a day,Afternoon,1 month
+9,1593,Fluticasone,Once a day,Evening,2 weeks
+10,665,Ciprofloxacin,Twice a day,Evening,2 weeks
+11,315,"Alprazolam, Sertraline",Three times a day,Morning,1 month
+12,1074,Nitroglycerin,Three times a day,Afternoon,1 month
+13,1172,Ranitidine,Three times a day,Evening,2 weeks
+14,1497,"Metformin, Melatonin",Once a day,Afternoon,1 week
+15,1063,Paroxetine,Once a day,Morning,2 weeks
+16,339,Diltiazem,Twice a day,Afternoon,1 month
+17,1504,Paracetamol,Once a day,Morning,1 month
+18,177,Esomeprazole,Once a day,Evening,1 week
+19,1760,Levitra,Twice a day,Morning,2 weeks
+20,1589,Prednisone,Three times a day,Morning,2 weeks
+21,1857,Montelukast,Once a day,Evening,2 weeks
+22,1472,"Azithromycin, Atenolol",Once a day,Afternoon,2 weeks
+23,9,Diazepam,Three times a day,Morning,1 month
+24,1027,"Ibuprofen, Zolpidem",Three times a day,Afternoon,1 month
+25,602,"Clopidogrel, Diazepam",Twice a day,Morning,2 weeks
+26,508,"Gabapentin, Nebivolol",Three times a day,Afternoon,1 week
+27,359,Atorvastatin,Twice a day,Morning,2 weeks
+28,98,"Clopidogrel, Nebivolol",Three times a day,Morning,2 weeks
+29,365,Fluoxetine,Three times a day,Morning,1 week
+30,320,Nebivolol,Once a day,Morning,1 week
+31,1575,"Clonazepam, Citalopram",Twice a day,Morning,1 month
+32,1882,"Lisinopril, Metoprolol",Twice a day,Afternoon,1 month
+33,1092,"Trazodone, Hydrochlorothiazide",Three times a day,Afternoon,1 month
+34,548,Warfarin,Once a day,Evening,1 week
+35,1503,Felodipine,Once a day,Afternoon,1 month
+36,323,Ciprofloxacin,Once a day,Afternoon,1 week
+37,1517,Ranitidine,Three times a day,Evening,2 weeks
+38,1081,Nifedipine,Three times a day,Morning,1 month
+39,1815,Citalopram,Once a day,Afternoon,2 weeks
+40,304,Paroxetine,Once a day,Afternoon,1 week
+41,1626,Bisoprolol,Three times a day,Afternoon,1 week
+42,1362,"Melatonin, Cialis",Twice a day,Evening,2 weeks
+43,1352,"Viagra, Furosemide",Once a day,Morning,1 week
+44,461,"Venlafaxine, Amlodipine",Once a day,Morning,1 week
+45,108,Pantoprazole,Three times a day,Morning,2 weeks
+46,591,Trazodone,Three times a day,Evening,2 weeks
+47,766,Citalopram,Once a day,Evening,2 weeks
+48,1140,"Simvastatin, Albuterol, Omeprazole",Twice a day,Evening,1 week
+49,979,Azithromycin,Once a day,Morning,2 weeks
+50,1327,"Trazodone, Viagra",Once a day,Evening,2 weeks
+51,426,"Tadalafil, Clopidogrel",Three times a day,Morning,1 week
+52,1597,Hydrochlorothiazide,Twice a day,Afternoon,1 week
+53,497,Loratadine,Three times a day,Evening,2 weeks
+54,904,Dutasteride,Three times a day,Evening,2 weeks
+55,718,Prednisone,Twice a day,Afternoon,1 month
+56,937,"Ramelteon, Clonazepam, Pantoprazole",Three times a day,Morning,1 month
+57,1285,"Verapamil, Prednisone",Twice a day,Evening,1 week
+58,346,"Nitroglycerin, Trazodone",Three times a day,Evening,2 weeks
+59,482,Simvastatin,Once a day,Morning,1 week
+60,54,"Fluoxetine, Diphenhydramine",Twice a day,Evening,1 week
+61,1511,Escitalopram,Twice a day,Afternoon,2 weeks
+62,1668,"Ciprofloxacin, Gabapentin, Nebivolol",Three times a day,Morning,1 week
+63,1476,Insulin,Twice a day,Evening,1 week
+64,1548,Paracetamol,Three times a day,Evening,1 week
+65,1189,Ramelteon,Once a day,Evening,1 month
+66,719,"Hydrochlorothiazide, Citalopram",Once a day,Afternoon,1 month
+67,29,"Bisoprolol, Hydrochlorothiazide",Once a day,Evening,1 week
+68,874,"Ibuprofen, Cetirizine, Azithromycin",Three times a day,Evening,1 week
+69,685,"Bupropion, Sertraline, Furosemide",Once a day,Afternoon,1 week
+70,1637,Diazepam,Three times a day,Morning,1 week
+71,881,"Cialis, Diphenhydramine",Three times a day,Evening,2 weeks
+72,343,Bupropion,Three times a day,Morning,1 week
+73,1291,"Dutasteride, Diphenhydramine",Twice a day,Afternoon,1 month
+74,653,"Clopidogrel, Propranolol",Three times a day,Evening,1 month
+75,1967,Dutasteride,Once a day,Morning,1 month
+76,507,Ibuprofen,Twice a day,Afternoon,2 weeks
+77,1972,Sildenafil,Once a day,Evening,1 week
+78,1005,"Hydrochlorothiazide, Cetirizine",Three times a day,Afternoon,2 weeks
+79,1387,"Eszopiclone, Alprazolam",Twice a day,Morning,2 weeks
+80,435,Azithromycin,Twice a day,Afternoon,1 week
+81,453,Lorazepam,Once a day,Morning,1 month
+82,1401,"Azithromycin, Ranitidine",Three times a day,Morning,2 weeks
+83,1310,Duloxetine,Three times a day,Morning,1 week
+84,1450,"Lorazepam, Venlafaxine, Metoprolol",Once a day,Morning,1 week
+85,1370,Simvastatin,Twice a day,Evening,2 weeks
+86,717,Metoprolol,Twice a day,Morning,1 month
+87,53,"Ciprofloxacin, Clonazepam",Once a day,Evening,2 weeks
+88,1439,"Amlodipine, Diphenhydramine",Three times a day,Evening,2 weeks
+89,239,Warfarin,Twice a day,Morning,1 month
+90,815,"Lorazepam, Zolpidem",Three times a day,Evening,2 weeks
+91,783,"Ranitidine, Ramelteon",Twice a day,Evening,1 month
+92,5,"Fluticasone, Nitroglycerin",Once a day,Afternoon,2 weeks
+93,647,"Levothyroxine, Loratadine",Three times a day,Morning,1 month
+94,944,"Paroxetine, Zolpidem",Three times a day,Morning,1 week
+95,1192,"Ramelteon, Lisinopril, Buspirone",Three times a day,Afternoon,1 week
+96,1316,Atenolol,Twice a day,Afternoon,1 week
+97,1903,Buspirone,Twice a day,Afternoon,1 week
+98,141,Fluticasone,Twice a day,Morning,1 month
+99,683,Venlafaxine,Twice a day,Evening,1 month
+100,933,Verapamil,Three times a day,Afternoon,2 weeks
+101,1965,"Clopidogrel, Paracetamol, Nebivolol",Three times a day,Morning,2 weeks
+102,634,Escitalopram,Twice a day,Morning,2 weeks
+103,1934,Furosemide,Twice a day,Morning,1 month
+104,698,"Lorazepam, Melatonin",Twice a day,Evening,2 weeks
+105,1508,"Bupropion, Nifedipine",Twice a day,Evening,2 weeks
+106,186,"Metoprolol, Bupropion",Twice a day,Afternoon,2 weeks
+107,1762,Clonazepam,Twice a day,Evening,1 week
+108,410,"Esomeprazole, Sertraline",Once a day,Morning,1 month
+109,537,Furosemide,Once a day,Evening,1 month
+110,1711,Azithromycin,Twice a day,Morning,2 weeks
+111,1886,Simvastatin,Three times a day,Afternoon,1 month
+112,372,Buspirone,Twice a day,Morning,2 weeks
+113,1502,"Escitalopram, Fluticasone, Metoprolol",Once a day,Afternoon,1 month
+114,381,Furosemide,Once a day,Afternoon,2 weeks
+115,1122,"Warfarin, Lorazepam",Twice a day,Afternoon,1 week
+116,888,"Hydrochlorothiazide, Clopidogrel",Three times a day,Afternoon,2 weeks
+117,1317,Verapamil,Once a day,Morning,1 month
+118,1055,Citalopram,Three times a day,Afternoon,1 week
+119,258,Paroxetine,Once a day,Afternoon,1 week
+120,1545,"Simvastatin, Tadalafil, Nitroglycerin",Once a day,Afternoon,2 weeks
+121,483,Fluoxetine,Three times a day,Evening,1 month
+122,67,Paracetamol,Once a day,Morning,1 month
+123,1957,Levitra,Three times a day,Morning,1 month
+124,555,Ciprofloxacin,Three times a day,Afternoon,2 weeks
+125,1245,"Ranitidine, Melatonin",Once a day,Morning,1 week
+126,1020,"Insulin, Melatonin",Three times a day,Afternoon,1 week
+127,666,Gabapentin,Twice a day,Afternoon,2 weeks
+128,1796,Hydrochlorothiazide,Three times a day,Evening,1 week
+129,1221,Eszopiclone,Once a day,Evening,1 month
+130,1413,"Melatonin, Felodipine, Zolpidem",Once a day,Afternoon,1 month
+131,1617,"Nebivolol, Insulin, Levothyroxine",Three times a day,Afternoon,1 month
+132,1411,"Metoprolol, Tadalafil",Three times a day,Evening,1 week
+133,908,Verapamil,Twice a day,Morning,2 weeks
+134,1071,"Azithromycin, Lorazepam, Duloxetine",Three times a day,Morning,1 month
+135,579,Bupropion,Twice a day,Afternoon,2 weeks
+136,720,Esomeprazole,Once a day,Evening,1 week
+137,712,Paroxetine,Twice a day,Afternoon,1 month
+138,1862,"Viagra, Amoxicillin",Three times a day,Evening,1 week
+139,1693,"Ciprofloxacin, Lorazepam",Once a day,Morning,1 month
+140,531,Bisoprolol,Three times a day,Morning,1 week
+141,1745,Dutasteride,Three times a day,Afternoon,2 weeks
+142,818,"Albuterol, Warfarin, Eszopiclone",Three times a day,Evening,2 weeks
+143,1421,Sertraline,Three times a day,Evening,1 month
+144,391,Albuterol,Twice a day,Morning,2 weeks
+145,959,Montelukast,Once a day,Afternoon,1 month
+146,430,Lisinopril,Three times a day,Afternoon,1 month
+147,1702,Sertraline,Three times a day,Afternoon,1 week
+148,745,Insulin,Once a day,Morning,1 week
+149,155,"Metoprolol, Aspirin, Clonidine",Twice a day,Evening,1 week
+150,96,Paroxetine,Once a day,Morning,2 weeks
+151,1930,"Viagra, Cetirizine",Once a day,Evening,1 month
+152,1489,Sertraline,Twice a day,Evening,2 weeks
+153,947,"Esomeprazole, Simvastatin",Twice a day,Afternoon,1 week
+154,1125,Lorazepam,Three times a day,Morning,1 month
+155,306,Eszopiclone,Once a day,Evening,1 month
+156,1865,"Insulin, Pantoprazole",Once a day,Afternoon,2 weeks
+157,204,Paracetamol,Twice a day,Evening,1 month
+158,1424,Carvedilol,Once a day,Afternoon,1 month
+159,500,"Clopidogrel, Loratadine",Three times a day,Afternoon,1 month
+160,1425,Bisoprolol,Twice a day,Morning,1 week
+161,331,Citalopram,Three times a day,Afternoon,2 weeks
+162,1805,"Ramelteon, Aspirin",Three times a day,Morning,1 week
+163,1781,"Furosemide, Gabapentin, Dutasteride",Twice a day,Afternoon,1 month
+164,513,"Albuterol, Zolpidem, Clonazepam",Once a day,Afternoon,1 week
+165,1984,Simvastatin,Once a day,Evening,1 week
+166,151,"Insulin, Atenolol",Three times a day,Morning,1 week
+167,1369,Ranitidine,Three times a day,Morning,1 week
+168,1869,Metoprolol,Three times a day,Morning,1 month
+169,935,Diazepam,Once a day,Afternoon,1 month
+170,348,"Cialis, Levitra",Three times a day,Morning,1 week
+171,1740,Insulin,Once a day,Morning,1 week
+172,1641,Pantoprazole,Three times a day,Morning,1 week
+173,1620,"Zolpidem, Warfarin",Twice a day,Morning,1 week
+174,1602,"Metformin, Buspirone",Twice a day,Evening,1 week
+175,1964,Omeprazole,Twice a day,Morning,1 week
+176,1778,Venlafaxine,Twice a day,Afternoon,1 week
+177,982,Carvedilol,Once a day,Afternoon,1 month
+178,884,Trazodone,Once a day,Afternoon,1 week
+179,965,Ramelteon,Once a day,Morning,1 month
+180,1428,Carvedilol,Three times a day,Morning,1 week
+181,1679,Escitalopram,Twice a day,Morning,1 month
+182,1853,"Propranolol, Diazepam",Twice a day,Evening,1 week
+183,360,Hydrochlorothiazide,Once a day,Evening,1 week
+184,1941,Zolpidem,Twice a day,Evening,1 month
+185,1343,Clopidogrel,Three times a day,Evening,1 month
+186,116,"Escitalopram, Ibuprofen",Three times a day,Evening,1 month
+187,291,Loratadine,Once a day,Evening,2 weeks
+188,230,"Fluticasone, Diphenhydramine",Three times a day,Evening,1 week
+189,35,Albuterol,Twice a day,Afternoon,1 week
+190,1346,Lisinopril,Three times a day,Morning,1 week
+191,20,Amoxicillin,Once a day,Afternoon,1 month
+192,1492,"Azithromycin, Nitroglycerin",Once a day,Evening,1 week
+193,1949,Insulin,Twice a day,Morning,1 month
+194,1394,Ranitidine,Three times a day,Morning,1 week
+195,1982,Hydrochlorothiazide,Three times a day,Evening,1 month
+196,1026,"Levothyroxine, Nebivolol",Twice a day,Morning,2 weeks
+197,263,Nifedipine,Once a day,Evening,1 month
+198,1147,"Carvedilol, Zolpidem",Twice a day,Evening,1 week
+199,1062,"Clonazepam, Citalopram",Once a day,Afternoon,1 month
+200,1701,"Metformin, Nitroglycerin",Three times a day,Morning,1 month
+201,670,Nifedipine,Three times a day,Afternoon,1 week
+202,957,"Atorvastatin, Buspirone, Hydrochlorothiazide",Once a day,Afternoon,2 weeks
+203,1231,"Montelukast, Metformin",Three times a day,Evening,1 month
+204,1388,"Finasteride, Levitra",Once a day,Evening,2 weeks
+205,125,"Trazodone, Bisoprolol, Ramelteon",Three times a day,Evening,1 week
+206,14,Sertraline,Once a day,Evening,2 weeks
+207,1600,"Amoxicillin, Prednisone",Three times a day,Afternoon,1 month
+208,1670,Felodipine,Three times a day,Evening,2 weeks
+209,1535,"Gabapentin, Buspirone",Once a day,Evening,1 week
+210,1527,Loratadine,Three times a day,Evening,2 weeks
+211,1417,Furosemide,Three times a day,Afternoon,2 weeks
+212,181,Verapamil,Twice a day,Morning,1 month
+213,1736,Propranolol,Three times a day,Morning,2 weeks
+214,1810,Nebivolol,Once a day,Afternoon,2 weeks
+215,1286,Albuterol,Three times a day,Morning,1 month
+216,288,Azithromycin,Three times a day,Evening,1 month
+217,1160,Dutasteride,Three times a day,Morning,1 week
+218,1821,Melatonin,Twice a day,Afternoon,1 month
+219,599,Buspirone,Three times a day,Afternoon,1 week
+220,941,"Gabapentin, Montelukast",Three times a day,Evening,1 week
+221,1775,"Citalopram, Ranitidine",Twice a day,Afternoon,1 week
+222,853,Metformin,Once a day,Evening,1 month
+223,1326,"Ramelteon, Citalopram",Once a day,Morning,2 weeks
+224,450,Metoprolol,Three times a day,Evening,1 week
+225,1750,"Aspirin, Ciprofloxacin",Once a day,Evening,2 weeks
+226,1939,"Ranitidine, Montelukast",Twice a day,Morning,2 weeks
+227,863,Finasteride,Three times a day,Morning,1 month
+228,1779,"Bupropion, Omeprazole",Twice a day,Afternoon,1 week
+229,166,Pantoprazole,Once a day,Afternoon,1 month
+230,1162,Ibuprofen,Twice a day,Evening,1 month
+231,422,Furosemide,Twice a day,Afternoon,1 month
+232,1680,"Felodipine, Bupropion",Three times a day,Evening,1 month
+233,221,Alprazolam,Three times a day,Evening,1 week
+234,275,"Eszopiclone, Ramelteon, Sildenafil",Twice a day,Afternoon,2 weeks
+235,1204,Citalopram,Once a day,Morning,2 weeks
+236,1407,Warfarin,Twice a day,Evening,2 weeks
+237,69,Viagra,Twice a day,Afternoon,1 week
+238,1530,"Ibuprofen, Melatonin",Three times a day,Afternoon,1 month
+239,788,"Bisoprolol, Buspirone, Cetirizine",Once a day,Morning,1 week
+240,1295,Diltiazem,Twice a day,Afternoon,2 weeks
+241,1429,Sertraline,Once a day,Afternoon,1 week
+242,748,Warfarin,Once a day,Evening,2 weeks
+243,213,"Sildenafil, Verapamil",Once a day,Evening,1 week
+244,127,Felodipine,Twice a day,Afternoon,2 weeks
+245,205,"Ramelteon, Bupropion",Three times a day,Morning,1 month
+246,377,Albuterol,Once a day,Evening,1 month
+247,1859,Ibuprofen,Once a day,Evening,2 weeks
+248,1615,Trazodone,Once a day,Morning,1 week
+249,1730,"Aspirin, Venlafaxine, Carvedilol",Three times a day,Afternoon,1 week
+250,1608,"Esomeprazole, Metoprolol, Cialis",Once a day,Afternoon,1 month
+251,112,"Ciprofloxacin, Clonazepam",Three times a day,Evening,1 week
+252,1845,Duloxetine,Three times a day,Morning,1 week
+253,1118,"Ciprofloxacin, Esomeprazole",Twice a day,Morning,1 week
+254,1516,Atenolol,Once a day,Afternoon,1 month
+255,1952,"Lisinopril, Propranolol",Three times a day,Afternoon,1 week
+256,1335,"Bisoprolol, Atorvastatin, Sildenafil",Three times a day,Evening,2 weeks
+257,1714,"Carvedilol, Levothyroxine",Twice a day,Afternoon,2 weeks
+258,1550,Pantoprazole,Once a day,Evening,1 month
+259,1834,Omeprazole,Three times a day,Afternoon,2 weeks
+260,675,"Metformin, Dutasteride",Once a day,Evening,1 week
+261,560,Verapamil,Twice a day,Afternoon,1 week
+262,1278,"Azithromycin, Venlafaxine",Twice a day,Morning,2 weeks
+263,605,"Clopidogrel, Fluticasone",Three times a day,Afternoon,2 weeks
+264,1515,"Paracetamol, Levitra",Once a day,Evening,2 weeks
+265,231,Diltiazem,Three times a day,Evening,2 weeks
+266,1164,Clonidine,Once a day,Morning,1 month
+267,1261,"Viagra, Fluticasone",Three times a day,Morning,2 weeks
+268,1569,Cialis,Twice a day,Afternoon,1 week
+269,1234,Trazodone,Twice a day,Morning,1 month
+270,1057,"Bupropion, Cialis",Once a day,Evening,1 week
+271,576,Bisoprolol,Twice a day,Evening,1 month
+272,290,"Cetirizine, Clopidogrel",Twice a day,Afternoon,2 weeks
+273,1663,Atorvastatin,Once a day,Afternoon,1 month
+274,1377,Carvedilol,Twice a day,Morning,1 week
+275,974,"Propranolol, Metformin",Once a day,Afternoon,2 weeks
+276,1468,Montelukast,Three times a day,Afternoon,1 month
+277,1042,Hydrochlorothiazide,Once a day,Morning,1 month
+278,1324,Felodipine,Three times a day,Evening,1 week
+279,1355,"Cetirizine, Warfarin",Once a day,Afternoon,1 week
+280,296,"Esomeprazole, Cialis",Three times a day,Morning,1 month
+281,794,"Melatonin, Nitroglycerin",Once a day,Afternoon,1 week
+282,1898,Clonidine,Twice a day,Morning,2 weeks
+283,995,"Furosemide, Carvedilol",Three times a day,Afternoon,2 weeks
+284,398,Aspirin,Twice a day,Evening,1 month
+285,1127,"Cialis, Verapamil, Clonazepam",Three times a day,Morning,1 week
+286,816,Eszopiclone,Twice a day,Evening,2 weeks
+287,428,"Clonidine, Amlodipine, Cialis",Once a day,Afternoon,1 month
+288,138,"Dutasteride, Trazodone",Three times a day,Afternoon,1 month
+289,148,Dutasteride,Three times a day,Evening,1 week
+290,1365,"Atorvastatin, Gabapentin",Once a day,Morning,2 weeks
+291,12,"Cialis, Azithromycin",Three times a day,Afternoon,2 weeks
+292,1333,Propranolol,Three times a day,Evening,2 weeks
+293,150,"Levitra, Bupropion, Diphenhydramine",Once a day,Evening,1 week
+294,1726,"Zolpidem, Clonazepam",Twice a day,Morning,1 week
+295,1767,Prednisone,Three times a day,Afternoon,1 week
+296,522,"Diazepam, Nifedipine, Lorazepam",Twice a day,Afternoon,1 month
+297,1916,"Sildenafil, Gabapentin",Twice a day,Morning,1 week
+298,509,Diazepam,Three times a day,Afternoon,1 month
+299,873,"Prednisone, Albuterol",Three times a day,Afternoon,2 weeks
+300,1215,"Nitroglycerin, Sildenafil",Once a day,Evening,2 weeks
+301,237,Citalopram,Twice a day,Evening,1 month
+302,1079,"Cialis, Bisoprolol, Metformin",Three times a day,Morning,1 month
+303,1437,Simvastatin,Twice a day,Evening,2 weeks
+304,769,Hydrochlorothiazide,Once a day,Afternoon,2 weeks
+305,1917,Loratadine,Once a day,Afternoon,1 week
+306,936,Prednisone,Twice a day,Morning,1 month
+307,188,Metoprolol,Once a day,Afternoon,2 weeks
+308,861,"Prednisone, Metformin",Three times a day,Afternoon,1 month
+309,1021,Albuterol,Once a day,Morning,2 weeks
+310,559,Dutasteride,Once a day,Afternoon,2 weeks
+311,582,Simvastatin,Once a day,Evening,1 week
+312,338,Diphenhydramine,Twice a day,Morning,1 month
+313,90,Esomeprazole,Three times a day,Evening,1 month
+314,524,"Levitra, Bisoprolol",Once a day,Afternoon,1 week
+315,1672,Metoprolol,Twice a day,Morning,1 week
+316,1451,Finasteride,Twice a day,Morning,2 weeks
+317,1159,"Citalopram, Propranolol, Metoprolol",Once a day,Morning,2 weeks
+318,1068,"Furosemide, Zolpidem",Three times a day,Afternoon,2 weeks
+319,159,"Furosemide, Felodipine",Three times a day,Evening,1 month
+320,1552,Tadalafil,Once a day,Evening,2 weeks
+321,977,"Lisinopril, Fluoxetine",Once a day,Evening,2 weeks
+322,487,Insulin,Twice a day,Morning,2 weeks
+323,1521,"Zolpidem, Paroxetine",Three times a day,Evening,1 month
+324,1485,Loratadine,Three times a day,Evening,1 month
+325,104,"Amlodipine, Fluticasone, Albuterol",Three times a day,Morning,1 week
+326,793,Escitalopram,Once a day,Morning,1 week
+327,79,"Azithromycin, Bupropion",Three times a day,Afternoon,1 month
+328,1549,"Ranitidine, Clonidine",Twice a day,Evening,1 week
+329,244,"Propranolol, Metoprolol",Three times a day,Morning,1 week
+330,61,"Diazepam, Cialis",Once a day,Morning,2 weeks
+331,283,Citalopram,Three times a day,Morning,1 week
+332,388,"Venlafaxine, Sertraline",Twice a day,Evening,1 week
+333,688,Ranitidine,Three times a day,Afternoon,1 month
+334,1136,Esomeprazole,Three times a day,Afternoon,1 week
+335,1643,Furosemide,Once a day,Evening,1 week
+336,1872,Lisinopril,Twice a day,Evening,1 month
+337,242,Metformin,Twice a day,Evening,2 weeks
+338,813,"Ibuprofen, Aspirin",Once a day,Afternoon,1 month
+339,118,"Pantoprazole, Cialis",Twice a day,Morning,1 week
+340,1661,Clonidine,Twice a day,Evening,1 week
+341,931,Loratadine,Once a day,Evening,1 week
+342,1198,Loratadine,Once a day,Afternoon,2 weeks
+343,966,Fluticasone,Three times a day,Evening,1 month
+344,322,Escitalopram,Once a day,Evening,2 weeks
+345,434,"Duloxetine, Loratadine",Once a day,Evening,1 month
+346,457,"Escitalopram, Simvastatin",Three times a day,Evening,1 month
+347,942,"Lorazepam, Atorvastatin",Three times a day,Morning,1 week
+348,980,Bisoprolol,Once a day,Evening,1 week
+349,1558,Sertraline,Three times a day,Evening,1 month
+350,1459,Albuterol,Once a day,Morning,1 month
+351,1561,"Lisinopril, Cetirizine, Clopidogrel",Twice a day,Evening,1 week
+352,433,Dutasteride,Twice a day,Afternoon,1 month
+353,1475,Metoprolol,Once a day,Evening,1 month
+354,1618,Clonidine,Three times a day,Afternoon,1 month
+355,272,"Ramelteon, Clonazepam, Tadalafil",Once a day,Evening,1 month
+356,1695,Melatonin,Three times a day,Evening,1 month
+357,552,"Atenolol, Sildenafil",Three times a day,Afternoon,2 weeks
+358,1590,Tadalafil,Once a day,Morning,2 weeks
+359,808,"Felodipine, Nifedipine",Twice a day,Afternoon,2 weeks
+360,462,"Diphenhydramine, Eszopiclone",Once a day,Evening,2 weeks
+361,1780,Atorvastatin,Three times a day,Evening,1 week
+362,668,Propranolol,Twice a day,Evening,2 weeks
+363,1571,"Escitalopram, Paroxetine",Three times a day,Evening,1 week
+364,1098,Tadalafil,Three times a day,Morning,1 week
+365,451,"Simvastatin, Levothyroxine, Buspirone",Once a day,Morning,2 weeks
+366,298,Sertraline,Once a day,Evening,1 week
+367,1510,"Lisinopril, Amlodipine",Once a day,Afternoon,1 month
+368,1551,Viagra,Three times a day,Evening,2 weeks
+369,1269,Azithromycin,Three times a day,Evening,2 weeks
+370,1359,"Paroxetine, Nebivolol, Duloxetine",Twice a day,Evening,1 week
+371,1605,"Insulin, Verapamil, Nebivolol",Once a day,Morning,2 weeks
+372,517,"Atenolol, Paroxetine, Bupropion",Once a day,Evening,1 week
+373,1738,Ciprofloxacin,Twice a day,Morning,2 weeks
+374,1523,Levothyroxine,Once a day,Evening,2 weeks
+375,628,Amoxicillin,Three times a day,Morning,1 month
+376,129,Nitroglycerin,Once a day,Morning,2 weeks
+377,1625,"Simvastatin, Clopidogrel",Three times a day,Afternoon,1 month
+378,580,Ranitidine,Once a day,Morning,1 month
+379,671,Melatonin,Three times a day,Evening,1 week
+380,246,"Citalopram, Azithromycin, Bisoprolol",Once a day,Afternoon,1 week
+381,185,"Tadalafil, Amoxicillin",Three times a day,Afternoon,1 week
+382,1010,Montelukast,Three times a day,Morning,1 month
+383,193,Esomeprazole,Once a day,Afternoon,1 month
+384,1909,Metoprolol,Three times a day,Morning,1 month
+385,1353,Simvastatin,Once a day,Morning,2 weeks
+386,1260,"Atorvastatin, Bupropion",Twice a day,Morning,1 week
+387,1807,Gabapentin,Three times a day,Evening,1 week
+388,1847,"Duloxetine, Sildenafil",Twice a day,Morning,1 month
+389,197,Omeprazole,Twice a day,Morning,1 month
+390,1415,"Bisoprolol, Pantoprazole",Three times a day,Morning,2 weeks
+391,1059,Amlodipine,Twice a day,Evening,1 week
+392,1338,"Montelukast, Esomeprazole",Three times a day,Evening,1 month
+393,91,"Ramelteon, Amlodipine, Levitra",Once a day,Morning,1 month
+394,1878,"Cialis, Bisoprolol",Twice a day,Evening,1 week
+395,1463,Sildenafil,Once a day,Evening,2 weeks
+396,245,"Tadalafil, Esomeprazole",Twice a day,Afternoon,1 week
+397,771,Bupropion,Once a day,Afternoon,1 week
+398,1634,"Loratadine, Zolpidem",Three times a day,Afternoon,2 weeks
+399,1406,Metoprolol,Once a day,Evening,1 week
+400,1783,Escitalopram,Twice a day,Afternoon,2 weeks
+401,1697,"Pantoprazole, Alprazolam",Twice a day,Morning,1 month
+402,803,Venlafaxine,Twice a day,Afternoon,1 week
+403,319,"Alprazolam, Simvastatin",Once a day,Evening,1 month
+404,1296,Ramelteon,Twice a day,Afternoon,2 weeks
+405,585,Melatonin,Once a day,Morning,1 week
+406,1690,"Dutasteride, Atenolol",Three times a day,Afternoon,2 weeks
+407,1187,Ranitidine,Once a day,Evening,1 week
+408,1322,Paroxetine,Three times a day,Morning,2 weeks
+409,643,Clonidine,Twice a day,Evening,2 weeks
+410,1364,Clonidine,Once a day,Afternoon,1 month
+411,382,"Paracetamol, Felodipine",Three times a day,Morning,1 week
+412,1357,Amoxicillin,Once a day,Afternoon,2 weeks
+413,535,"Bisoprolol, Lorazepam",Three times a day,Morning,1 month
+414,1033,"Verapamil, Fluoxetine, Loratadine",Three times a day,Afternoon,1 week
+415,644,Lisinopril,Twice a day,Morning,1 month
+416,840,Furosemide,Twice a day,Afternoon,1 week
+417,1989,"Prednisone, Bupropion, Finasteride",Three times a day,Morning,1 week
+418,64,"Dutasteride, Verapamil",Twice a day,Evening,1 month
+419,132,Atorvastatin,Three times a day,Morning,1 week
+420,431,Alprazolam,Twice a day,Evening,1 month
+421,594,Eszopiclone,Twice a day,Morning,1 week
+422,1487,Buspirone,Twice a day,Evening,1 month
+423,1195,"Sildenafil, Clonazepam",Once a day,Evening,2 weeks
+424,225,"Lisinopril, Albuterol",Three times a day,Afternoon,1 week
+425,1823,Clonidine,Three times a day,Evening,1 week
+426,1183,Esomeprazole,Twice a day,Morning,1 week
+427,1349,"Propranolol, Aspirin",Three times a day,Afternoon,1 month
+428,1752,Aspirin,Three times a day,Afternoon,2 weeks
+429,357,Diltiazem,Once a day,Evening,1 week
+430,1163,Hydrochlorothiazide,Three times a day,Afternoon,1 month
+431,1837,Dutasteride,Once a day,Morning,1 week
+432,1065,Metformin,Once a day,Morning,1 month
+433,711,Furosemide,Twice a day,Morning,2 weeks
+434,1244,"Clonidine, Felodipine",Twice a day,Morning,1 week
+435,1319,"Sildenafil, Fluticasone",Twice a day,Morning,1 week
+436,1029,"Dutasteride, Hydrochlorothiazide",Twice a day,Afternoon,2 weeks
+437,41,"Esomeprazole, Duloxetine",Three times a day,Morning,1 month
+438,142,"Escitalopram, Omeprazole",Three times a day,Afternoon,2 weeks
+439,825,"Atorvastatin, Dutasteride",Twice a day,Afternoon,1 month
+440,663,Propranolol,Twice a day,Morning,2 weeks
+441,1208,Loratadine,Three times a day,Evening,1 month
+442,228,"Escitalopram, Warfarin",Twice a day,Afternoon,2 weeks
+443,1491,Diphenhydramine,Once a day,Morning,1 week
+444,1963,Lorazepam,Three times a day,Evening,2 weeks
+445,1782,Felodipine,Twice a day,Afternoon,2 weeks
+446,488,Diazepam,Once a day,Evening,1 month
+447,804,Viagra,Twice a day,Evening,1 month
+448,1689,Buspirone,Once a day,Afternoon,2 weeks
+449,677,Clonazepam,Once a day,Evening,1 month
+450,146,Amoxicillin,Once a day,Afternoon,1 week
+451,501,"Cialis, Warfarin, Verapamil",Once a day,Morning,1 month
+452,1559,"Bisoprolol, Eszopiclone",Twice a day,Afternoon,1 month
+453,374,Finasteride,Once a day,Afternoon,2 weeks
+454,342,Dutasteride,Twice a day,Morning,1 month
+455,1705,Ramelteon,Once a day,Evening,1 month
+456,1442,Warfarin,Once a day,Evening,1 week
+457,297,Clonazepam,Three times a day,Morning,1 month
+458,1350,Ranitidine,Twice a day,Evening,1 month
+459,1067,"Ramelteon, Levothyroxine",Twice a day,Morning,2 weeks
+460,1846,Azithromycin,Three times a day,Morning,1 month
+461,822,Levothyroxine,Three times a day,Morning,1 month
+462,345,"Atenolol, Lorazepam",Three times a day,Morning,1 month
+463,1409,Metoprolol,Twice a day,Afternoon,1 month
+464,533,"Amoxicillin, Clopidogrel, Ciprofloxacin",Once a day,Morning,1 week
+465,1583,"Metformin, Diphenhydramine",Twice a day,Evening,2 weeks
+466,676,"Atorvastatin, Loratadine, Propranolol",Three times a day,Afternoon,1 week
+467,1554,Cialis,Twice a day,Evening,2 weeks
+468,396,"Felodipine, Gabapentin",Three times a day,Afternoon,1 month
+469,238,Albuterol,Three times a day,Evening,1 month
+470,266,Omeprazole,Twice a day,Morning,2 weeks
+471,1306,"Prednisone, Atorvastatin",Three times a day,Afternoon,2 weeks
+472,1956,Amoxicillin,Three times a day,Afternoon,1 week
+473,1384,"Venlafaxine, Clopidogrel",Three times a day,Morning,1 week
+474,1908,"Albuterol, Aspirin",Once a day,Afternoon,1 week
+475,1050,Diphenhydramine,Twice a day,Morning,1 month
+476,1197,Viagra,Once a day,Evening,2 weeks
+477,1978,Finasteride,Once a day,Evening,1 week
+478,195,Ramelteon,Twice a day,Afternoon,1 week
+479,536,"Diphenhydramine, Loratadine, Nitroglycerin",Twice a day,Evening,1 week
+480,1077,"Felodipine, Metoprolol",Three times a day,Afternoon,1 week
+481,744,Diphenhydramine,Once a day,Evening,1 month
+482,1483,"Ranitidine, Alprazolam",Three times a day,Evening,2 weeks
+483,1465,"Dutasteride, Nebivolol",Once a day,Evening,1 month
+484,1226,Zolpidem,Three times a day,Morning,1 month
+485,452,"Levitra, Nitroglycerin",Once a day,Afternoon,2 weeks
+486,1927,"Ranitidine, Citalopram",Three times a day,Afternoon,1 week
+487,823,"Escitalopram, Levitra",Twice a day,Evening,1 week
+488,1717,"Nitroglycerin, Fluoxetine",Once a day,Afternoon,2 weeks
+489,829,Loratadine,Twice a day,Afternoon,1 week
+490,1218,Lisinopril,Once a day,Afternoon,1 month
+491,749,"Nebivolol, Citalopram",Twice a day,Afternoon,1 week
+492,943,"Nifedipine, Diltiazem",Twice a day,Morning,1 month
+493,276,Loratadine,Once a day,Morning,1 week
+494,211,"Paracetamol, Nifedipine, Lorazepam",Once a day,Afternoon,1 month
+495,713,Loratadine,Once a day,Morning,2 weeks
+496,445,Prednisone,Twice a day,Afternoon,2 weeks
+497,1947,Clonidine,Three times a day,Evening,1 month
+498,1174,"Zolpidem, Albuterol",Three times a day,Evening,2 weeks
+499,642,"Hydrochlorothiazide, Buspirone",Once a day,Afternoon,1 week
+500,1710,Lisinopril,Once a day,Morning,1 month
+501,1196,Metformin,Twice a day,Afternoon,1 week
+502,915,"Dutasteride, Nebivolol",Once a day,Evening,1 month
+503,632,Lorazepam,Three times a day,Afternoon,1 month
+504,1526,"Dutasteride, Furosemide, Zolpidem",Three times a day,Evening,2 weeks
+505,152,Simvastatin,Twice a day,Morning,1 week
+506,921,"Warfarin, Melatonin",Twice a day,Morning,2 weeks
+507,124,"Atorvastatin, Amoxicillin",Once a day,Afternoon,1 month
+508,1803,Diltiazem,Three times a day,Evening,1 month
+509,476,"Levothyroxine, Escitalopram, Metoprolol",Once a day,Morning,2 weeks
+510,806,"Prednisone, Fluticasone, Tadalafil",Twice a day,Morning,1 month
+511,1907,Cetirizine,Three times a day,Evening,2 weeks
+512,1460,"Lorazepam, Paracetamol",Twice a day,Morning,1 week
+513,1137,Diazepam,Twice a day,Morning,1 month
+514,637,"Loratadine, Atenolol",Once a day,Afternoon,2 weeks
+515,801,"Hydrochlorothiazide, Ibuprofen, Levitra",Three times a day,Evening,2 weeks
+516,362,Tadalafil,Once a day,Morning,1 month
+517,1786,Lorazepam,Twice a day,Afternoon,2 weeks
+518,858,"Clopidogrel, Lorazepam",Twice a day,Afternoon,1 week
+519,490,"Paroxetine, Verapamil",Three times a day,Morning,2 weeks
+520,1156,Ciprofloxacin,Three times a day,Afternoon,1 week
+521,905,Sertraline,Three times a day,Evening,2 weeks
+522,1839,Simvastatin,Once a day,Afternoon,2 weeks
+523,1392,"Amoxicillin, Tadalafil, Diphenhydramine",Twice a day,Afternoon,1 week
+524,810,Ranitidine,Three times a day,Evening,2 weeks
+525,747,Verapamil,Twice a day,Afternoon,1 month
+526,1580,Furosemide,Once a day,Afternoon,1 month
+527,1036,Diltiazem,Twice a day,Evening,2 weeks
+528,1351,"Loratadine, Warfarin",Once a day,Morning,2 weeks
+529,595,"Eszopiclone, Venlafaxine",Three times a day,Evening,1 week
+530,511,Amlodipine,Three times a day,Afternoon,2 weeks
+531,1958,Metoprolol,Twice a day,Evening,1 month
+532,368,Ranitidine,Three times a day,Evening,1 week
+533,1382,Atorvastatin,Twice a day,Afternoon,1 month
+534,830,"Melatonin, Albuterol",Once a day,Evening,1 month
+535,917,Sildenafil,Twice a day,Morning,1 month
+536,414,"Finasteride, Diazepam, Pantoprazole",Three times a day,Evening,1 week
+537,82,"Paracetamol, Esomeprazole",Once a day,Afternoon,1 week
+538,1741,Buspirone,Twice a day,Afternoon,1 month
+539,646,Azithromycin,Twice a day,Afternoon,1 month
+540,1758,"Ibuprofen, Nebivolol, Hydrochlorothiazide",Twice a day,Evening,2 weeks
+541,120,"Ciprofloxacin, Diltiazem",Three times a day,Morning,1 month
+542,562,Azithromycin,Twice a day,Evening,1 month
+543,1885,"Atenolol, Lisinopril, Ramelteon",Twice a day,Afternoon,1 week
+544,1737,"Citalopram, Atorvastatin, Buspirone",Once a day,Morning,1 week
+545,232,Metformin,Twice a day,Morning,1 week
+546,964,"Cetirizine, Albuterol",Twice a day,Morning,1 week
+547,286,Ciprofloxacin,Once a day,Morning,1 month
+548,1707,Nifedipine,Once a day,Morning,1 month
+549,156,Levitra,Twice a day,Afternoon,1 week
+550,1180,Sertraline,Three times a day,Morning,1 month
+551,963,Aspirin,Once a day,Afternoon,2 weeks
+552,248,"Lisinopril, Azithromycin, Ranitidine",Three times a day,Morning,1 week
+553,1166,Clonidine,Three times a day,Afternoon,1 week
+554,1378,Dutasteride,Three times a day,Evening,1 week
+555,1644,Furosemide,Twice a day,Afternoon,1 month
+556,268,Ranitidine,Three times a day,Afternoon,1 week
+557,1753,Clonazepam,Once a day,Evening,2 weeks
+558,807,Lorazepam,Three times a day,Afternoon,2 weeks
+559,1300,"Esomeprazole, Fluoxetine",Three times a day,Afternoon,1 week
+560,158,Clopidogrel,Three times a day,Evening,2 weeks
+561,1581,Propranolol,Once a day,Afternoon,1 month
+562,778,"Citalopram, Clonazepam",Three times a day,Evening,1 week
+563,1095,"Pantoprazole, Carvedilol",Three times a day,Morning,1 month
+564,681,"Nebivolol, Azithromycin",Twice a day,Evening,1 week
+565,259,Insulin,Twice a day,Evening,1 week
+566,932,"Zolpidem, Buspirone",Three times a day,Afternoon,1 month
+567,1206,Azithromycin,Once a day,Morning,1 month
+568,578,Zolpidem,Once a day,Morning,1 month
+569,624,"Metoprolol, Atorvastatin",Once a day,Afternoon,1 month
+570,832,Finasteride,Twice a day,Afternoon,1 week
+571,1777,Cialis,Once a day,Afternoon,1 week
+572,1058,Ibuprofen,Twice a day,Afternoon,1 week
+573,94,Ibuprofen,Three times a day,Afternoon,1 week
+574,1073,Levothyroxine,Once a day,Evening,1 week
+575,175,Albuterol,Three times a day,Morning,1 month
+576,1720,Furosemide,Twice a day,Evening,1 month
+577,985,Omeprazole,Once a day,Evening,1 month
+578,581,Pantoprazole,Three times a day,Afternoon,1 month
+579,1193,"Bupropion, Aspirin",Once a day,Morning,2 weeks
+580,226,"Omeprazole, Nifedipine",Twice a day,Evening,1 month
+581,1518,Nifedipine,Twice a day,Evening,1 month
+582,1043,Omeprazole,Twice a day,Morning,1 week
+583,371,Zolpidem,Once a day,Morning,1 week
+584,254,Diphenhydramine,Twice a day,Afternoon,1 month
+585,1880,"Esomeprazole, Escitalopram",Once a day,Evening,1 week
+586,967,Venlafaxine,Three times a day,Afternoon,2 weeks
+587,1478,Carvedilol,Three times a day,Morning,1 month
+588,1441,Insulin,Twice a day,Evening,2 weeks
+589,969,"Simvastatin, Levitra",Twice a day,Evening,1 month
+590,87,Clonazepam,Three times a day,Evening,2 weeks
+591,877,Cetirizine,Three times a day,Morning,1 week
+592,1008,Sildenafil,Three times a day,Evening,1 week
+593,1013,Lisinopril,Three times a day,Afternoon,2 weeks
+594,1313,"Melatonin, Ranitidine",Once a day,Morning,1 month
+595,835,"Carvedilol, Pantoprazole",Twice a day,Evening,2 weeks
+596,1318,"Fluticasone, Levitra",Twice a day,Morning,1 month
+597,1262,Cialis,Three times a day,Morning,1 week
+598,1391,Diphenhydramine,Three times a day,Evening,1 week
+599,655,Atenolol,Three times a day,Morning,2 weeks
+600,1994,Sildenafil,Twice a day,Evening,2 weeks
+601,1470,Venlafaxine,Three times a day,Evening,1 week
+602,923,Ibuprofen,Once a day,Evening,2 weeks
+603,1117,Azithromycin,Twice a day,Morning,2 weeks
+604,1091,Metoprolol,Three times a day,Evening,1 month
+605,1985,Ranitidine,Three times a day,Afternoon,2 weeks
+606,878,"Prednisone, Furosemide",Three times a day,Evening,1 month
+607,1227,Felodipine,Twice a day,Afternoon,1 week
+608,1699,"Clonidine, Zolpidem, Dutasteride",Twice a day,Afternoon,1 month
+609,1440,"Eszopiclone, Cetirizine",Once a day,Evening,1 month
+610,1256,Trazodone,Twice a day,Evening,2 weeks
+611,1232,Gabapentin,Three times a day,Afternoon,1 week
+612,945,"Loratadine, Bupropion",Three times a day,Evening,1 week
+613,1030,"Nifedipine, Dutasteride",Three times a day,Morning,1 week
+614,812,Montelukast,Twice a day,Afternoon,1 week
+615,1248,Metoprolol,Twice a day,Afternoon,2 weeks
+616,1312,"Prednisone, Hydrochlorothiazide",Once a day,Afternoon,1 month
+617,866,Venlafaxine,Once a day,Morning,1 month
+618,765,Sertraline,Three times a day,Evening,1 month
+619,1900,"Amlodipine, Warfarin",Once a day,Morning,2 weeks
+620,1254,Lorazepam,Twice a day,Morning,2 weeks
+621,49,Tadalafil,Once a day,Evening,1 month
+622,1849,"Cetirizine, Nifedipine",Twice a day,Evening,2 weeks
+623,697,Montelukast,Once a day,Evening,1 week
+624,1604,Propranolol,Three times a day,Afternoon,1 week
+625,474,"Alprazolam, Clopidogrel",Once a day,Afternoon,2 weeks
+626,913,Montelukast,Three times a day,Morning,1 week
+627,216,"Duloxetine, Prednisone",Twice a day,Afternoon,1 month
+628,1808,"Hydrochlorothiazide, Felodipine",Twice a day,Morning,2 weeks
+629,617,Propranolol,Once a day,Evening,1 week
+630,1988,"Prednisone, Bupropion, Trazodone",Three times a day,Evening,1 month
+631,1405,"Cetirizine, Diazepam",Three times a day,Afternoon,1 week
+632,167,Fluoxetine,Twice a day,Afternoon,1 month
+633,1139,Atorvastatin,Twice a day,Morning,1 month
+634,1385,"Dutasteride, Furosemide",Three times a day,Morning,1 month
+635,542,Ramelteon,Twice a day,Afternoon,1 week
+636,444,Furosemide,Twice a day,Morning,1 month
+637,1614,Gabapentin,Three times a day,Evening,1 week
+638,571,Verapamil,Once a day,Afternoon,2 weeks
+639,1266,"Duloxetine, Omeprazole",Once a day,Morning,1 month
+640,1466,Zolpidem,Once a day,Evening,1 month
+641,678,"Nitroglycerin, Insulin",Three times a day,Morning,1 week
+642,834,Albuterol,Once a day,Evening,1 week
+643,176,"Diphenhydramine, Esomeprazole",Once a day,Afternoon,1 week
+644,1066,"Alprazolam, Fluoxetine",Once a day,Morning,1 week
+645,1719,"Amlodipine, Melatonin, Atorvastatin",Twice a day,Evening,1 week
+646,1541,"Felodipine, Cetirizine",Twice a day,Morning,1 month
+647,1825,Nifedipine,Twice a day,Morning,2 weeks
+648,1224,"Felodipine, Escitalopram",Twice a day,Morning,1 month
+649,862,Diazepam,Twice a day,Morning,2 weeks
+650,1540,"Montelukast, Clonazepam",Once a day,Morning,2 weeks
+651,724,Nifedipine,Three times a day,Afternoon,1 week
+652,458,Diltiazem,Once a day,Morning,2 weeks
+653,1126,Warfarin,Twice a day,Evening,2 weeks
+654,1596,"Nifedipine, Atorvastatin",Once a day,Evening,1 week
+655,1438,"Fluticasone, Finasteride, Fluoxetine",Twice a day,Afternoon,1 week
+656,754,Cialis,Twice a day,Evening,1 month
+657,1471,Clonazepam,Once a day,Evening,2 weeks
+658,349,Zolpidem,Once a day,Evening,1 week
+659,1895,Azithromycin,Twice a day,Evening,2 weeks
+660,1017,"Ranitidine, Clonidine, Levitra",Three times a day,Afternoon,2 weeks
+661,1150,Prednisone,Once a day,Morning,1 week
+662,621,Furosemide,Three times a day,Afternoon,2 weeks
+663,1337,"Verapamil, Zolpidem",Three times a day,Morning,2 weeks
+664,1202,"Duloxetine, Bupropion",Once a day,Afternoon,1 month
+665,1398,Eszopiclone,Three times a day,Evening,1 week
+666,846,Escitalopram,Twice a day,Morning,1 month
+667,71,"Clonazepam, Ramelteon",Three times a day,Afternoon,1 month
+668,1585,"Dutasteride, Ibuprofen, Aspirin",Twice a day,Morning,1 week
+669,1363,"Pantoprazole, Ibuprofen",Once a day,Afternoon,1 month
+670,1101,"Fluticasone, Amlodipine",Three times a day,Morning,1 week
+671,1076,Sildenafil,Twice a day,Afternoon,2 weeks
+672,383,Sildenafil,Three times a day,Evening,1 week
+673,73,Sertraline,Once a day,Afternoon,1 week
+674,161,Diltiazem,Three times a day,Afternoon,2 weeks
+675,335,"Ranitidine, Metformin",Twice a day,Evening,1 week
+676,189,Trazodone,Twice a day,Evening,2 weeks
+677,1945,Furosemide,Twice a day,Afternoon,1 month
+678,1562,Aspirin,Three times a day,Morning,1 month
+679,1827,Trazodone,Twice a day,Afternoon,2 weeks
+680,1400,"Eszopiclone, Paracetamol",Twice a day,Morning,2 weeks
+681,1794,Ranitidine,Once a day,Morning,1 month
+682,871,"Propranolol, Fluoxetine",Once a day,Morning,1 week
+683,998,"Clonazepam, Diazepam",Twice a day,Morning,2 weeks
+684,593,Clopidogrel,Once a day,Morning,2 weeks
+685,39,Esomeprazole,Twice a day,Afternoon,1 week
+686,295,Clonidine,Three times a day,Afternoon,1 week
+687,300,"Aspirin, Pantoprazole",Twice a day,Afternoon,1 month
+688,1080,Bisoprolol,Three times a day,Morning,1 week
+689,1239,Paroxetine,Twice a day,Evening,1 month
+690,1971,Verapamil,Three times a day,Afternoon,2 weeks
+691,1479,Nebivolol,Three times a day,Afternoon,1 month
+692,1110,Paracetamol,Once a day,Afternoon,1 month
+693,378,Ranitidine,Twice a day,Morning,1 week
+694,1992,Carvedilol,Twice a day,Evening,1 week
+695,1975,"Verapamil, Bupropion, Prednisone",Once a day,Morning,1 week
+696,432,Bupropion,Three times a day,Morning,1 month
+697,973,Clopidogrel,Three times a day,Evening,1 month
+698,530,Verapamil,Once a day,Evening,1 week
+699,1850,Ramelteon,Three times a day,Evening,1 month
+700,1099,"Sildenafil, Escitalopram, Ranitidine",Three times a day,Evening,2 weeks
+701,868,Sildenafil,Twice a day,Evening,2 weeks
+702,978,Buspirone,Once a day,Evening,1 week
+703,1981,Gabapentin,Once a day,Afternoon,1 week
+704,730,Zolpidem,Twice a day,Afternoon,1 month
+705,1681,Lisinopril,Once a day,Afternoon,1 week
+706,1692,"Atorvastatin, Trazodone",Twice a day,Morning,1 week
+707,1436,Buspirone,Once a day,Afternoon,1 week
+708,1240,Amoxicillin,Three times a day,Afternoon,1 week
+709,690,Omeprazole,Once a day,Morning,1 month
+710,869,"Alprazolam, Citalopram",Twice a day,Afternoon,1 week
+711,1274,"Lorazepam, Bupropion",Twice a day,Morning,2 weeks
+712,1188,"Duloxetine, Bupropion",Three times a day,Morning,1 week
+713,520,Metoprolol,Once a day,Evening,1 month
+714,1798,Bupropion,Twice a day,Evening,1 week
+715,568,Cialis,Once a day,Morning,2 weeks
+716,709,Zolpidem,Three times a day,Evening,2 weeks
+717,1448,Levitra,Twice a day,Afternoon,2 weeks
+718,227,"Diphenhydramine, Loratadine",Twice a day,Afternoon,2 weeks
+719,1153,Ranitidine,Twice a day,Evening,1 month
+720,439,Pantoprazole,Twice a day,Afternoon,1 month
+721,889,"Clopidogrel, Paracetamol",Three times a day,Afternoon,1 week
+722,773,"Gabapentin, Sildenafil",Twice a day,Afternoon,2 weeks
+723,1579,"Warfarin, Bupropion",Twice a day,Morning,1 month
+724,119,Eszopiclone,Three times a day,Evening,1 month
+725,492,Fluticasone,Twice a day,Morning,2 weeks
+726,1761,"Diphenhydramine, Pantoprazole, Esomeprazole",Twice a day,Afternoon,1 week
+727,598,Diazepam,Once a day,Morning,1 month
+728,440,Levitra,Twice a day,Evening,2 weeks
+729,214,"Insulin, Albuterol",Three times a day,Afternoon,1 week
+730,1035,Diltiazem,Once a day,Afternoon,1 week
+731,702,Viagra,Once a day,Evening,2 weeks
+732,1049,Amlodipine,Once a day,Morning,1 week
+733,1864,"Levitra, Atenolol",Three times a day,Evening,2 weeks
+734,1,Nebivolol,Twice a day,Afternoon,2 weeks
+735,1564,Diltiazem,Once a day,Morning,1 week
+736,1722,Nitroglycerin,Once a day,Morning,1 week
+737,236,Cialis,Twice a day,Morning,1 week
+738,139,"Albuterol, Metoprolol",Three times a day,Evening,1 month
+739,741,Azithromycin,Twice a day,Afternoon,1 month
+740,1134,"Melatonin, Escitalopram",Twice a day,Afternoon,2 weeks
+741,328,"Levothyroxine, Fluoxetine",Once a day,Afternoon,1 month
+742,836,Paroxetine,Once a day,Morning,1 week
+743,789,"Venlafaxine, Omeprazole",Twice a day,Afternoon,2 weeks
+744,26,Alprazolam,Once a day,Evening,2 weeks
+745,97,Fluticasone,Twice a day,Evening,2 weeks
+746,532,Diphenhydramine,Once a day,Afternoon,1 month
+747,1567,"Sildenafil, Ibuprofen, Propranolol",Three times a day,Morning,2 weeks
+748,395,Dutasteride,Twice a day,Morning,1 month
+749,636,Cialis,Three times a day,Evening,1 week
+750,1334,Insulin,Twice a day,Morning,2 weeks
+751,1265,"Ranitidine, Simvastatin",Twice a day,Evening,1 week
+752,1538,"Melatonin, Eszopiclone",Three times a day,Afternoon,1 month
+753,1893,"Clonidine, Esomeprazole",Twice a day,Evening,1 week
+754,620,"Propranolol, Diphenhydramine",Twice a day,Morning,1 week
+755,1500,Finasteride,Once a day,Afternoon,1 month
+756,1631,Verapamil,Once a day,Morning,1 week
+757,470,"Clonidine, Amoxicillin",Three times a day,Afternoon,2 weeks
+758,1449,Amlodipine,Twice a day,Evening,1 week
+759,961,"Levitra, Amoxicillin",Once a day,Evening,1 week
+760,58,Furosemide,Once a day,Evening,1 week
+761,289,"Warfarin, Cialis",Three times a day,Morning,1 month
+762,1528,Sertraline,Three times a day,Morning,1 month
+763,614,"Clonidine, Ranitidine",Once a day,Afternoon,1 week
+764,264,Ranitidine,Once a day,Evening,1 week
+765,577,"Duloxetine, Simvastatin",Once a day,Afternoon,1 week
+766,144,"Bupropion, Verapamil",Twice a day,Afternoon,1 week
+767,774,"Cetirizine, Lisinopril, Eszopiclone",Twice a day,Morning,2 weeks
+768,170,Diphenhydramine,Three times a day,Afternoon,1 month
+769,10,"Nitroglycerin, Propranolol",Three times a day,Afternoon,1 month
+770,597,"Diazepam, Furosemide",Three times a day,Afternoon,1 week
+771,1258,Omeprazole,Three times a day,Morning,2 weeks
+772,307,Diazepam,Three times a day,Evening,1 month
+773,953,"Atorvastatin, Viagra",Once a day,Afternoon,2 weeks
+774,364,Insulin,Once a day,Afternoon,2 weeks
+775,684,Ramelteon,Twice a day,Evening,1 week
+776,795,"Esomeprazole, Felodipine",Three times a day,Afternoon,1 month
+777,400,Esomeprazole,Twice a day,Evening,1 week
+778,1883,"Sildenafil, Atenolol",Twice a day,Morning,1 month
+779,1379,Lorazepam,Once a day,Morning,2 weeks
+780,334,Bupropion,Three times a day,Morning,1 week
+781,86,"Ciprofloxacin, Gabapentin",Twice a day,Afternoon,1 week
+782,534,Verapamil,Twice a day,Afternoon,1 week
+783,1906,"Levitra, Ibuprofen",Once a day,Morning,2 weeks
+784,1383,Escitalopram,Three times a day,Morning,1 week
+785,1566,Clopidogrel,Once a day,Morning,2 weeks
+786,1120,Venlafaxine,Three times a day,Evening,1 week
+787,1744,"Amoxicillin, Levitra",Once a day,Evening,1 week
+788,1784,"Aspirin, Finasteride",Three times a day,Morning,1 month
+789,848,"Melatonin, Levothyroxine",Once a day,Evening,1 week
+790,122,Viagra,Twice a day,Morning,1 week
+791,566,Bupropion,Three times a day,Morning,1 week
+792,1748,Carvedilol,Once a day,Evening,2 weeks
+793,154,Omeprazole,Once a day,Evening,2 weeks
+794,762,"Bisoprolol, Viagra",Once a day,Evening,1 month
+795,1386,"Amlodipine, Fluoxetine, Escitalopram",Once a day,Afternoon,1 month
+796,996,Amlodipine,Three times a day,Afternoon,1 month
+797,1645,Metformin,Once a day,Morning,1 month
+798,1646,"Sertraline, Lorazepam, Levothyroxine",Three times a day,Afternoon,2 weeks
+799,1874,Insulin,Once a day,Evening,1 month
+800,25,Fluticasone,Twice a day,Evening,1 month
+801,1980,Clonidine,Once a day,Morning,2 weeks
+802,572,Duloxetine,Twice a day,Morning,2 weeks
+803,446,"Atorvastatin, Paroxetine",Three times a day,Morning,2 weeks
+804,212,"Diphenhydramine, Fluticasone, Bupropion",Once a day,Afternoon,1 week
+805,1706,"Duloxetine, Dutasteride, Buspirone",Twice a day,Afternoon,1 week
+806,1676,"Nebivolol, Finasteride",Once a day,Evening,1 week
+807,1403,Zolpidem,Three times a day,Evening,2 weeks
+808,1557,Hydrochlorothiazide,Twice a day,Afternoon,1 month
+809,257,"Montelukast, Sertraline",Three times a day,Morning,1 month
+810,831,Azithromycin,Once a day,Evening,1 week
+811,1591,Cetirizine,Three times a day,Evening,2 weeks
+812,847,Diltiazem,Once a day,Afternoon,1 week
+813,1420,Ramelteon,Three times a day,Evening,2 weeks
+814,1532,Omeprazole,Three times a day,Evening,2 weeks
+815,1170,Propranolol,Twice a day,Morning,1 month
+816,366,"Prednisone, Furosemide",Once a day,Evening,1 month
+817,1513,Venlafaxine,Three times a day,Afternoon,1 week
+818,1019,Gabapentin,Once a day,Afternoon,1 month
+819,1477,Amlodipine,Twice a day,Afternoon,2 weeks
+820,1669,Verapamil,Once a day,Evening,2 weeks
+821,1772,Propranolol,Once a day,Afternoon,2 weeks
+822,1443,Loratadine,Once a day,Morning,2 weeks
+823,423,"Omeprazole, Lisinopril, Duloxetine",Once a day,Afternoon,2 weeks
+824,1723,"Cetirizine, Prednisone",Three times a day,Morning,2 weeks
+825,922,"Aspirin, Buspirone, Sertraline",Three times a day,Evening,1 week
+826,841,Sertraline,Twice a day,Afternoon,2 weeks
+827,1061,"Levitra, Diphenhydramine",Twice a day,Morning,1 week
+828,939,Pantoprazole,Twice a day,Evening,1 week
+829,1556,"Melatonin, Hydrochlorothiazide",Twice a day,Afternoon,1 week
+830,1499,Clopidogrel,Once a day,Morning,1 week
+831,1228,Propranolol,Once a day,Morning,1 week
+832,114,Fluoxetine,Once a day,Afternoon,2 weeks
+833,1607,"Duloxetine, Bupropion",Once a day,Afternoon,1 month
+834,1001,Nitroglycerin,Three times a day,Afternoon,1 week
+835,390,"Lisinopril, Escitalopram",Once a day,Afternoon,2 weeks
+836,1682,"Viagra, Verapamil",Three times a day,Evening,1 month
+837,202,"Clopidogrel, Furosemide, Montelukast",Three times a day,Morning,2 weeks
+838,970,Albuterol,Three times a day,Morning,1 week
+839,828,Viagra,Once a day,Afternoon,2 weeks
+840,865,Carvedilol,Once a day,Evening,1 week
+841,994,Nitroglycerin,Once a day,Morning,1 month
+842,802,"Pantoprazole, Venlafaxine",Twice a day,Afternoon,1 week
+843,1104,Paracetamol,Twice a day,Afternoon,1 week
+844,786,Melatonin,Twice a day,Morning,1 month
+845,928,Venlafaxine,Once a day,Evening,2 weeks
+846,567,Aspirin,Three times a day,Morning,1 month
+847,57,"Eszopiclone, Nifedipine, Gabapentin",Three times a day,Evening,2 weeks
+848,1892,"Albuterol, Amoxicillin, Fluoxetine",Once a day,Evening,1 week
+849,1330,"Fluticasone, Insulin",Once a day,Evening,1 week
+850,380,Ranitidine,Three times a day,Morning,2 weeks
+851,408,"Diphenhydramine, Furosemide",Twice a day,Evening,1 week
+852,1190,Venlafaxine,Twice a day,Afternoon,2 weeks
+853,1534,Amlodipine,Twice a day,Afternoon,1 week
+854,742,"Atenolol, Sildenafil",Once a day,Evening,1 week
+855,575,Zolpidem,Twice a day,Morning,1 week
+856,215,Fluoxetine,Three times a day,Afternoon,1 week
+857,1555,Nebivolol,Three times a day,Afternoon,1 week
+858,89,Prednisone,Once a day,Morning,1 month
+859,1773,Montelukast,Twice a day,Evening,1 month
+860,404,"Aspirin, Bupropion",Once a day,Afternoon,2 weeks
+861,256,"Omeprazole, Verapamil",Twice a day,Afternoon,1 month
+862,1085,Metoprolol,Three times a day,Morning,2 weeks
+863,819,"Aspirin, Insulin",Once a day,Afternoon,1 month
+864,700,Prednisone,Once a day,Morning,1 week
+865,1168,Felodipine,Once a day,Afternoon,1 week
+866,854,"Diazepam, Nifedipine",Once a day,Evening,1 month
+867,1154,Paroxetine,Three times a day,Evening,1 month
+868,75,"Venlafaxine, Tadalafil",Three times a day,Afternoon,1 week
+869,992,"Cetirizine, Dutasteride",Once a day,Evening,1 week
+870,1249,Clopidogrel,Once a day,Evening,2 weeks
+871,103,"Montelukast, Fluticasone",Once a day,Afternoon,1 week
+872,1434,Diphenhydramine,Once a day,Morning,1 month
+873,658,Escitalopram,Once a day,Morning,1 month
+874,1627,"Citalopram, Paroxetine",Three times a day,Evening,1 month
+875,494,Diltiazem,Three times a day,Afternoon,1 month
+876,950,Venlafaxine,Twice a day,Evening,2 weeks
+877,615,Fluoxetine,Once a day,Afternoon,1 week
+878,1854,"Fluoxetine, Escitalopram",Twice a day,Morning,1 month
+879,550,"Atorvastatin, Viagra",Once a day,Afternoon,2 weeks
+880,217,Atorvastatin,Twice a day,Evening,2 weeks
+881,1230,Clopidogrel,Twice a day,Morning,1 month
+882,1116,Finasteride,Twice a day,Afternoon,1 week
+883,729,"Verapamil, Ranitidine",Three times a day,Evening,1 month
+884,951,Prednisone,Three times a day,Afternoon,2 weeks
+885,341,Paracetamol,Three times a day,Evening,1 week
+886,1843,Nebivolol,Twice a day,Morning,2 weeks
+887,1225,Pantoprazole,Three times a day,Afternoon,2 weeks
+888,523,Carvedilol,Twice a day,Afternoon,2 weeks
+889,991,Finasteride,Twice a day,Evening,2 weeks
+890,756,"Verapamil, Diazepam",Three times a day,Evening,1 week
+891,1640,"Atenolol, Diphenhydramine",Once a day,Morning,1 month
+892,406,"Escitalopram, Lorazepam, Cialis",Twice a day,Morning,1 week
+893,1084,"Azithromycin, Viagra",Twice a day,Afternoon,1 month
+894,1276,Fluticasone,Three times a day,Evening,2 weeks
+895,1135,"Dutasteride, Diphenhydramine",Once a day,Morning,2 weeks
+896,1942,Viagra,Twice a day,Evening,2 weeks
+897,946,"Citalopram, Carvedilol",Twice a day,Afternoon,2 weeks
+898,1997,"Nitroglycerin, Cetirizine",Twice a day,Evening,1 month
+899,1320,Sildenafil,Once a day,Morning,2 weeks
+900,1606,Felodipine,Twice a day,Afternoon,2 weeks
+901,949,"Hydrochlorothiazide, Duloxetine",Three times a day,Afternoon,1 week
+902,169,"Clopidogrel, Cialis",Three times a day,Morning,2 weeks
+903,179,Tadalafil,Three times a day,Morning,1 month
+904,1884,"Buspirone, Zolpidem",Three times a day,Morning,1 week
+905,600,Cialis,Three times a day,Evening,1 month
+906,1495,"Paroxetine, Dutasteride, Diphenhydramine",Once a day,Evening,1 month
+907,478,"Cialis, Montelukast",Three times a day,Afternoon,1 week
+908,1414,Felodipine,Twice a day,Afternoon,1 month
+909,1546,Ramelteon,Twice a day,Morning,1 month
+910,1133,"Furosemide, Ranitidine",Three times a day,Morning,1 month
+911,1563,"Metoprolol, Duloxetine",Once a day,Morning,2 weeks
+912,855,Venlafaxine,Three times a day,Evening,1 week
+913,1698,Paracetamol,Twice a day,Morning,2 weeks
+914,1514,"Venlafaxine, Tadalafil",Three times a day,Afternoon,1 week
+915,610,Fluoxetine,Three times a day,Morning,2 weeks
+916,1925,Tadalafil,Twice a day,Morning,1 month
+917,1844,"Atenolol, Sildenafil, Alprazolam",Three times a day,Evening,1 week
+918,1446,Zolpidem,Once a day,Evening,1 week
+919,375,"Simvastatin, Warfarin, Diazepam",Twice a day,Evening,2 weeks
+920,737,Alprazolam,Twice a day,Evening,1 month
+921,34,Atenolol,Twice a day,Morning,2 weeks
+922,1097,"Ranitidine, Hydrochlorothiazide",Three times a day,Evening,1 month
+923,1181,Ranitidine,Three times a day,Afternoon,1 month
+924,708,Ranitidine,Three times a day,Afternoon,1 week
+925,45,Metoprolol,Twice a day,Afternoon,2 weeks
+926,277,"Fluoxetine, Albuterol",Twice a day,Morning,1 week
+927,1875,Melatonin,Once a day,Afternoon,1 week
+928,1914,Clonidine,Once a day,Morning,1 month
+929,1991,Melatonin,Once a day,Evening,2 weeks
+930,229,Loratadine,Once a day,Evening,2 weeks
+931,1444,Diazepam,Once a day,Afternoon,1 week
+932,182,"Sildenafil, Insulin, Metoprolol",Once a day,Morning,1 week
+933,267,Finasteride,Three times a day,Evening,1 week
+934,369,Insulin,Three times a day,Evening,2 weeks
+935,1653,"Loratadine, Fluticasone",Once a day,Evening,1 week
+936,682,Verapamil,Twice a day,Evening,1 month
+937,1223,"Amlodipine, Venlafaxine",Twice a day,Evening,1 week
+938,1304,Felodipine,Once a day,Morning,1 week
+939,1373,"Paroxetine, Atorvastatin",Three times a day,Morning,1 month
+940,546,"Diltiazem, Cialis",Once a day,Evening,2 weeks
+941,1014,Clonazepam,Once a day,Morning,1 week
+942,1203,Diazepam,Three times a day,Evening,1 week
+943,1835,"Clonazepam, Aspirin, Escitalopram",Twice a day,Afternoon,2 weeks
+944,790,Levothyroxine,Once a day,Evening,1 week
+945,1759,"Insulin, Diazepam, Albuterol",Once a day,Afternoon,1 month
+946,1804,"Zolpidem, Buspirone",Once a day,Evening,1 week
+947,31,Buspirone,Once a day,Morning,1 week
+948,573,"Atorvastatin, Metoprolol, Levitra",Once a day,Afternoon,1 month
+949,1113,"Dutasteride, Cialis",Twice a day,Evening,2 weeks
+950,968,Diphenhydramine,Once a day,Afternoon,1 month
+951,262,"Hydrochlorothiazide, Trazodone",Once a day,Morning,1 week
+952,728,"Amoxicillin, Furosemide, Ciprofloxacin",Once a day,Morning,2 weeks
+953,1328,"Alprazolam, Tadalafil",Twice a day,Afternoon,1 month
+954,1054,"Trazodone, Fluoxetine",Twice a day,Afternoon,2 weeks
+955,496,Propranolol,Once a day,Afternoon,1 month
+956,1422,Amoxicillin,Once a day,Evening,2 weeks
+957,1700,Loratadine,Three times a day,Morning,2 weeks
+958,464,"Amlodipine, Diphenhydramine",Twice a day,Morning,1 month
+959,1481,"Lisinopril, Esomeprazole",Once a day,Evening,1 month
+960,1023,Bupropion,Once a day,Afternoon,2 weeks
+961,1813,"Loratadine, Sertraline, Melatonin",Twice a day,Afternoon,1 month
+962,190,"Nifedipine, Venlafaxine",Three times a day,Evening,1 month
+963,1167,Albuterol,Three times a day,Evening,1 week
+964,608,"Amoxicillin, Diazepam",Twice a day,Morning,1 month
+965,130,Clopidogrel,Once a day,Afternoon,1 week
+966,875,"Tadalafil, Levothyroxine",Twice a day,Evening,2 weeks
+967,1512,Nitroglycerin,Once a day,Evening,2 weeks
+968,480,"Simvastatin, Clonazepam, Nifedipine",Three times a day,Afternoon,1 week
+969,909,"Fluticasone, Omeprazole",Twice a day,Afternoon,1 week
+970,1053,"Loratadine, Furosemide, Aspirin",Three times a day,Evening,2 weeks
+971,101,"Pantoprazole, Loratadine",Once a day,Morning,1 week
+972,1241,"Furosemide, Amoxicillin",Once a day,Morning,2 weeks
+973,890,Ciprofloxacin,Three times a day,Morning,1 week
+974,1683,Loratadine,Three times a day,Afternoon,2 weeks
+975,332,"Loratadine, Ramelteon",Once a day,Evening,2 weeks
+976,1219,Ranitidine,Once a day,Evening,1 week
+977,988,Omeprazole,Once a day,Afternoon,1 week
+978,1028,Clonazepam,Once a day,Evening,1 week
+979,607,"Escitalopram, Sildenafil",Three times a day,Morning,1 week
+980,609,"Prednisone, Esomeprazole",Twice a day,Afternoon,2 weeks
+981,1727,Ramelteon,Once a day,Afternoon,1 month
+982,891,"Esomeprazole, Bupropion",Once a day,Evening,2 weeks
+983,336,Dutasteride,Once a day,Morning,2 weeks
+984,1507,Loratadine,Twice a day,Evening,1 week
+985,392,Viagra,Once a day,Evening,1 week
+986,1374,Citalopram,Twice a day,Afternoon,1 week
+987,411,Pantoprazole,Three times a day,Afternoon,2 weeks
+988,596,Prednisone,Once a day,Morning,1 month
+989,1870,"Loratadine, Ramelteon",Once a day,Evening,1 week
+990,1277,"Ciprofloxacin, Venlafaxine",Three times a day,Morning,2 weeks
+991,60,"Dutasteride, Nitroglycerin, Diltiazem",Twice a day,Afternoon,1 month
+992,1375,Ibuprofen,Three times a day,Evening,1 week
+993,1592,Carvedilol,Twice a day,Morning,1 week
+994,896,"Duloxetine, Sertraline",Once a day,Evening,2 weeks
+995,674,Lisinopril,Twice a day,Morning,1 month
+996,589,"Prednisone, Loratadine",Three times a day,Morning,1 week
+997,327,"Pantoprazole, Gabapentin",Once a day,Evening,2 weeks
+998,1664,Paroxetine,Three times a day,Evening,2 weeks
+999,844,"Fluoxetine, Clonazepam, Ibuprofen",Once a day,Morning,1 month
+1000,173,Lisinopril,Twice a day,Evening,1 month
+1001,99,Nifedipine,Three times a day,Afternoon,1 month
+1002,1325,Ciprofloxacin,Once a day,Evening,2 weeks
+1003,1293,"Pantoprazole, Verapamil, Diltiazem",Twice a day,Evening,2 weeks
+1004,701,Tadalafil,Twice a day,Afternoon,2 weeks
+1005,399,Escitalopram,Three times a day,Afternoon,2 weeks
+1006,849,"Loratadine, Eszopiclone, Venlafaxine",Once a day,Morning,2 weeks
+1007,1171,"Cialis, Fluoxetine",Twice a day,Afternoon,1 week
+1008,1577,Fluticasone,Three times a day,Morning,1 month
+1009,1675,Montelukast,Twice a day,Evening,1 month
+1010,1216,Azithromycin,Once a day,Afternoon,2 weeks
+1011,920,Sertraline,Three times a day,Evening,2 weeks
+1012,1612,Finasteride,Twice a day,Afternoon,2 weeks
+1013,903,Cetirizine,Three times a day,Afternoon,1 week
+1014,46,"Nifedipine, Gabapentin",Once a day,Afternoon,1 week
+1015,164,"Ibuprofen, Nifedipine",Twice a day,Afternoon,2 weeks
+1016,1687,"Aspirin, Paracetamol",Three times a day,Afternoon,2 weeks
+1017,17,Albuterol,Twice a day,Morning,1 week
+1018,648,"Escitalopram, Verapamil",Three times a day,Morning,2 weeks
+1019,1124,Lisinopril,Three times a day,Evening,1 month
+1020,1342,"Ramelteon, Sildenafil",Twice a day,Morning,1 month
+1021,1537,Warfarin,Twice a day,Evening,1 month
+1022,826,"Escitalopram, Atenolol",Three times a day,Morning,1 week
+1023,1519,Paroxetine,Three times a day,Afternoon,1 month
+1024,750,Prednisone,Twice a day,Morning,1 week
+1025,294,Lorazepam,Twice a day,Morning,1 week
+1026,839,Zolpidem,Three times a day,Morning,1 week
+1027,153,Ramelteon,Three times a day,Afternoon,2 weeks
+1028,184,Melatonin,Once a day,Morning,1 week
+1029,1969,"Ranitidine, Levothyroxine",Once a day,Morning,1 week
+1030,1109,Diphenhydramine,Twice a day,Evening,1 month
+1031,198,Viagra,Three times a day,Morning,2 weeks
+1032,1696,Fluticasone,Once a day,Afternoon,1 month
+1033,1107,Zolpidem,Once a day,Morning,2 weeks
+1034,1149,"Montelukast, Venlafaxine",Three times a day,Morning,1 month
+1035,999,"Buspirone, Nifedipine",Twice a day,Morning,2 weeks
+1036,1529,Ciprofloxacin,Three times a day,Afternoon,1 month
+1037,1056,"Sildenafil, Bisoprolol, Levitra",Three times a day,Morning,1 week
+1038,1565,"Trazodone, Dutasteride",Three times a day,Evening,1 week
+1039,1238,"Gabapentin, Zolpidem",Three times a day,Evening,1 month
+1040,587,"Montelukast, Nebivolol, Dutasteride",Once a day,Afternoon,1 week
+1041,1940,Melatonin,Once a day,Morning,1 month
+1042,32,"Simvastatin, Paroxetine",Once a day,Evening,1 month
+1043,85,"Diazepam, Gabapentin",Once a day,Evening,1 month
+1044,1044,Sertraline,Once a day,Morning,1 week
+1045,1410,Ciprofloxacin,Once a day,Afternoon,1 month
+1046,516,Bisoprolol,Twice a day,Afternoon,1 month
+1047,723,"Paracetamol, Atenolol",Twice a day,Evening,2 weeks
+1048,1229,"Amlodipine, Hydrochlorothiazide",Once a day,Afternoon,2 weeks
+1049,1922,Buspirone,Three times a day,Morning,1 week
+1050,1486,Levitra,Once a day,Morning,1 month
+1051,1131,Warfarin,Three times a day,Evening,1 week
+1052,475,"Felodipine, Finasteride",Three times a day,Afternoon,1 month
+1053,972,Finasteride,Twice a day,Evening,1 month
+1054,1595,Bupropion,Once a day,Afternoon,1 month
+1055,1974,Bisoprolol,Once a day,Morning,2 weeks
+1056,1024,"Clopidogrel, Escitalopram",Three times a day,Morning,1 week
+1057,203,Fluticasone,Three times a day,Evening,1 week
+1058,4,Warfarin,Twice a day,Evening,2 weeks
+1059,1146,Atorvastatin,Three times a day,Afternoon,1 month
+1060,1937,Ramelteon,Twice a day,Morning,1 week
+1061,1764,Clonazepam,Twice a day,Morning,2 weeks
+1062,664,Nifedipine,Twice a day,Morning,1 month
+1063,1082,"Ciprofloxacin, Clopidogrel, Montelukast",Twice a day,Morning,1 month
+1064,1655,Ranitidine,Three times a day,Afternoon,1 week
+1065,1237,"Lorazepam, Carvedilol",Twice a day,Evening,1 week
+1066,83,"Venlafaxine, Simvastatin",Once a day,Morning,1 week
+1067,660,Azithromycin,Three times a day,Afternoon,2 weeks
+1068,876,"Nifedipine, Citalopram",Once a day,Afternoon,1 week
+1069,652,"Viagra, Lorazepam, Nebivolol",Twice a day,Evening,2 weeks
+1070,48,Clonidine,Once a day,Evening,2 weeks
+1071,305,"Ranitidine, Citalopram",Three times a day,Evening,2 weeks
+1072,901,Amoxicillin,Once a day,Evening,1 week
+1073,521,"Escitalopram, Diltiazem",Three times a day,Morning,1 month
+1074,570,"Nitroglycerin, Amoxicillin, Diazepam",Three times a day,Evening,1 week
+1075,196,Albuterol,Twice a day,Evening,1 month
+1076,282,"Finasteride, Carvedilol",Twice a day,Evening,1 month
+1077,105,"Lorazepam, Ciprofloxacin, Buspirone",Once a day,Afternoon,2 weeks
+1078,1016,Nifedipine,Twice a day,Evening,1 week
+1079,394,"Ibuprofen, Prednisone",Once a day,Morning,2 weeks
+1080,1901,Trazodone,Three times a day,Morning,1 month
+1081,280,"Cetirizine, Zolpidem",Once a day,Afternoon,1 week
+1082,940,Amlodipine,Once a day,Afternoon,1 week
+1083,833,"Buspirone, Verapamil, Cetirizine",Three times a day,Evening,2 weeks
+1084,740,Levitra,Once a day,Evening,1 month
+1085,387,Fluticasone,Three times a day,Evening,1 week
+1086,971,"Eszopiclone, Lisinopril",Once a day,Evening,1 week
+1087,1141,"Diphenhydramine, Propranolol, Prednisone",Three times a day,Morning,1 week
+1088,1358,Levitra,Once a day,Evening,1 week
+1089,427,Cetirizine,Once a day,Morning,1 month
+1090,1754,Albuterol,Once a day,Evening,2 weeks
+1091,1811,Cetirizine,Once a day,Morning,2 weeks
+1092,1070,"Sertraline, Clopidogrel",Twice a day,Evening,1 month
+1093,1931,Ranitidine,Three times a day,Morning,1 month
+1094,393,Clonazepam,Once a day,Morning,2 weeks
+1095,541,"Atorvastatin, Nitroglycerin",Three times a day,Afternoon,2 weeks
+1096,669,Dutasteride,Twice a day,Afternoon,1 month
+1097,1402,Insulin,Twice a day,Morning,1 month
+1098,900,"Aspirin, Dutasteride, Atorvastatin",Once a day,Evening,1 month
+1099,1968,Furosemide,Three times a day,Afternoon,1 month
+1100,1423,"Bisoprolol, Prednisone",Twice a day,Evening,1 week
+1101,1842,"Clonazepam, Ramelteon",Three times a day,Afternoon,1 month
+1102,1213,"Warfarin, Sildenafil, Montelukast",Twice a day,Afternoon,1 month
+1103,1979,"Diphenhydramine, Viagra",Once a day,Afternoon,1 week
+1104,710,"Escitalopram, Fluticasone",Twice a day,Morning,1 month
+1105,792,Propranolol,Twice a day,Evening,1 week
+1106,1022,Warfarin,Once a day,Morning,1 week
+1107,1247,Omeprazole,Three times a day,Morning,2 weeks
+1108,510,Sertraline,Three times a day,Afternoon,1 month
+1109,172,Levitra,Twice a day,Morning,2 weeks
+1110,1856,Cetirizine,Twice a day,Afternoon,2 weeks
+1111,1488,"Ibuprofen, Escitalopram",Three times a day,Afternoon,2 weeks
+1112,1199,Amlodipine,Once a day,Afternoon,1 month
+1113,353,"Ibuprofen, Nifedipine, Clonazepam",Three times a day,Morning,2 weeks
+1114,838,Metoprolol,Twice a day,Evening,1 month
+1115,1201,Verapamil,Twice a day,Afternoon,1 week
+1116,1539,"Carvedilol, Pantoprazole",Once a day,Morning,1 week
+1117,1012,Albuterol,Three times a day,Evening,1 month
+1118,1271,Loratadine,Three times a day,Morning,1 month
+1119,449,"Paroxetine, Carvedilol, Cialis",Twice a day,Afternoon,1 week
+1120,1474,"Metformin, Nebivolol",Three times a day,Evening,1 week
+1121,981,Bupropion,Once a day,Morning,1 month
+1122,1911,"Aspirin, Duloxetine, Cetirizine",Once a day,Morning,1 month
+1123,397,"Nitroglycerin, Atorvastatin",Three times a day,Morning,2 weeks
+1124,1536,Clonidine,Three times a day,Afternoon,2 weeks
+1125,527,Venlafaxine,Twice a day,Morning,2 weeks
+1126,55,Aspirin,Three times a day,Morning,1 week
+1127,1222,Esomeprazole,Three times a day,Morning,1 month
+1128,689,Paroxetine,Twice a day,Evening,2 weeks
+1129,1376,"Metoprolol, Venlafaxine",Three times a day,Morning,1 week
+1130,218,Loratadine,Once a day,Evening,2 weeks
+1131,1574,Clonazepam,Twice a day,Evening,1 week
+1132,811,Nebivolol,Three times a day,Morning,1 week
+1133,460,Nitroglycerin,Three times a day,Morning,1 month
+1134,1836,"Bupropion, Viagra",Twice a day,Morning,1 month
+1135,1533,"Montelukast, Pantoprazole",Three times a day,Morning,1 month
+1136,1279,Lisinopril,Once a day,Evening,2 weeks
+1137,907,"Simvastatin, Montelukast, Alprazolam",Twice a day,Afternoon,2 weeks
+1138,1038,Nifedipine,Three times a day,Evening,1 week
+1139,370,Esomeprazole,Twice a day,Afternoon,2 weeks
+1140,1890,"Paroxetine, Paracetamol, Citalopram",Once a day,Afternoon,1 month
+1141,1704,Esomeprazole,Once a day,Morning,2 weeks
+1142,1361,Zolpidem,Once a day,Morning,1 week
+1143,1876,Escitalopram,Once a day,Evening,2 weeks
+1144,824,"Bupropion, Finasteride",Twice a day,Evening,2 weeks
+1145,1611,Clopidogrel,Three times a day,Morning,2 weeks
+1146,347,"Gabapentin, Eszopiclone",Three times a day,Afternoon,1 month
+1147,467,Amoxicillin,Three times a day,Afternoon,1 week
+1148,11,"Warfarin, Ranitidine",Three times a day,Evening,1 month
+1149,1381,Nebivolol,Twice a day,Evening,1 week
+1150,1461,"Hydrochlorothiazide, Venlafaxine",Twice a day,Evening,1 month
+1151,358,Nifedipine,Once a day,Morning,2 weeks
+1152,734,"Albuterol, Simvastatin, Clonazepam",Three times a day,Morning,1 month
+1153,743,Paracetamol,Three times a day,Morning,1 month
+1154,1176,Furosemide,Twice a day,Afternoon,1 week
+1155,1106,"Bupropion, Lorazepam",Once a day,Evening,2 weeks
+1156,1995,Fluticasone,Three times a day,Morning,2 weeks
+1157,340,Paroxetine,Three times a day,Evening,1 week
+1158,438,"Dutasteride, Escitalopram, Cialis",Three times a day,Afternoon,2 weeks
+1159,781,"Zolpidem, Venlafaxine",Three times a day,Morning,1 month
+1160,16,Lorazepam,Three times a day,Evening,1 week
+1161,1340,"Albuterol, Cetirizine",Twice a day,Evening,1 month
+1162,1887,"Finasteride, Tadalafil",Three times a day,Morning,2 weeks
+1163,1812,Paracetamol,Once a day,Evening,1 week
+1164,1389,Clonidine,Twice a day,Morning,2 weeks
+1165,1983,"Albuterol, Sertraline, Citalopram",Three times a day,Morning,1 month
+1166,1543,Aspirin,Three times a day,Afternoon,1 week
+1167,1733,Dutasteride,Three times a day,Afternoon,1 month
+1168,1347,"Esomeprazole, Propranolol",Three times a day,Evening,1 month
+1169,827,Diltiazem,Three times a day,Morning,1 month
+1170,463,Clonidine,Once a day,Morning,1 month
+1171,84,Clopidogrel,Twice a day,Morning,1 week
+1172,1920,Verapamil,Twice a day,Evening,2 weeks
+1173,325,Metoprolol,Once a day,Evening,1 month
+1174,919,Propranolol,Three times a day,Evening,1 month
+1175,1467,Metoprolol,Once a day,Evening,1 month
+1176,1493,Clopidogrel,Three times a day,Afternoon,1 week
+1177,454,"Amoxicillin, Propranolol, Eszopiclone",Once a day,Afternoon,1 week
+1178,171,"Ramelteon, Pantoprazole",Three times a day,Afternoon,1 week
+1179,1824,Clopidogrel,Twice a day,Morning,1 week
+1180,1809,"Levothyroxine, Dutasteride",Once a day,Afternoon,1 week
+1181,308,Bupropion,Three times a day,Morning,1 week
+1182,1453,"Ramelteon, Propranolol",Twice a day,Morning,1 month
+1183,1161,"Pantoprazole, Ibuprofen",Three times a day,Afternoon,1 week
+1184,302,"Bupropion, Gabapentin",Three times a day,Evening,1 week
+1185,1746,Amlodipine,Once a day,Afternoon,2 weeks
+1186,1177,Sildenafil,Three times a day,Evening,1 month
+1187,1419,Cialis,Once a day,Afternoon,1 month
+1188,1826,Venlafaxine,Once a day,Morning,2 weeks
+1189,1881,"Ibuprofen, Ramelteon",Once a day,Morning,1 month
+1190,367,Furosemide,Twice a day,Evening,1 week
+1191,1929,"Alprazolam, Eszopiclone, Melatonin",Once a day,Morning,1 week
+1192,316,"Clopidogrel, Diltiazem",Three times a day,Evening,1 week
+1193,1287,"Cialis, Felodipine, Cetirizine",Twice a day,Morning,1 month
+1194,1130,Furosemide,Once a day,Morning,2 weeks
+1195,222,Viagra,Twice a day,Morning,1 month
+1196,1766,Verapamil,Once a day,Evening,1 week
+1197,301,Alprazolam,Twice a day,Afternoon,2 weeks
+1198,538,Montelukast,Twice a day,Morning,1 week
+1199,1341,Levitra,Twice a day,Morning,1 week
+1200,693,"Pantoprazole, Nebivolol",Three times a day,Afternoon,1 month
+1201,384,"Ramelteon, Warfarin, Lisinopril",Three times a day,Morning,2 weeks
+1202,1904,Gabapentin,Three times a day,Evening,1 month
+1203,1298,Insulin,Three times a day,Evening,1 month
+1204,1734,Felodipine,Once a day,Evening,1 month
+1205,386,Sertraline,Three times a day,Afternoon,1 week
+1206,273,"Alprazolam, Verapamil, Nifedipine",Twice a day,Afternoon,1 month
+1207,303,"Atenolol, Escitalopram",Three times a day,Evening,1 week
+1208,837,Fluticasone,Three times a day,Afternoon,1 week
+1209,654,Diltiazem,Twice a day,Afternoon,1 month
+1210,1673,Simvastatin,Twice a day,Evening,2 weeks
+1211,1251,Zolpidem,Twice a day,Morning,1 week
+1212,491,"Omeprazole, Alprazolam, Clopidogrel",Twice a day,Evening,2 weeks
+1213,1743,Ibuprofen,Twice a day,Afternoon,1 week
+1214,1086,"Diphenhydramine, Furosemide",Once a day,Evening,1 week
+1215,333,Diltiazem,Once a day,Evening,2 weeks
+1216,1833,Diphenhydramine,Twice a day,Afternoon,2 weeks
+1217,1078,Ciprofloxacin,Three times a day,Afternoon,1 week
+1218,603,Clonidine,Three times a day,Evening,2 weeks
+1219,1629,"Escitalopram, Ibuprofen",Once a day,Afternoon,1 month
+1220,529,"Lisinopril, Insulin",Once a day,Evening,2 weeks
+1221,1996,"Metoprolol, Escitalopram",Once a day,Morning,2 weeks
+1222,800,Levitra,Once a day,Morning,1 week
+1223,1598,Lisinopril,Twice a day,Evening,1 week
+1224,1677,"Paracetamol, Clonidine",Three times a day,Afternoon,2 weeks
+1225,409,Furosemide,Twice a day,Evening,2 weeks
+1226,1007,Sertraline,Once a day,Evening,1 week
+1227,1111,"Clonidine, Amoxicillin",Three times a day,Morning,1 week
+1228,1480,"Nebivolol, Furosemide",Three times a day,Afternoon,1 week
+1229,484,Nifedipine,Twice a day,Evening,1 week
+1230,611,Amoxicillin,Twice a day,Evening,2 weeks
+1231,223,Furosemide,Twice a day,Evening,1 month
+1232,1430,Carvedilol,Once a day,Afternoon,2 weeks
+1233,916,Azithromycin,Three times a day,Afternoon,2 weeks
+1234,66,Ciprofloxacin,Once a day,Morning,1 week
+1235,584,Fluticasone,Three times a day,Afternoon,1 month
+1236,1289,"Ranitidine, Ciprofloxacin",Once a day,Evening,2 weeks
+1237,117,"Viagra, Ciprofloxacin",Once a day,Afternoon,1 week
+1238,526,"Pantoprazole, Omeprazole",Three times a day,Morning,1 month
+1239,544,Escitalopram,Twice a day,Morning,1 month
+1240,92,Paracetamol,Three times a day,Afternoon,2 weeks
+1241,1790,Viagra,Once a day,Afternoon,2 weeks
+1242,1544,"Carvedilol, Cialis, Trazodone",Twice a day,Afternoon,1 week
+1243,1896,"Ramelteon, Buspirone",Twice a day,Morning,1 week
+1244,1522,Insulin,Three times a day,Afternoon,2 weeks
+1245,1252,"Fluoxetine, Cetirizine",Three times a day,Afternoon,1 week
+1246,134,"Metoprolol, Escitalopram, Buspirone",Three times a day,Afternoon,2 weeks
+1247,1426,"Felodipine, Amoxicillin, Azithromycin",Twice a day,Afternoon,2 weeks
+1248,785,Simvastatin,Twice a day,Morning,1 month
+1249,1622,"Ibuprofen, Diphenhydramine",Once a day,Afternoon,1 week
+1250,1323,"Bupropion, Nifedipine",Three times a day,Afternoon,1 month
+1251,1297,Trazodone,Once a day,Afternoon,2 weeks
+1252,528,"Loratadine, Clonazepam",Once a day,Evening,1 month
+1253,1619,"Nebivolol, Azithromycin",Twice a day,Evening,2 weeks
+1254,1235,Insulin,Twice a day,Evening,1 week
+1255,33,"Buspirone, Venlafaxine, Dutasteride",Three times a day,Evening,1 month
+1256,1331,Amlodipine,Three times a day,Morning,1 month
+1257,911,Trazodone,Three times a day,Morning,1 month
+1258,1774,Eszopiclone,Once a day,Evening,1 month
+1259,1257,"Verapamil, Esomeprazole, Fluoxetine",Once a day,Evening,1 week
+1260,1433,Atorvastatin,Three times a day,Evening,1 month
+1261,1390,"Sertraline, Verapamil, Escitalopram",Twice a day,Evening,2 weeks
+1262,403,"Venlafaxine, Prednisone",Once a day,Morning,1 week
+1263,1520,"Ibuprofen, Esomeprazole",Twice a day,Morning,1 week
+1264,1157,Finasteride,Twice a day,Evening,1 week
+1265,984,Pantoprazole,Once a day,Afternoon,1 week
+1266,1456,"Paracetamol, Clopidogrel",Twice a day,Afternoon,1 month
+1267,418,"Clonidine, Citalopram",Once a day,Morning,1 week
+1268,36,"Diltiazem, Eszopiclone, Clonazepam",Twice a day,Evening,1 month
+1269,1243,"Nifedipine, Warfarin",Three times a day,Afternoon,1 week
+1270,1936,"Sertraline, Duloxetine",Once a day,Morning,1 month
+1271,898,Pantoprazole,Twice a day,Afternoon,1 month
+1272,1970,"Amlodipine, Carvedilol",Three times a day,Evening,1 week
+1273,1173,Aspirin,Twice a day,Afternoon,2 weeks
+1274,1628,Simvastatin,Once a day,Evening,1 month
+1275,1458,"Cialis, Loratadine",Twice a day,Afternoon,1 month
+1276,44,"Gabapentin, Buspirone",Twice a day,Afternoon,1 week
+1277,956,Gabapentin,Once a day,Evening,1 month
+1278,1427,"Bisoprolol, Clopidogrel, Trazodone",Twice a day,Morning,1 week
+1279,1955,"Metformin, Ramelteon",Once a day,Afternoon,1 week
+1280,199,Metoprolol,Three times a day,Morning,2 weeks
+1281,1688,Sertraline,Three times a day,Afternoon,2 weeks
+1282,27,Warfarin,Twice a day,Afternoon,1 week
+1283,1665,Omeprazole,Three times a day,Morning,1 month
+1284,23,"Prednisone, Eszopiclone",Three times a day,Evening,1 month
+1285,1578,"Amlodipine, Lisinopril",Twice a day,Afternoon,1 month
+1286,1305,"Tadalafil, Pantoprazole",Three times a day,Morning,2 weeks
+1287,1879,Ramelteon,Once a day,Afternoon,1 week
+1288,1311,Warfarin,Once a day,Evening,1 week
+1289,43,"Fluticasone, Cialis",Twice a day,Afternoon,1 week
+1290,1987,Lisinopril,Once a day,Morning,2 weeks
+1291,1712,"Venlafaxine, Clonazepam",Three times a day,Afternoon,2 weeks
+1292,1757,Warfarin,Once a day,Afternoon,1 week
+1293,897,"Furosemide, Zolpidem",Twice a day,Morning,2 weeks
+1294,459,Pantoprazole,Three times a day,Morning,1 month
+1295,975,Insulin,Twice a day,Afternoon,1 week
+1296,679,"Prednisone, Carvedilol",Once a day,Morning,2 weeks
+1297,726,"Sertraline, Ciprofloxacin",Once a day,Morning,1 month
+1298,486,Trazodone,Once a day,Evening,1 month
+1299,502,Cetirizine,Twice a day,Afternoon,2 weeks
+1300,1345,Ibuprofen,Three times a day,Morning,1 week
+1301,1264,Bupropion,Once a day,Morning,2 weeks
+1302,910,"Venlafaxine, Levothyroxine",Twice a day,Afternoon,1 week
+1303,1309,Dutasteride,Twice a day,Evening,1 week
+1304,1447,Simvastatin,Once a day,Morning,1 month
+1305,1041,Lisinopril,Once a day,Evening,1 week
+1306,1112,Cetirizine,Twice a day,Morning,1 month
+1307,160,Nitroglycerin,Twice a day,Evening,1 month
+1308,489,Gabapentin,Three times a day,Evening,1 week
+1309,1242,"Melatonin, Levitra",Three times a day,Evening,1 month
+1310,503,Fluoxetine,Three times a day,Evening,1 week
+1311,926,Atenolol,Three times a day,Evening,2 weeks
+1312,473,Simvastatin,Three times a day,Evening,2 weeks
+1313,285,"Albuterol, Diphenhydramine, Lisinopril",Once a day,Afternoon,1 month
+1314,997,"Lorazepam, Melatonin",Three times a day,Evening,2 weeks
+1315,471,Pantoprazole,Once a day,Morning,1 week
+1316,545,Amlodipine,Three times a day,Morning,2 weeks
+1317,126,Montelukast,Twice a day,Evening,2 weeks
+1318,401,"Ibuprofen, Ranitidine",Twice a day,Afternoon,1 month
+1319,662,Escitalopram,Three times a day,Afternoon,2 weeks
+1320,738,"Cialis, Bisoprolol",Twice a day,Morning,2 weeks
+1321,240,"Bisoprolol, Warfarin, Cetirizine",Twice a day,Morning,1 week
+1322,437,Nifedipine,Three times a day,Afternoon,2 weeks
+1323,274,Omeprazole,Once a day,Afternoon,1 month
+1324,885,Nitroglycerin,Twice a day,Evening,2 weeks
+1325,1115,"Nebivolol, Omeprazole, Carvedilol",Once a day,Afternoon,1 month
+1326,1484,Lisinopril,Twice a day,Evening,1 month
+1327,1178,Lorazepam,Three times a day,Morning,1 week
+1328,415,"Warfarin, Gabapentin",Twice a day,Afternoon,1 week
+1329,209,Propranolol,Three times a day,Morning,1 week
+1330,402,Albuterol,Twice a day,Evening,1 week
+1331,1924,Lorazepam,Once a day,Evening,2 weeks
+1332,72,Escitalopram,Once a day,Evening,2 weeks
+1333,1246,Finasteride,Twice a day,Evening,1 week
+1334,1314,"Paracetamol, Buspirone",Twice a day,Morning,2 weeks
+1335,1200,Levothyroxine,Once a day,Afternoon,1 week
+1336,1184,Alprazolam,Twice a day,Morning,1 week
+1337,1852,"Propranolol, Diphenhydramine, Clonazepam",Once a day,Morning,2 weeks
+1338,856,Fluticasone,Twice a day,Morning,1 month
+1339,775,Paracetamol,Once a day,Morning,1 month
+1340,895,"Amoxicillin, Finasteride",Once a day,Evening,1 month
+1341,680,Cialis,Twice a day,Morning,2 weeks
+1342,1332,Escitalopram,Once a day,Evening,1 month
+1343,1272,"Bisoprolol, Montelukast",Three times a day,Afternoon,1 month
+1344,1273,Loratadine,Once a day,Evening,1 week
+1345,1308,Venlafaxine,Once a day,Afternoon,2 weeks
+1346,68,Amlodipine,Twice a day,Evening,1 week
+1347,1749,Clonidine,Twice a day,Morning,2 weeks
+1348,284,Metformin,Once a day,Morning,1 month
+1349,145,"Insulin, Carvedilol",Once a day,Evening,1 week
+1350,1658,Sertraline,Once a day,Evening,1 month
+1351,253,Sildenafil,Twice a day,Afternoon,2 weeks
+1352,554,"Insulin, Diazepam",Twice a day,Afternoon,1 week
+1353,952,Atenolol,Twice a day,Evening,2 weeks
+1354,1910,Sildenafil,Once a day,Evening,1 week
+1355,1768,Dutasteride,Twice a day,Evening,1 month
+1356,613,"Ramelteon, Trazodone",Once a day,Evening,2 weeks
+1357,763,Azithromycin,Once a day,Evening,1 week
+1358,1765,Montelukast,Once a day,Morning,1 week
+1359,1769,"Ciprofloxacin, Amlodipine, Sildenafil",Once a day,Morning,2 weeks
+1360,1662,Amoxicillin,Twice a day,Morning,1 week
+1361,1303,Loratadine,Three times a day,Evening,1 week
+1362,1315,Citalopram,Three times a day,Evening,1 month
+1363,187,"Azithromycin, Nitroglycerin",Three times a day,Evening,2 weeks
+1364,109,"Loratadine, Bupropion",Three times a day,Evening,1 month
+1365,363,"Sildenafil, Viagra, Amlodipine",Twice a day,Morning,1 week
+1366,1838,"Ibuprofen, Amlodipine",Once a day,Morning,1 week
+1367,883,Insulin,Once a day,Evening,1 week
+1368,879,Sertraline,Once a day,Morning,1 month
+1369,1572,"Carvedilol, Finasteride",Once a day,Evening,1 week
+1370,1756,Clonazepam,Once a day,Evening,2 weeks
+1371,1169,"Atenolol, Hydrochlorothiazide, Albuterol",Once a day,Evening,2 weeks
+1372,1052,"Melatonin, Bisoprolol, Diphenhydramine",Twice a day,Morning,1 week
+1373,1570,Ibuprofen,Once a day,Morning,1 week
+1374,37,"Warfarin, Esomeprazole",Once a day,Evening,1 week
+1375,21,Escitalopram,Once a day,Evening,1 week
+1376,379,Hydrochlorothiazide,Three times a day,Morning,1 month
+1377,1214,Paroxetine,Three times a day,Afternoon,1 week
+1378,1094,"Levothyroxine, Montelukast",Once a day,Afternoon,1 week
+1379,1610,"Lisinopril, Clonidine",Once a day,Evening,1 month
+1380,1959,"Nebivolol, Loratadine",Three times a day,Morning,1 month
