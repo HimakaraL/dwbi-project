@@ -1,0 +1,1341 @@
+<?xml version="1.0"?>
+<DataProfile xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/sqlserver/2008/DataDebugger/">
+  <ProfileVersion>1.0</ProfileVersion>
+  <DataSources>
+    <DtsDataSource ID="{7026C571-A3FB-4E28-9F02-727C9A923ED0}" Name="desktop-vbpgocs.HealthCare_Staging">
+      <DtsConnectionManagerID>desktop-vbpgocs.HealthCare_Staging</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{60A0AC2F-66C5-496D-ACE5-B73954CC5931}" Name="stgAppointments">
+      <DtsConnectionManagerID>stgAppointments</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{AC2A2389-F488-4608-8E49-E96D4B54A343}" Name="stgAppointments 1">
+      <DtsConnectionManagerID>stgAppointments 1</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{96E5925E-10C9-4513-9247-E1FDDAA37250}" Name="stgBilling">
+      <DtsConnectionManagerID>stgBilling</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{FC9A9FBA-BA20-49DB-813A-43C8493C9D7F}" Name="stgDoctors">
+      <DtsConnectionManagerID>stgDoctors</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{178842FF-769B-4A30-B44F-724EA115C28C}" Name="stgPatients">
+      <DtsConnectionManagerID>stgPatients</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{31F3A087-2301-42B2-97D5-6A7E118A9146}" Name="stgPrescription">
+      <DtsConnectionManagerID>stgPrescription</DtsConnectionManagerID>
+    </DtsDataSource>
+  </DataSources>
+  <DataProfileInput>
+    <ProfileMode>Exact</ProfileMode>
+    <Timeout>0</Timeout>
+    <Requests>
+      <ColumnNullRatioProfileRequest ID="NullRatioReq">
+        <DataSourceID>{7026C571-A3FB-4E28-9F02-727C9A923ED0}</DataSourceID>
+        <Table Schema="dbo" Table="StgPatients" />
+        <Column IsWildCard="true" />
+      </ColumnNullRatioProfileRequest>
+      <ColumnStatisticsProfileRequest ID="StatisticsReq">
+        <DataSourceID>{7026C571-A3FB-4E28-9F02-727C9A923ED0}</DataSourceID>
+        <Table Schema="dbo" Table="StgPatients" />
+        <Column IsWildCard="true" />
+      </ColumnStatisticsProfileRequest>
+      <ColumnLengthDistributionProfileRequest ID="LengthDistReq">
+        <DataSourceID>{7026C571-A3FB-4E28-9F02-727C9A923ED0}</DataSourceID>
+        <Table Schema="dbo" Table="StgPatients" />
+        <Column IsWildCard="true" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+      </ColumnLengthDistributionProfileRequest>
+      <ColumnValueDistributionProfileRequest ID="ValueDistReq">
+        <DataSourceID>{7026C571-A3FB-4E28-9F02-727C9A923ED0}</DataSourceID>
+        <Table Schema="dbo" Table="StgPatients" />
+        <Column IsWildCard="true" />
+        <Option>FrequentValues</Option>
+        <FrequentValueThreshold>0.001</FrequentValueThreshold>
+      </ColumnValueDistributionProfileRequest>
+      <ColumnPatternProfileRequest ID="PatternReq">
+        <DataSourceID>{7026C571-A3FB-4E28-9F02-727C9A923ED0}</DataSourceID>
+        <Table Schema="dbo" Table="StgPatients" />
+        <Column IsWildCard="true" />
+        <MaxNumberOfPatterns>10</MaxNumberOfPatterns>
+        <PercentageDataCoverageDesired>95</PercentageDataCoverageDesired>
+        <CaseSensitive>false</CaseSensitive>
+        <Delimiters> \t\r\n</Delimiters>
+        <Symbols>,.;:-"'`~=&amp;/\\@!?()&lt;&gt;[]{}|#*^%</Symbols>
+        <TagTableName />
+      </ColumnPatternProfileRequest>
+      <CandidateKeyProfileRequest ID="KeyReq">
+        <DataSourceID>{7026C571-A3FB-4E28-9F02-727C9A923ED0}</DataSourceID>
+        <Table Schema="dbo" Table="StgPatients" />
+        <KeyColumns>
+          <Column IsWildCard="true" />
+        </KeyColumns>
+        <ThresholdSetting>Specified</ThresholdSetting>
+        <KeyStrengthThreshold>0.95</KeyStrengthThreshold>
+        <VerifyOutputInFastMode>false</VerifyOutputInFastMode>
+        <MaxNumberOfViolations>100</MaxNumberOfViolations>
+      </CandidateKeyProfileRequest>
+      <FunctionalDependencyProfileRequest ID="FDReq">
+        <DataSourceID>{7026C571-A3FB-4E28-9F02-727C9A923ED0}</DataSourceID>
+        <Table Schema="dbo" Table="StgPatients" />
+        <DeterminantColumns>
+          <Column IsWildCard="true" />
+        </DeterminantColumns>
+        <DependentColumn IsWildCard="true" />
+        <ThresholdSetting>Specified</ThresholdSetting>
+        <FDStrengthThreshold>0.95</FDStrengthThreshold>
+        <VerifyOutputInFastMode>false</VerifyOutputInFastMode>
+        <MaxNumberOfViolations>100</MaxNumberOfViolations>
+      </FunctionalDependencyProfileRequest>
+    </Requests>
+  </DataProfileInput>
+  <DataProfileOutput>
+    <Profiles>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{7026C571-A3FB-4E28-9F02-727C9A923ED0}</DataSourceID>
+        <Table DataSource="desktop-vbpgocs" Database="HealthCare_Staging" Schema="dbo" Table="StgPatients" RowCount="1000" />
+        <Column Name="patientId" SqlDbType="Decimal" MaxLength="0" Precision="18" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{7026C571-A3FB-4E28-9F02-727C9A923ED0}</DataSourceID>
+        <Table DataSource="desktop-vbpgocs" Database="HealthCare_Staging" Schema="dbo" Table="StgPatients" RowCount="1000" />
+        <Column Name="name" SqlDbType="VarChar" MaxLength="100" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{7026C571-A3FB-4E28-9F02-727C9A923ED0}</DataSourceID>
+        <Table DataSource="desktop-vbpgocs" Database="HealthCare_Staging" Schema="dbo" Table="StgPatients" RowCount="1000" />
+        <Column Name="age" SqlDbType="Decimal" MaxLength="0" Precision="18" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{7026C571-A3FB-4E28-9F02-727C9A923ED0}</DataSourceID>
+        <Table DataSource="desktop-vbpgocs" Database="HealthCare_Staging" Schema="dbo" Table="StgPatients" RowCount="1000" />
+        <Column Name="phoneNo" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{7026C571-A3FB-4E28-9F02-727C9A923ED0}</DataSourceID>
+        <Table DataSource="desktop-vbpgocs" Database="HealthCare_Staging" Schema="dbo" Table="StgPatients" RowCount="1000" />
+        <Column Name="address" SqlDbType="VarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{7026C571-A3FB-4E28-9F02-727C9A923ED0}</DataSourceID>
+        <Table DataSource="desktop-vbpgocs" Database="HealthCare_Staging" Schema="dbo" Table="StgPatients" RowCount="1000" />
+        <Column Name="sickness" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{7026C571-A3FB-4E28-9F02-727C9A923ED0}</DataSourceID>
+        <Table DataSource="desktop-vbpgocs" Database="HealthCare_Staging" Schema="dbo" Table="StgPatients" RowCount="1000" />
+        <Column Name="assigned_doctor" SqlDbType="VarChar" MaxLength="100" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{7026C571-A3FB-4E28-9F02-727C9A923ED0}</DataSourceID>
+        <Table DataSource="desktop-vbpgocs" Database="HealthCare_Staging" Schema="dbo" Table="StgPatients" RowCount="1000" />
+        <Column Name="patientId" SqlDbType="Decimal" MaxLength="0" Precision="18" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>0</MinValue>
+        <MaxValue>999</MaxValue>
+        <Mean>499.5</Mean>
+        <StdDev>288.67499025721</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{7026C571-A3FB-4E28-9F02-727C9A923ED0}</DataSourceID>
+        <Table DataSource="desktop-vbpgocs" Database="HealthCare_Staging" Schema="dbo" Table="StgPatients" RowCount="1000" />
+        <Column Name="age" SqlDbType="Decimal" MaxLength="0" Precision="18" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>1</MinValue>
+        <MaxValue>90</MaxValue>
+        <Mean>45.113</Mean>
+        <StdDev>26.026029873955</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq" IsExact="true">
+        <DataSourceID>{7026C571-A3FB-4E28-9F02-727C9A923ED0}</DataSourceID>
+        <Table DataSource="desktop-vbpgocs" Database="HealthCare_Staging" Schema="dbo" Table="StgPatients" RowCount="1000" />
+        <Column Name="name" SqlDbType="VarChar" MaxLength="100" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+        <MinLength>8</MinLength>
+        <MaxLength>23</MaxLength>
+        <LengthDistribution>
+          <LengthDistributionItem>
+            <Length>23</Length>
+            <Count>3</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>15</Length>
+            <Count>105</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>9</Length>
+            <Count>22</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>12</Length>
+            <Count>167</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>21</Length>
+            <Count>4</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>18</Length>
+            <Count>22</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>10</Length>
+            <Count>56</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>19</Length>
+            <Count>8</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>13</Length>
+            <Count>195</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>22</Length>
+            <Count>2</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>16</Length>
+            <Count>77</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>17</Length>
+            <Count>35</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>11</Length>
+            <Count>139</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>20</Length>
+            <Count>7</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>14</Length>
+            <Count>157</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>8</Length>
+            <Count>1</Count>
+          </LengthDistributionItem>
+        </LengthDistribution>
+      </ColumnLengthDistributionProfile>
+      <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq" IsExact="true">
+        <DataSourceID>{7026C571-A3FB-4E28-9F02-727C9A923ED0}</DataSourceID>
+        <Table DataSource="desktop-vbpgocs" Database="HealthCare_Staging" Schema="dbo" Table="StgPatients" RowCount="1000" />
+        <Column Name="phoneNo" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+        <MinLength>10</MinLength>
+        <MaxLength>10</MaxLength>
+        <LengthDistribution>
+          <LengthDistributionItem>
+            <Length>10</Length>
+            <Count>1000</Count>
+          </LengthDistributionItem>
+        </LengthDistribution>
+      </ColumnLengthDistributionProfile>
+      <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq" IsExact="true">
+        <DataSourceID>{7026C571-A3FB-4E28-9F02-727C9A923ED0}</DataSourceID>
+        <Table DataSource="desktop-vbpgocs" Database="HealthCare_Staging" Schema="dbo" Table="StgPatients" RowCount="1000" />
+        <Column Name="address" SqlDbType="VarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+        <MinLength>21</MinLength>
+        <MaxLength>61</MaxLength>
+        <LengthDistribution>
+          <LengthDistributionItem>
+            <Length>23</Length>
+            <Count>4</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>46</Length>
+            <Count>50</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>29</Length>
+            <Count>1</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>52</Length>
+            <Count>50</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>26</Length>
+            <Count>2</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>35</Length>
+            <Count>19</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>43</Length>
+            <Count>36</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>55</Length>
+            <Count>17</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>49</Length>
+            <Count>58</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>21</Length>
+            <Count>3</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>27</Length>
+            <Count>1</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>58</Length>
+            <Count>1</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>38</Length>
+            <Count>42</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>44</Length>
+            <Count>40</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>50</Length>
+            <Count>54</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>24</Length>
+            <Count>8</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>47</Length>
+            <Count>44</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>61</Length>
+            <Count>1</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>41</Length>
+            <Count>45</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>25</Length>
+            <Count>8</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>36</Length>
+            <Count>27</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>42</Length>
+            <Count>39</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>56</Length>
+            <Count>16</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>22</Length>
+            <Count>4</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>59</Length>
+            <Count>3</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>39</Length>
+            <Count>45</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>33</Length>
+            <Count>7</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>53</Length>
+            <Count>36</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>45</Length>
+            <Count>37</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>48</Length>
+            <Count>48</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>31</Length>
+            <Count>63</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>60</Length>
+            <Count>4</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>40</Length>
+            <Count>54</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>34</Length>
+            <Count>6</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>54</Length>
+            <Count>25</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>57</Length>
+            <Count>15</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>37</Length>
+            <Count>39</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>51</Length>
+            <Count>48</Count>
+          </LengthDistributionItem>
+        </LengthDistribution>
+      </ColumnLengthDistributionProfile>
+      <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq" IsExact="true">
+        <DataSourceID>{7026C571-A3FB-4E28-9F02-727C9A923ED0}</DataSourceID>
+        <Table DataSource="desktop-vbpgocs" Database="HealthCare_Staging" Schema="dbo" Table="StgPatients" RowCount="1000" />
+        <Column Name="sickness" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+        <MinLength>3</MinLength>
+        <MaxLength>23</MaxLength>
+        <LengthDistribution>
+          <LengthDistributionItem>
+            <Length>23</Length>
+            <Count>13</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>9</Length>
+            <Count>135</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>15</Length>
+            <Count>7</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>3</Length>
+            <Count>87</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>12</Length>
+            <Count>24</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>6</Length>
+            <Count>29</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>7</Length>
+            <Count>56</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>10</Length>
+            <Count>80</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>4</Length>
+            <Count>103</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>19</Length>
+            <Count>20</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>13</Length>
+            <Count>16</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>5</Length>
+            <Count>195</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>16</Length>
+            <Count>4</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>11</Length>
+            <Count>100</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>14</Length>
+            <Count>15</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>8</Length>
+            <Count>116</Count>
+          </LengthDistributionItem>
+        </LengthDistribution>
+      </ColumnLengthDistributionProfile>
+      <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq" IsExact="true">
+        <DataSourceID>{7026C571-A3FB-4E28-9F02-727C9A923ED0}</DataSourceID>
+        <Table DataSource="desktop-vbpgocs" Database="HealthCare_Staging" Schema="dbo" Table="StgPatients" RowCount="1000" />
+        <Column Name="assigned_doctor" SqlDbType="VarChar" MaxLength="100" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+        <MinLength>1</MinLength>
+        <MaxLength>2</MaxLength>
+        <LengthDistribution>
+          <LengthDistributionItem>
+            <Length>1</Length>
+            <Count>31</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>2</Length>
+            <Count>969</Count>
+          </LengthDistributionItem>
+        </LengthDistribution>
+      </ColumnLengthDistributionProfile>
+      <CandidateKeyProfile IsExact="true" ProfileRequestID="KeyReq">
+        <DataSourceID>{7026C571-A3FB-4E28-9F02-727C9A923ED0}</DataSourceID>
+        <Table DataSource="desktop-vbpgocs" Database="HealthCare_Staging" Schema="dbo" Table="StgPatients" RowCount="1000" />
+        <KeyColumns>
+          <Column Name="name" SqlDbType="VarChar" MaxLength="100" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        </KeyColumns>
+        <IsExactKey>false</IsExactKey>
+        <KeyStrength>0.997</KeyStrength>
+        <KeyViolations>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>Shawn Jones</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>Samuel Howard</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>Jonathan Rodriguez</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+        </KeyViolations>
+      </CandidateKeyProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{7026C571-A3FB-4E28-9F02-727C9A923ED0}</DataSourceID>
+        <Table DataSource="desktop-vbpgocs" Database="HealthCare_Staging" Schema="dbo" Table="StgPatients" RowCount="1000" />
+        <Column Name="name" SqlDbType="VarChar" MaxLength="100" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>997</NumberOfDistinctValues>
+        <ValueDistribution>
+          <ValueDistributionItem>
+            <Value>Jonathan Rodriguez</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Samuel Howard</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Shawn Jones</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+        </ValueDistribution>
+      </ColumnValueDistributionProfile>
+      <CandidateKeyProfile IsExact="true" ProfileRequestID="KeyReq">
+        <DataSourceID>{7026C571-A3FB-4E28-9F02-727C9A923ED0}</DataSourceID>
+        <Table DataSource="desktop-vbpgocs" Database="HealthCare_Staging" Schema="dbo" Table="StgPatients" RowCount="1000" />
+        <KeyColumns>
+          <Column Name="phoneNo" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        </KeyColumns>
+        <IsExactKey>true</IsExactKey>
+      </CandidateKeyProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{7026C571-A3FB-4E28-9F02-727C9A923ED0}</DataSourceID>
+        <Table DataSource="desktop-vbpgocs" Database="HealthCare_Staging" Schema="dbo" Table="StgPatients" RowCount="1000" />
+        <Column Name="phoneNo" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>1000</NumberOfDistinctValues>
+      </ColumnValueDistributionProfile>
+      <CandidateKeyProfile IsExact="true" ProfileRequestID="KeyReq">
+        <DataSourceID>{7026C571-A3FB-4E28-9F02-727C9A923ED0}</DataSourceID>
+        <Table DataSource="desktop-vbpgocs" Database="HealthCare_Staging" Schema="dbo" Table="StgPatients" RowCount="1000" />
+        <KeyColumns>
+          <Column Name="address" SqlDbType="VarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        </KeyColumns>
+        <IsExactKey>true</IsExactKey>
+      </CandidateKeyProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{7026C571-A3FB-4E28-9F02-727C9A923ED0}</DataSourceID>
+        <Table DataSource="desktop-vbpgocs" Database="HealthCare_Staging" Schema="dbo" Table="StgPatients" RowCount="1000" />
+        <Column Name="address" SqlDbType="VarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>1000</NumberOfDistinctValues>
+      </ColumnValueDistributionProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{7026C571-A3FB-4E28-9F02-727C9A923ED0}</DataSourceID>
+        <Table DataSource="desktop-vbpgocs" Database="HealthCare_Staging" Schema="dbo" Table="StgPatients" RowCount="1000" />
+        <Column Name="sickness" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>35</NumberOfDistinctValues>
+        <ValueDistribution>
+          <ValueDistributionItem>
+            <Value>Headache</Value>
+            <Count>70</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Shortness of breath</Value>
+            <Count>20</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Sore Throat</Value>
+            <Count>27</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Vomiting</Value>
+            <Count>11</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Diabetes</Value>
+            <Count>17</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Fever</Value>
+            <Count>120</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Allergy</Value>
+            <Count>25</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Nausea</Value>
+            <Count>23</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Skin Infection</Value>
+            <Count>7</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Stomachache</Value>
+            <Count>50</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Anxiety</Value>
+            <Count>8</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Chest Pain</Value>
+            <Count>21</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Liver Disease</Value>
+            <Count>6</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Flu</Value>
+            <Count>87</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Bronchitis</Value>
+            <Count>15</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Heart Disease</Value>
+            <Count>10</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Infection</Value>
+            <Count>45</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Muscle Pain</Value>
+            <Count>12</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Fatigue</Value>
+            <Count>23</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Hemorrhoids</Value>
+            <Count>11</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Constipation</Value>
+            <Count>10</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Thyroid Disorder</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Gastroenteritis</Value>
+            <Count>7</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Kidney Disease</Value>
+            <Count>8</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Back Pain</Value>
+            <Count>43</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Asthma</Value>
+            <Count>6</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Rash</Value>
+            <Count>9</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Cough</Value>
+            <Count>75</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Dizziness</Value>
+            <Count>28</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Joint Pain</Value>
+            <Count>44</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Pneumonia</Value>
+            <Count>19</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Hypertension</Value>
+            <Count>14</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Cold</Value>
+            <Count>94</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Diarrhea</Value>
+            <Count>18</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Urinary Tract Infection</Value>
+            <Count>13</Count>
+          </ValueDistributionItem>
+        </ValueDistribution>
+      </ColumnValueDistributionProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{7026C571-A3FB-4E28-9F02-727C9A923ED0}</DataSourceID>
+        <Table DataSource="desktop-vbpgocs" Database="HealthCare_Staging" Schema="dbo" Table="StgPatients" RowCount="1000" />
+        <Column Name="assigned_doctor" SqlDbType="VarChar" MaxLength="100" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>90</NumberOfDistinctValues>
+        <ValueDistribution>
+          <ValueDistributionItem>
+            <Value>0</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1</Value>
+            <Count>7</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>12</Value>
+            <Count>18</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>13</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>14</Value>
+            <Count>17</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>17</Value>
+            <Count>20</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>18</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>19</Value>
+            <Count>8</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>20</Value>
+            <Count>70</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>21</Value>
+            <Count>3</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>22</Value>
+            <Count>5</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>23</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>24</Value>
+            <Count>57</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>25</Value>
+            <Count>16</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>27</Value>
+            <Count>60</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>28</Value>
+            <Count>16</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>29</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>31</Value>
+            <Count>16</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>34</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>35</Value>
+            <Count>3</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>36</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>37</Value>
+            <Count>5</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>38</Value>
+            <Count>3</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>39</Value>
+            <Count>3</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>4</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>42</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>43</Value>
+            <Count>16</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>45</Value>
+            <Count>5</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>46</Value>
+            <Count>3</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>47</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>48</Value>
+            <Count>70</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>5</Value>
+            <Count>5</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>50</Value>
+            <Count>26</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>51</Value>
+            <Count>14</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>53</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>54</Value>
+            <Count>3</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>55</Value>
+            <Count>3</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>57</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>58</Value>
+            <Count>6</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>59</Value>
+            <Count>65</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>6</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>60</Value>
+            <Count>13</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>61</Value>
+            <Count>16</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>62</Value>
+            <Count>3</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>63</Value>
+            <Count>3</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>64</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>65</Value>
+            <Count>3</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>67</Value>
+            <Count>7</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>68</Value>
+            <Count>14</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>7</Value>
+            <Count>3</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>70</Value>
+            <Count>3</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>71</Value>
+            <Count>77</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>72</Value>
+            <Count>50</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>74</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>75</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>76</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>77</Value>
+            <Count>8</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>78</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>79</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>8</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>80</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>82</Value>
+            <Count>5</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>86</Value>
+            <Count>5</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>87</Value>
+            <Count>60</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>88</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>89</Value>
+            <Count>3</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>9</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>90</Value>
+            <Count>3</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>92</Value>
+            <Count>3</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>95</Value>
+            <Count>85</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>96</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>99</Value>
+            <Count>11</Count>
+          </ValueDistributionItem>
+        </ValueDistribution>
+      </ColumnValueDistributionProfile>
+      <ColumnPatternProfile ProfileRequestID="PatternReq" IsExact="true">
+        <DataSourceID>{7026C571-A3FB-4E28-9F02-727C9A923ED0}</DataSourceID>
+        <Table DataSource="desktop-vbpgocs" Database="HealthCare_Staging" Schema="dbo" Table="StgPatients" RowCount="1000" />
+        <Column Name="name" SqlDbType="VarChar" MaxLength="100" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <TopRegexPatterns>
+          <PatternDistributionItem>
+            <RegexText>\p{L}+ \p{L}+</RegexText>
+            <Frequency>95</Frequency>
+          </PatternDistributionItem>
+          <PatternDistributionItem>
+            <RegexText>(\p{L}+ )+</RegexText>
+            <Frequency>2</Frequency>
+          </PatternDistributionItem>
+        </TopRegexPatterns>
+      </ColumnPatternProfile>
+      <ColumnPatternProfile ProfileRequestID="PatternReq" IsExact="true">
+        <DataSourceID>{7026C571-A3FB-4E28-9F02-727C9A923ED0}</DataSourceID>
+        <Table DataSource="desktop-vbpgocs" Database="HealthCare_Staging" Schema="dbo" Table="StgPatients" RowCount="1000" />
+        <Column Name="phoneNo" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <TopRegexPatterns>
+          <PatternDistributionItem>
+            <RegexText>07\d+</RegexText>
+            <Frequency>100</Frequency>
+          </PatternDistributionItem>
+        </TopRegexPatterns>
+      </ColumnPatternProfile>
+      <ColumnPatternProfile ProfileRequestID="PatternReq" IsExact="true">
+        <DataSourceID>{7026C571-A3FB-4E28-9F02-727C9A923ED0}</DataSourceID>
+        <Table DataSource="desktop-vbpgocs" Database="HealthCare_Staging" Schema="dbo" Table="StgPatients" RowCount="1000" />
+        <Column Name="address" SqlDbType="VarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <TopRegexPatterns>
+          <PatternDistributionItem>
+            <RegexText>\d\d\d (\p{L}+ )+\p{L}+, \p{L}\p{L} \d\d\d\d\d</RegexText>
+            <Frequency>17</Frequency>
+          </PatternDistributionItem>
+          <PatternDistributionItem>
+            <RegexText>\d\d\d\d\d (\p{L}+ )+\p{L}+, \p{L}\p{L} \d\d\d\d\d</RegexText>
+            <Frequency>15</Frequency>
+          </PatternDistributionItem>
+          <PatternDistributionItem>
+            <RegexText>\d\d\d\d (\p{L}+ )+\p{L}+, \p{L}\p{L} \d\d\d\d\d</RegexText>
+            <Frequency>13</Frequency>
+          </PatternDistributionItem>
+          <PatternDistributionItem>
+            <RegexText>.*</RegexText>
+            <Frequency>55</Frequency>
+          </PatternDistributionItem>
+        </TopRegexPatterns>
+      </ColumnPatternProfile>
+      <ColumnPatternProfile ProfileRequestID="PatternReq" IsExact="true">
+        <DataSourceID>{7026C571-A3FB-4E28-9F02-727C9A923ED0}</DataSourceID>
+        <Table DataSource="desktop-vbpgocs" Database="HealthCare_Staging" Schema="dbo" Table="StgPatients" RowCount="1000" />
+        <Column Name="sickness" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <TopRegexPatterns>
+          <PatternDistributionItem>
+            <RegexText>FEVER</RegexText>
+            <Frequency>12</Frequency>
+          </PatternDistributionItem>
+          <PatternDistributionItem>
+            <RegexText>HEADACHE</RegexText>
+            <Frequency>7</Frequency>
+          </PatternDistributionItem>
+          <PatternDistributionItem>
+            <RegexText>COLD</RegexText>
+            <Frequency>9</Frequency>
+          </PatternDistributionItem>
+          <PatternDistributionItem>
+            <RegexText>COUGH</RegexText>
+            <Frequency>8</Frequency>
+          </PatternDistributionItem>
+          <PatternDistributionItem>
+            <RegexText>FLU</RegexText>
+            <Frequency>9</Frequency>
+          </PatternDistributionItem>
+          <PatternDistributionItem>
+            <RegexText>\p{L}+ PAIN</RegexText>
+            <Frequency>12</Frequency>
+          </PatternDistributionItem>
+          <PatternDistributionItem>
+            <RegexText>\p{L}+</RegexText>
+            <Frequency>34</Frequency>
+          </PatternDistributionItem>
+          <PatternDistributionItem>
+            <RegexText>\p{L}+ \p{L}+</RegexText>
+            <Frequency>6</Frequency>
+          </PatternDistributionItem>
+        </TopRegexPatterns>
+      </ColumnPatternProfile>
+      <ColumnPatternProfile ProfileRequestID="PatternReq" IsExact="true">
+        <DataSourceID>{7026C571-A3FB-4E28-9F02-727C9A923ED0}</DataSourceID>
+        <Table DataSource="desktop-vbpgocs" Database="HealthCare_Staging" Schema="dbo" Table="StgPatients" RowCount="1000" />
+        <Column Name="assigned_doctor" SqlDbType="VarChar" MaxLength="100" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <TopRegexPatterns>
+          <PatternDistributionItem>
+            <RegexText>\d\d</RegexText>
+            <Frequency>97</Frequency>
+          </PatternDistributionItem>
+        </TopRegexPatterns>
+      </ColumnPatternProfile>
+      <FunctionalDependencyProfile IsExact="true" ProfileRequestID="">
+        <DataSourceID>{7026C571-A3FB-4E28-9F02-727C9A923ED0}</DataSourceID>
+        <Table DataSource="desktop-vbpgocs" Database="HealthCare_Staging" Schema="dbo" Table="StgPatients" RowCount="1000" />
+        <DeterminantColumns>
+          <Column Name="address" SqlDbType="VarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        </DeterminantColumns>
+        <DependentColumn Name="assigned_doctor" SqlDbType="VarChar" MaxLength="100" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IsExactFD>true</IsExactFD>
+      </FunctionalDependencyProfile>
+      <FunctionalDependencyProfile IsExact="true" ProfileRequestID="">
+        <DataSourceID>{7026C571-A3FB-4E28-9F02-727C9A923ED0}</DataSourceID>
+        <Table DataSource="desktop-vbpgocs" Database="HealthCare_Staging" Schema="dbo" Table="StgPatients" RowCount="1000" />
+        <DeterminantColumns>
+          <Column Name="phoneNo" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        </DeterminantColumns>
+        <DependentColumn Name="assigned_doctor" SqlDbType="VarChar" MaxLength="100" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IsExactFD>true</IsExactFD>
+      </FunctionalDependencyProfile>
+      <FunctionalDependencyProfile IsExact="true" ProfileRequestID="">
+        <DataSourceID>{7026C571-A3FB-4E28-9F02-727C9A923ED0}</DataSourceID>
+        <Table DataSource="desktop-vbpgocs" Database="HealthCare_Staging" Schema="dbo" Table="StgPatients" RowCount="1000" />
+        <DeterminantColumns>
+          <Column Name="address" SqlDbType="VarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        </DeterminantColumns>
+        <DependentColumn Name="sickness" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IsExactFD>true</IsExactFD>
+      </FunctionalDependencyProfile>
+      <FunctionalDependencyProfile IsExact="true" ProfileRequestID="">
+        <DataSourceID>{7026C571-A3FB-4E28-9F02-727C9A923ED0}</DataSourceID>
+        <Table DataSource="desktop-vbpgocs" Database="HealthCare_Staging" Schema="dbo" Table="StgPatients" RowCount="1000" />
+        <DeterminantColumns>
+          <Column Name="phoneNo" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        </DeterminantColumns>
+        <DependentColumn Name="sickness" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IsExactFD>true</IsExactFD>
+      </FunctionalDependencyProfile>
+      <FunctionalDependencyProfile IsExact="true" ProfileRequestID="">
+        <DataSourceID>{7026C571-A3FB-4E28-9F02-727C9A923ED0}</DataSourceID>
+        <Table DataSource="desktop-vbpgocs" Database="HealthCare_Staging" Schema="dbo" Table="StgPatients" RowCount="1000" />
+        <DeterminantColumns>
+          <Column Name="phoneNo" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        </DeterminantColumns>
+        <DependentColumn Name="address" SqlDbType="VarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IsExactFD>true</IsExactFD>
+      </FunctionalDependencyProfile>
+      <FunctionalDependencyProfile IsExact="true" ProfileRequestID="">
+        <DataSourceID>{7026C571-A3FB-4E28-9F02-727C9A923ED0}</DataSourceID>
+        <Table DataSource="desktop-vbpgocs" Database="HealthCare_Staging" Schema="dbo" Table="StgPatients" RowCount="1000" />
+        <DeterminantColumns>
+          <Column Name="address" SqlDbType="VarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        </DeterminantColumns>
+        <DependentColumn Name="phoneNo" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IsExactFD>true</IsExactFD>
+      </FunctionalDependencyProfile>
+      <FunctionalDependencyProfile IsExact="true" ProfileRequestID="">
+        <DataSourceID>{7026C571-A3FB-4E28-9F02-727C9A923ED0}</DataSourceID>
+        <Table DataSource="desktop-vbpgocs" Database="HealthCare_Staging" Schema="dbo" Table="StgPatients" RowCount="1000" />
+        <DeterminantColumns>
+          <Column Name="address" SqlDbType="VarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        </DeterminantColumns>
+        <DependentColumn Name="name" SqlDbType="VarChar" MaxLength="100" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IsExactFD>true</IsExactFD>
+      </FunctionalDependencyProfile>
+      <FunctionalDependencyProfile IsExact="true" ProfileRequestID="">
+        <DataSourceID>{7026C571-A3FB-4E28-9F02-727C9A923ED0}</DataSourceID>
+        <Table DataSource="desktop-vbpgocs" Database="HealthCare_Staging" Schema="dbo" Table="StgPatients" RowCount="1000" />
+        <DeterminantColumns>
+          <Column Name="phoneNo" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        </DeterminantColumns>
+        <DependentColumn Name="name" SqlDbType="VarChar" MaxLength="100" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IsExactFD>true</IsExactFD>
+      </FunctionalDependencyProfile>
+      <FunctionalDependencyProfile IsExact="true" ProfileRequestID="FDReq">
+        <DataSourceID>{7026C571-A3FB-4E28-9F02-727C9A923ED0}</DataSourceID>
+        <Table DataSource="desktop-vbpgocs" Database="HealthCare_Staging" Schema="dbo" Table="StgPatients" RowCount="1000" />
+        <DeterminantColumns>
+          <Column Name="name" SqlDbType="VarChar" MaxLength="100" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        </DeterminantColumns>
+        <DependentColumn Name="assigned_doctor" SqlDbType="VarChar" MaxLength="100" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IsExactFD>false</IsExactFD>
+        <FDStrength>0.997</FDStrength>
+        <FDViolations>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Jonathan Rodriguez</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>20</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Samuel Howard</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>59</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Shawn Jones</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>5</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+        </FDViolations>
+      </FunctionalDependencyProfile>
+      <FunctionalDependencyProfile IsExact="true" ProfileRequestID="FDReq">
+        <DataSourceID>{7026C571-A3FB-4E28-9F02-727C9A923ED0}</DataSourceID>
+        <Table DataSource="desktop-vbpgocs" Database="HealthCare_Staging" Schema="dbo" Table="StgPatients" RowCount="1000" />
+        <DeterminantColumns>
+          <Column Name="name" SqlDbType="VarChar" MaxLength="100" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        </DeterminantColumns>
+        <DependentColumn Name="sickness" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IsExactFD>false</IsExactFD>
+        <FDStrength>0.997</FDStrength>
+        <FDViolations>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Jonathan Rodriguez</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>Cough</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Samuel Howard</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>Cold</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Shawn Jones</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>Diabetes</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+        </FDViolations>
+      </FunctionalDependencyProfile>
+      <FunctionalDependencyProfile IsExact="true" ProfileRequestID="FDReq">
+        <DataSourceID>{7026C571-A3FB-4E28-9F02-727C9A923ED0}</DataSourceID>
+        <Table DataSource="desktop-vbpgocs" Database="HealthCare_Staging" Schema="dbo" Table="StgPatients" RowCount="1000" />
+        <DeterminantColumns>
+          <Column Name="name" SqlDbType="VarChar" MaxLength="100" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        </DeterminantColumns>
+        <DependentColumn Name="address" SqlDbType="VarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IsExactFD>false</IsExactFD>
+        <FDStrength>0.997</FDStrength>
+        <FDViolations>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Jonathan Rodriguez</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>04198 Brown Burgs Suite 143
+Jasonburgh, NC 05473</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Samuel Howard</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>56504 Ruben Estates
+New Cathymouth, AZ 48678</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Shawn Jones</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>4188 Carroll View
+East Danieltown, NC 77736</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+        </FDViolations>
+      </FunctionalDependencyProfile>
+      <FunctionalDependencyProfile IsExact="true" ProfileRequestID="FDReq">
+        <DataSourceID>{7026C571-A3FB-4E28-9F02-727C9A923ED0}</DataSourceID>
+        <Table DataSource="desktop-vbpgocs" Database="HealthCare_Staging" Schema="dbo" Table="StgPatients" RowCount="1000" />
+        <DeterminantColumns>
+          <Column Name="name" SqlDbType="VarChar" MaxLength="100" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        </DeterminantColumns>
+        <DependentColumn Name="phoneNo" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IsExactFD>false</IsExactFD>
+        <FDStrength>0.997</FDStrength>
+        <FDViolations>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Jonathan Rodriguez</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>0711074764</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Samuel Howard</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>0738719684</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Shawn Jones</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>0746152598</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+        </FDViolations>
+      </FunctionalDependencyProfile>
+    </Profiles>
+  </DataProfileOutput>
+</DataProfile>

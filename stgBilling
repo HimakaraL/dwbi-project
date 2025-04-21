@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<DataProfile xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/sqlserver/2008/DataDebugger/">
+  <ProfileVersion>1.0</ProfileVersion>
+  <DataSources>
+    <DtsDataSource ID="{7026C571-A3FB-4E28-9F02-727C9A923ED0}" Name="desktop-vbpgocs.HealthCare_Staging">
+      <DtsConnectionManagerID>desktop-vbpgocs.HealthCare_Staging</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{60A0AC2F-66C5-496D-ACE5-B73954CC5931}" Name="stgAppointments">
+      <DtsConnectionManagerID>stgAppointments</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{AC2A2389-F488-4608-8E49-E96D4B54A343}" Name="stgAppointments 1">
+      <DtsConnectionManagerID>stgAppointments 1</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{96E5925E-10C9-4513-9247-E1FDDAA37250}" Name="stgBilling">
+      <DtsConnectionManagerID>stgBilling</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{FC9A9FBA-BA20-49DB-813A-43C8493C9D7F}" Name="stgDoctors">
+      <DtsConnectionManagerID>stgDoctors</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{178842FF-769B-4A30-B44F-724EA115C28C}" Name="stgPatients">
+      <DtsConnectionManagerID>stgPatients</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{31F3A087-2301-42B2-97D5-6A7E118A9146}" Name="stgPrescription">
+      <DtsConnectionManagerID>stgPrescription</DtsConnectionManagerID>
+    </DtsDataSource>
+  </DataSources>
+  <DataProfileInput>
+    <ProfileMode>Exact</ProfileMode>
+    <Timeout>0</Timeout>
+    <Requests />
+  </DataProfileInput>
+  <DataProfileOutput>
+    <Profiles />
+  </DataProfileOutput>
+</DataProfile>

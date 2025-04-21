@@ -1,0 +1,1961 @@
+<?xml version="1.0"?>
+<DataProfile xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/sqlserver/2008/DataDebugger/">
+  <ProfileVersion>1.0</ProfileVersion>
+  <DataSources>
+    <DtsDataSource ID="{7026C571-A3FB-4E28-9F02-727C9A923ED0}" Name="desktop-vbpgocs.HealthCare_Staging">
+      <DtsConnectionManagerID>desktop-vbpgocs.HealthCare_Staging</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{60A0AC2F-66C5-496D-ACE5-B73954CC5931}" Name="stgAppointments">
+      <DtsConnectionManagerID>stgAppointments</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{AC2A2389-F488-4608-8E49-E96D4B54A343}" Name="stgAppointments 1">
+      <DtsConnectionManagerID>stgAppointments 1</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{96E5925E-10C9-4513-9247-E1FDDAA37250}" Name="stgBilling">
+      <DtsConnectionManagerID>stgBilling</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{FC9A9FBA-BA20-49DB-813A-43C8493C9D7F}" Name="stgDoctors">
+      <DtsConnectionManagerID>stgDoctors</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{178842FF-769B-4A30-B44F-724EA115C28C}" Name="stgPatients">
+      <DtsConnectionManagerID>stgPatients</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{31F3A087-2301-42B2-97D5-6A7E118A9146}" Name="stgPrescription">
+      <DtsConnectionManagerID>stgPrescription</DtsConnectionManagerID>
+    </DtsDataSource>
+  </DataSources>
+  <DataProfileInput>
+    <ProfileMode>Exact</ProfileMode>
+    <Timeout>0</Timeout>
+    <Requests>
+      <ColumnNullRatioProfileRequest ID="NullRatioReq">
+        <DataSourceID>{7026C571-A3FB-4E28-9F02-727C9A923ED0}</DataSourceID>
+        <Table Schema="dbo" Table="StgDoctors" />
+        <Column IsWildCard="true" />
+      </ColumnNullRatioProfileRequest>
+      <ColumnStatisticsProfileRequest ID="StatisticsReq">
+        <DataSourceID>{7026C571-A3FB-4E28-9F02-727C9A923ED0}</DataSourceID>
+        <Table Schema="dbo" Table="StgDoctors" />
+        <Column IsWildCard="true" />
+      </ColumnStatisticsProfileRequest>
+      <ColumnLengthDistributionProfileRequest ID="LengthDistReq">
+        <DataSourceID>{7026C571-A3FB-4E28-9F02-727C9A923ED0}</DataSourceID>
+        <Table Schema="dbo" Table="StgDoctors" />
+        <Column IsWildCard="true" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+      </ColumnLengthDistributionProfileRequest>
+      <ColumnValueDistributionProfileRequest ID="ValueDistReq">
+        <DataSourceID>{7026C571-A3FB-4E28-9F02-727C9A923ED0}</DataSourceID>
+        <Table Schema="dbo" Table="StgDoctors" />
+        <Column IsWildCard="true" />
+        <Option>FrequentValues</Option>
+        <FrequentValueThreshold>0.001</FrequentValueThreshold>
+      </ColumnValueDistributionProfileRequest>
+      <ColumnPatternProfileRequest ID="PatternReq">
+        <DataSourceID>{7026C571-A3FB-4E28-9F02-727C9A923ED0}</DataSourceID>
+        <Table Schema="dbo" Table="StgDoctors" />
+        <Column IsWildCard="true" />
+        <MaxNumberOfPatterns>10</MaxNumberOfPatterns>
+        <PercentageDataCoverageDesired>95</PercentageDataCoverageDesired>
+        <CaseSensitive>false</CaseSensitive>
+        <Delimiters> \t\r\n</Delimiters>
+        <Symbols>,.;:-"'`~=&amp;/\\@!?()&lt;&gt;[]{}|#*^%</Symbols>
+        <TagTableName />
+      </ColumnPatternProfileRequest>
+      <CandidateKeyProfileRequest ID="KeyReq">
+        <DataSourceID>{7026C571-A3FB-4E28-9F02-727C9A923ED0}</DataSourceID>
+        <Table Schema="dbo" Table="StgDoctors" />
+        <KeyColumns>
+          <Column IsWildCard="true" />
+        </KeyColumns>
+        <ThresholdSetting>Specified</ThresholdSetting>
+        <KeyStrengthThreshold>0.95</KeyStrengthThreshold>
+        <VerifyOutputInFastMode>false</VerifyOutputInFastMode>
+        <MaxNumberOfViolations>100</MaxNumberOfViolations>
+      </CandidateKeyProfileRequest>
+      <FunctionalDependencyProfileRequest ID="FDReq">
+        <DataSourceID>{7026C571-A3FB-4E28-9F02-727C9A923ED0}</DataSourceID>
+        <Table Schema="dbo" Table="StgDoctors" />
+        <DeterminantColumns>
+          <Column IsWildCard="true" />
+        </DeterminantColumns>
+        <DependentColumn IsWildCard="true" />
+        <ThresholdSetting>Specified</ThresholdSetting>
+        <FDStrengthThreshold>0.95</FDStrengthThreshold>
+        <VerifyOutputInFastMode>false</VerifyOutputInFastMode>
+        <MaxNumberOfViolations>100</MaxNumberOfViolations>
+      </FunctionalDependencyProfileRequest>
+    </Requests>
+  </DataProfileInput>
+  <DataProfileOutput>
+    <Profiles>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{7026C571-A3FB-4E28-9F02-727C9A923ED0}</DataSourceID>
+        <Table DataSource="desktop-vbpgocs" Database="HealthCare_Staging" Schema="dbo" Table="StgDoctors" RowCount="100" />
+        <Column Name="doctorId" SqlDbType="Decimal" MaxLength="0" Precision="18" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{7026C571-A3FB-4E28-9F02-727C9A923ED0}</DataSourceID>
+        <Table DataSource="desktop-vbpgocs" Database="HealthCare_Staging" Schema="dbo" Table="StgDoctors" RowCount="100" />
+        <Column Name="registrationNo" SqlDbType="Decimal" MaxLength="0" Precision="18" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{7026C571-A3FB-4E28-9F02-727C9A923ED0}</DataSourceID>
+        <Table DataSource="desktop-vbpgocs" Database="HealthCare_Staging" Schema="dbo" Table="StgDoctors" RowCount="100" />
+        <Column Name="name" SqlDbType="VarChar" MaxLength="100" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{7026C571-A3FB-4E28-9F02-727C9A923ED0}</DataSourceID>
+        <Table DataSource="desktop-vbpgocs" Database="HealthCare_Staging" Schema="dbo" Table="StgDoctors" RowCount="100" />
+        <Column Name="experience" SqlDbType="Decimal" MaxLength="0" Precision="18" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{7026C571-A3FB-4E28-9F02-727C9A923ED0}</DataSourceID>
+        <Table DataSource="desktop-vbpgocs" Database="HealthCare_Staging" Schema="dbo" Table="StgDoctors" RowCount="100" />
+        <Column Name="specialization" SqlDbType="VarChar" MaxLength="100" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{7026C571-A3FB-4E28-9F02-727C9A923ED0}</DataSourceID>
+        <Table DataSource="desktop-vbpgocs" Database="HealthCare_Staging" Schema="dbo" Table="StgDoctors" RowCount="100" />
+        <Column Name="phoneNo" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{7026C571-A3FB-4E28-9F02-727C9A923ED0}</DataSourceID>
+        <Table DataSource="desktop-vbpgocs" Database="HealthCare_Staging" Schema="dbo" Table="StgDoctors" RowCount="100" />
+        <Column Name="address" SqlDbType="VarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{7026C571-A3FB-4E28-9F02-727C9A923ED0}</DataSourceID>
+        <Table DataSource="desktop-vbpgocs" Database="HealthCare_Staging" Schema="dbo" Table="StgDoctors" RowCount="100" />
+        <Column Name="doctorId" SqlDbType="Decimal" MaxLength="0" Precision="18" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>0</MinValue>
+        <MaxValue>99</MaxValue>
+        <Mean>49.5</Mean>
+        <StdDev>28.8660700477221</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{7026C571-A3FB-4E28-9F02-727C9A923ED0}</DataSourceID>
+        <Table DataSource="desktop-vbpgocs" Database="HealthCare_Staging" Schema="dbo" Table="StgDoctors" RowCount="100" />
+        <Column Name="registrationNo" SqlDbType="Decimal" MaxLength="0" Precision="18" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>1033</MinValue>
+        <MaxValue>9989</MaxValue>
+        <Mean>5631.91</Mean>
+        <StdDev>2678.04075433889</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{7026C571-A3FB-4E28-9F02-727C9A923ED0}</DataSourceID>
+        <Table DataSource="desktop-vbpgocs" Database="HealthCare_Staging" Schema="dbo" Table="StgDoctors" RowCount="100" />
+        <Column Name="experience" SqlDbType="Decimal" MaxLength="0" Precision="18" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>1</MinValue>
+        <MaxValue>30</MaxValue>
+        <Mean>14.79</Mean>
+        <StdDev>8.72730771773289</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq" IsExact="true">
+        <DataSourceID>{7026C571-A3FB-4E28-9F02-727C9A923ED0}</DataSourceID>
+        <Table DataSource="desktop-vbpgocs" Database="HealthCare_Staging" Schema="dbo" Table="StgDoctors" RowCount="100" />
+        <Column Name="name" SqlDbType="VarChar" MaxLength="100" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+        <MinLength>7</MinLength>
+        <MaxLength>19</MaxLength>
+        <LengthDistribution>
+          <LengthDistributionItem>
+            <Length>7</Length>
+            <Count>1</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>9</Length>
+            <Count>2</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>10</Length>
+            <Count>8</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>11</Length>
+            <Count>13</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>12</Length>
+            <Count>18</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>13</Length>
+            <Count>23</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>14</Length>
+            <Count>14</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>15</Length>
+            <Count>13</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>16</Length>
+            <Count>3</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>17</Length>
+            <Count>3</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>18</Length>
+            <Count>1</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>19</Length>
+            <Count>1</Count>
+          </LengthDistributionItem>
+        </LengthDistribution>
+      </ColumnLengthDistributionProfile>
+      <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq" IsExact="true">
+        <DataSourceID>{7026C571-A3FB-4E28-9F02-727C9A923ED0}</DataSourceID>
+        <Table DataSource="desktop-vbpgocs" Database="HealthCare_Staging" Schema="dbo" Table="StgDoctors" RowCount="100" />
+        <Column Name="specialization" SqlDbType="VarChar" MaxLength="100" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+        <MinLength>11</MinLength>
+        <MaxLength>18</MaxLength>
+        <LengthDistribution>
+          <LengthDistributionItem>
+            <Length>11</Length>
+            <Count>6</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>12</Length>
+            <Count>39</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>13</Length>
+            <Count>29</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>15</Length>
+            <Count>7</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>17</Length>
+            <Count>9</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>18</Length>
+            <Count>10</Count>
+          </LengthDistributionItem>
+        </LengthDistribution>
+      </ColumnLengthDistributionProfile>
+      <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq" IsExact="true">
+        <DataSourceID>{7026C571-A3FB-4E28-9F02-727C9A923ED0}</DataSourceID>
+        <Table DataSource="desktop-vbpgocs" Database="HealthCare_Staging" Schema="dbo" Table="StgDoctors" RowCount="100" />
+        <Column Name="phoneNo" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+        <MinLength>10</MinLength>
+        <MaxLength>10</MaxLength>
+        <LengthDistribution>
+          <LengthDistributionItem>
+            <Length>10</Length>
+            <Count>100</Count>
+          </LengthDistributionItem>
+        </LengthDistribution>
+      </ColumnLengthDistributionProfile>
+      <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq" IsExact="true">
+        <DataSourceID>{7026C571-A3FB-4E28-9F02-727C9A923ED0}</DataSourceID>
+        <Table DataSource="desktop-vbpgocs" Database="HealthCare_Staging" Schema="dbo" Table="StgDoctors" RowCount="100" />
+        <Column Name="address" SqlDbType="VarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+        <MinLength>23</MinLength>
+        <MaxLength>60</MaxLength>
+        <LengthDistribution>
+          <LengthDistributionItem>
+            <Length>23</Length>
+            <Count>1</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>25</Length>
+            <Count>1</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>26</Length>
+            <Count>1</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>31</Length>
+            <Count>6</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>35</Length>
+            <Count>2</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>36</Length>
+            <Count>2</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>37</Length>
+            <Count>5</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>38</Length>
+            <Count>2</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>39</Length>
+            <Count>5</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>40</Length>
+            <Count>4</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>41</Length>
+            <Count>3</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>42</Length>
+            <Count>6</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>43</Length>
+            <Count>4</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>44</Length>
+            <Count>5</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>45</Length>
+            <Count>6</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>46</Length>
+            <Count>2</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>47</Length>
+            <Count>5</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>48</Length>
+            <Count>5</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>49</Length>
+            <Count>4</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>50</Length>
+            <Count>8</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>51</Length>
+            <Count>4</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>52</Length>
+            <Count>8</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>53</Length>
+            <Count>5</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>54</Length>
+            <Count>1</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>56</Length>
+            <Count>3</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>58</Length>
+            <Count>1</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>60</Length>
+            <Count>1</Count>
+          </LengthDistributionItem>
+        </LengthDistribution>
+      </ColumnLengthDistributionProfile>
+      <CandidateKeyProfile IsExact="true" ProfileRequestID="KeyReq">
+        <DataSourceID>{7026C571-A3FB-4E28-9F02-727C9A923ED0}</DataSourceID>
+        <Table DataSource="desktop-vbpgocs" Database="HealthCare_Staging" Schema="dbo" Table="StgDoctors" RowCount="100" />
+        <KeyColumns>
+          <Column Name="name" SqlDbType="VarChar" MaxLength="100" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        </KeyColumns>
+        <IsExactKey>true</IsExactKey>
+      </CandidateKeyProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{7026C571-A3FB-4E28-9F02-727C9A923ED0}</DataSourceID>
+        <Table DataSource="desktop-vbpgocs" Database="HealthCare_Staging" Schema="dbo" Table="StgDoctors" RowCount="100" />
+        <Column Name="name" SqlDbType="VarChar" MaxLength="100" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>100</NumberOfDistinctValues>
+        <ValueDistribution>
+          <ValueDistributionItem>
+            <Value>Aaron Johnson</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Adam Goodwin</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Alexa Ferrell</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Alexis Coleman</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Amy Hernandez</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Andrea Barnes</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Andrea Curtis</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Andrea Frederick</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Angela Jimenez</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Anthony Daniels</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Antonio Conner</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Audrey Jones</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Austin Callahan</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Brittany Baxter</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Charles Ward</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Christian Herrera</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Christopher Gomez</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Colin Graves</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Crystal Sellers</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Damon Powell</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Dana Perez</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Daniel Mitchell</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Darius Frost</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>David Clark</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>David Oneill</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>David Wright</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Dawn Le</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Derek Bishop</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Derrick Taylor</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Dominic Jones</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Donald Schmidt</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Donna Barnes</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Dwayne Williams</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Elizabeth Martinez</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Elizabeth Solomon</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Emily Mendez</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Eric Brock</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Eric Hansen</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Erin Livingston</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Harry Chan</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Isaac Nelson</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>James Cole</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>James Gray</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>James Sanchez</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Jason Brown</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Jason Manning</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Jeffrey Moore</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Jennifer Chen</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Jennifer Martin</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Jeremy Johnson</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Jesse Oliver</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Jesse Smith</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Joanna Moran</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>John Nelson</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>John Rodriguez</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Jordan Newman</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Joseph Martin</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Joshua Nelson</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Judith Wilson</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Justin Miller</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Karen Weber</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Katherine Durham</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Kathy Smith</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Kimberly Solis</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Kristin Moore</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Kristina Turner</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Laura Cochran</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Lauren Rush</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Laurie Contreras</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Linda Hill</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Lisa Deleon</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Lori Anderson</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Lucas Anderson</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Mark Lester</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Max Phillips</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Michael Garcia</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Michelle Branch</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Miguel Wilson</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Molly Bradford</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Monica Miller</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Mrs. Jeanette Crane</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Nathan Mccoy</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Pamela Brown</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Paula Hall</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Rebecca Rubio</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Robert Gonzales</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Ryan Bullock</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Ryan King</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Seth Parker</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Seth Tucker</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Sherry Bartlett</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Sherry Bell</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Stacey Johnson</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Stephanie Reid</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Steven Burnett</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Suzanne Evans</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Terri Stewart</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Timothy Ramirez</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Tina Lara</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Wayne Duke</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+        </ValueDistribution>
+      </ColumnValueDistributionProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{7026C571-A3FB-4E28-9F02-727C9A923ED0}</DataSourceID>
+        <Table DataSource="desktop-vbpgocs" Database="HealthCare_Staging" Schema="dbo" Table="StgDoctors" RowCount="100" />
+        <Column Name="specialization" SqlDbType="VarChar" MaxLength="100" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>9</NumberOfDistinctValues>
+        <ValueDistribution>
+          <ValueDistributionItem>
+            <Value>Cardiologist</Value>
+            <Count>18</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Dermatologist</Value>
+            <Count>9</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Endocrinologist</Value>
+            <Count>7</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Gastroenterologist</Value>
+            <Count>10</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>General Physician</Value>
+            <Count>9</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Nephrologist</Value>
+            <Count>11</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Orthopedist</Value>
+            <Count>6</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Psychiatrist</Value>
+            <Count>10</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Pulmonologist</Value>
+            <Count>20</Count>
+          </ValueDistributionItem>
+        </ValueDistribution>
+      </ColumnValueDistributionProfile>
+      <CandidateKeyProfile IsExact="true" ProfileRequestID="KeyReq">
+        <DataSourceID>{7026C571-A3FB-4E28-9F02-727C9A923ED0}</DataSourceID>
+        <Table DataSource="desktop-vbpgocs" Database="HealthCare_Staging" Schema="dbo" Table="StgDoctors" RowCount="100" />
+        <KeyColumns>
+          <Column Name="phoneNo" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        </KeyColumns>
+        <IsExactKey>true</IsExactKey>
+      </CandidateKeyProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{7026C571-A3FB-4E28-9F02-727C9A923ED0}</DataSourceID>
+        <Table DataSource="desktop-vbpgocs" Database="HealthCare_Staging" Schema="dbo" Table="StgDoctors" RowCount="100" />
+        <Column Name="phoneNo" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>100</NumberOfDistinctValues>
+        <ValueDistribution>
+          <ValueDistributionItem>
+            <Value>0710711532</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0711054184</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0712079889</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0712547557</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0713178792</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0713608114</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0713950121</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0714159060</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0714289659</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0714588359</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0714803533</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0715233569</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0715388792</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0715404815</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0715888977</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0715918444</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0716976098</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0717358989</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0718423446</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0719043210</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0720249567</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0720446600</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0721095271</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0721209409</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0721267405</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0721476357</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0722193185</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0722780585</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0723034592</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0723038375</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0723041831</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0723906310</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0724906741</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0724915189</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0725811468</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0726353441</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0726872659</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0727275884</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0727950286</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0728877572</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0729387039</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0729784492</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0729910250</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0729949257</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0730053669</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0730075412</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0730123934</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0730232487</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0730291183</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0730308946</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0730583727</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0730817673</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0731830314</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0731907437</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0731988013</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0732188893</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0732194716</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0733519727</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0734691729</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0734868417</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0735448076</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0736324045</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0737166421</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0737188237</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0737225310</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0737850520</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0738187538</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0738355386</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0739406599</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0739453789</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0739875174</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0740117751</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0740147864</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0740274840</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0741803598</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0741861764</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0742061752</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0742488834</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0742805257</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0743123773</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0743653573</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0743783792</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0743924913</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0744474349</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0744586324</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0744844907</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0744952098</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0745263900</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0745482399</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0745873438</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0746158521</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0746317199</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0746626741</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0747128130</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0747492437</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0748060450</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0748756741</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0749189319</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0749368371</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0749853708</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+        </ValueDistribution>
+      </ColumnValueDistributionProfile>
+      <CandidateKeyProfile IsExact="true" ProfileRequestID="KeyReq">
+        <DataSourceID>{7026C571-A3FB-4E28-9F02-727C9A923ED0}</DataSourceID>
+        <Table DataSource="desktop-vbpgocs" Database="HealthCare_Staging" Schema="dbo" Table="StgDoctors" RowCount="100" />
+        <KeyColumns>
+          <Column Name="address" SqlDbType="VarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        </KeyColumns>
+        <IsExactKey>true</IsExactKey>
+      </CandidateKeyProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{7026C571-A3FB-4E28-9F02-727C9A923ED0}</DataSourceID>
+        <Table DataSource="desktop-vbpgocs" Database="HealthCare_Staging" Schema="dbo" Table="StgDoctors" RowCount="100" />
+        <Column Name="address" SqlDbType="VarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>100</NumberOfDistinctValues>
+        <ValueDistribution>
+          <ValueDistributionItem>
+            <Value>003 White Ports Suite 712
+South Williamstad, WV 98718</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>013 Amanda Lake
+East Krista, MA 44845</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>06696 Jackson Motorway
+Tarabury, WV 67452</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>075 Katherine Centers Apt. 514
+New Kellieshire, AK 77539</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>0824 Charles Key
+Stouthaven, NV 46453</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>09253 Alvarez Island Suite 032
+Port Michael, MN 74435</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>10034 Griffin Islands Apt. 608
+New Micheal, ME 03068</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>128 Courtney River
+Christyland, VT 62036</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1371 Mckinney Throughway Apt. 198
+North Victor, IA 74494</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>145 James Via
+New Destiny, MI 62743</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>14707 Powell Bypass Suite 200
+East Danaton, MS 86050</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1532 Jones Isle Suite 640
+South Rebeccachester, OK 03458</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>16010 Patrick Tunnel Suite 858
+Port William, NH 29458</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>186 Smith Gateway Apt. 032
+New Elizabeth, MN 24298</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>188 Amy Heights
+Josephland, OH 04528</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2087 Williams Highway Apt. 355
+Cameronbury, HI 51829</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>214 Brown Burgs Apt. 955
+Mercadoville, NH 64125</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2183 Michelle Neck
+South Debbieland, LA 62344</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2208 Brian Course
+South Mary, PW 76318</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>228 Sylvia Views
+Port Wesleyport, ME 53729</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>234 David Ridge Apt. 577
+East Kyleview, IA 49061</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>258 Katherine Drive Apt. 696
+Lake Suzanne, IN 04239</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>27014 Baker Course
+New Andrewville, MH 33890</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>27185 Stephen Flats
+Lyonsstad, WI 68105</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>280 Berger Isle
+Virginiashire, NH 88376</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>28860 Lauren Brook
+Noahville, CT 38133</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>297 Jesse Glen Apt. 718
+South Leslieville, OH 67224</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>305 Vincent Isle Suite 835
+Griffithshire, AR 98177</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>30684 James Place Suite 109
+Melissahaven, NC 54929</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3268 Michelle Forges
+Geoffreyhaven, GU 09423</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3552 Nicole Oval Suite 139
+Bradyfurt, VI 12186</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>35594 George Harbor Apt. 830
+Johntown, FM 69904</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>356 Moon Ford Apt. 343
+West Georgechester, NH 75696</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3570 Ronald Street Suite 263
+Antoniostad, AS 57303</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>36428 Kenneth Tunnel
+Westport, PR 49999</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3663 Nicholas Glen Suite 658
+North James, NM 05331</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>39076 Nancy Meadows Suite 475
+East Kimberlyborough, LA 48877</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>394 Simpson Courts
+Lake Margaretland, IL 15878</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>405 Ellen Viaduct Suite 168
+Jenniferstad, AZ 92052</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>406 Anderson Spur
+West William, LA 69458</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>41866 Ramos Common Apt. 084
+Grantburgh, PA 63135</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>41938 Wood Green
+New Emmachester, VI 98371</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>4250 Smith Trail
+Lake Michaelstad, PR 09062</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>4422 Michelle Mountains
+Keithtown, PA 58743</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>44488 Kevin Valley
+North Ryantown, GA 64138</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>4486 Mariah River
+Connorville, GA 08442</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>5624 Mcmillan Springs
+South Richard, MO 21496</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>5628 Delgado Track Suite 168
+New Daniel, NH 68877</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>59405 Duran Garden
+Port Angelashire, GU 69370</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>5958 Stacey Crest Suite 002
+New Lindsay, MI 09393</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>599 Mack Grove Apt. 372
+Lake Laceymouth, GU 38133</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>6063 Stephanie Highway
+Meganview, MN 46103</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>6132 William Courts Suite 286
+Brittanyview, CT 74941</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>645 Nicole Port
+West Shawn, ME 51555</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>6475 Dawson Village
+New Ericburgh, CA 74476</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>648 Gay Parks Suite 407
+Port Alisonchester, OH 42262</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>652 Daniel Mountain Suite 454
+Courtneyport, NY 10817</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>66223 Brenda Lakes
+New Johnburgh, ND 83588</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>67943 Garcia Mount Apt. 042
+Morenoport, IA 23250</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>687 Marc Oval
+New Alexachester, MP 18423</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>72681 Elliott Islands
+North Donald, NY 04742</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>7392 April Springs Apt. 484
+Lawrenceville, ME 83207</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>7447 Tran Bridge
+Jonesborough, TX 41203</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>75255 Russell Stream Apt. 398
+New Dawn, CO 21551</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>7567 Lauren Lodge Suite 412
+Port Ashleyport, TX 33725</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>7872 Wilkinson Squares Suite 765
+Wrighthaven, CO 35123</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>793 Weiss Ranch Apt. 964
+East Cherylborough, SC 38360</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>79598 Eileen Courts Suite 084
+East Ianview, VA 87540</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>821 Rogers Union Suite 419
+Antonioshire, CA 89415</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>84904 Gray Field Apt. 135
+Brownside, FM 22102</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>8514 Alan Ramp Suite 456
+Brittanyland, MT 32214</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>8574 Tracey Cove
+West Joannfort, NH 49924</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>86615 Rodriguez Park
+North Nicholas, NC 68309</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>8673 King Falls
+Danielsbury, CT 79318</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>8729 Kathleen Union Suite 778
+Goodwinmouth, AK 03094</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>874 House Plains
+Elizabethland, FM 37420</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>879 Davis Throughway
+West Shane, DC 34420</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>88096 Joseph Mountain
+Lake Cherylside, IA 56366</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>88408 Hanson Ramp
+Davidstad, NY 24165</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>888 Gill Courts
+Henryside, SC 11155</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>91525 Wade Rapid Apt. 299
+Hannachester, NJ 48160</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>91839 Amanda Stream
+Sarahborough, GU 03478</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>9208 Cooper Centers
+Williamsonville, OR 64673</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>9335 Arias Ports
+East Debbiefort, DE 09093</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>93479 Miller Run
+Sparksview, WY 69741</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>94690 Reynolds Views
+Lake Gabriela, AL 37582</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>954 Andrea Rapids Apt. 040
+Greenmouth, PA 76826</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>971 Allen Knoll
+East Benjaminmouth, MH 52695</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>9721 Deborah Parkway Apt. 619
+Lake Heidi, RI 25407</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>98706 Cheryl Springs Apt. 412
+Port Amandaborough, MP 05397</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>99221 Ryan Walks Suite 814
+Mitchellmouth, IL 10859</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>PSC 4349, Box 8118
+APO AE 15949</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>PSC 8196, Box 5170
+APO AE 43335</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Unit 0511 Box 7048
+DPO AP 96653</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Unit 1660 Box 6235
+DPO AE 05079</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Unit 5069 Box 1056
+DPO AE 50079</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Unit 5765 Box 6313
+DPO AA 07575</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>USNV Beasley
+FPO AP 35689</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>USNV Johnston
+FPO AE 49790</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>USNV Reyes
+FPO AE 40604</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+        </ValueDistribution>
+      </ColumnValueDistributionProfile>
+      <ColumnPatternProfile ProfileRequestID="PatternReq" IsExact="true">
+        <DataSourceID>{7026C571-A3FB-4E28-9F02-727C9A923ED0}</DataSourceID>
+        <Table DataSource="desktop-vbpgocs" Database="HealthCare_Staging" Schema="dbo" Table="StgDoctors" RowCount="100" />
+        <Column Name="name" SqlDbType="VarChar" MaxLength="100" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <TopRegexPatterns>
+          <PatternDistributionItem>
+            <RegexText>\p{L}+ \p{L}+</RegexText>
+            <Frequency>99</Frequency>
+          </PatternDistributionItem>
+        </TopRegexPatterns>
+      </ColumnPatternProfile>
+      <ColumnPatternProfile ProfileRequestID="PatternReq" IsExact="true">
+        <DataSourceID>{7026C571-A3FB-4E28-9F02-727C9A923ED0}</DataSourceID>
+        <Table DataSource="desktop-vbpgocs" Database="HealthCare_Staging" Schema="dbo" Table="StgDoctors" RowCount="100" />
+        <Column Name="specialization" SqlDbType="VarChar" MaxLength="100" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <TopRegexPatterns>
+          <PatternDistributionItem>
+            <RegexText>PULMONOLOGIST</RegexText>
+            <Frequency>20</Frequency>
+          </PatternDistributionItem>
+          <PatternDistributionItem>
+            <RegexText>CARDIOLOGIST</RegexText>
+            <Frequency>18</Frequency>
+          </PatternDistributionItem>
+          <PatternDistributionItem>
+            <RegexText>NEPHROLOGIST</RegexText>
+            <Frequency>11</Frequency>
+          </PatternDistributionItem>
+          <PatternDistributionItem>
+            <RegexText>GENERAL PHYSICIAN</RegexText>
+            <Frequency>9</Frequency>
+          </PatternDistributionItem>
+          <PatternDistributionItem>
+            <RegexText>PSYCHIATRIST</RegexText>
+            <Frequency>10</Frequency>
+          </PatternDistributionItem>
+          <PatternDistributionItem>
+            <RegexText>DERMATOLOGIST</RegexText>
+            <Frequency>9</Frequency>
+          </PatternDistributionItem>
+          <PatternDistributionItem>
+            <RegexText>ENDOCRINOLOGIST</RegexText>
+            <Frequency>7</Frequency>
+          </PatternDistributionItem>
+          <PatternDistributionItem>
+            <RegexText>ORTHOPEDIST</RegexText>
+            <Frequency>6</Frequency>
+          </PatternDistributionItem>
+          <PatternDistributionItem>
+            <RegexText>\p{L}+</RegexText>
+            <Frequency>10</Frequency>
+          </PatternDistributionItem>
+        </TopRegexPatterns>
+      </ColumnPatternProfile>
+      <ColumnPatternProfile ProfileRequestID="PatternReq" IsExact="true">
+        <DataSourceID>{7026C571-A3FB-4E28-9F02-727C9A923ED0}</DataSourceID>
+        <Table DataSource="desktop-vbpgocs" Database="HealthCare_Staging" Schema="dbo" Table="StgDoctors" RowCount="100" />
+        <Column Name="phoneNo" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <TopRegexPatterns>
+          <PatternDistributionItem>
+            <RegexText>07\d+</RegexText>
+            <Frequency>100</Frequency>
+          </PatternDistributionItem>
+        </TopRegexPatterns>
+      </ColumnPatternProfile>
+      <ColumnPatternProfile ProfileRequestID="PatternReq" IsExact="true">
+        <DataSourceID>{7026C571-A3FB-4E28-9F02-727C9A923ED0}</DataSourceID>
+        <Table DataSource="desktop-vbpgocs" Database="HealthCare_Staging" Schema="dbo" Table="StgDoctors" RowCount="100" />
+        <Column Name="address" SqlDbType="VarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <TopRegexPatterns>
+          <PatternDistributionItem>
+            <RegexText>\d\d\d\d\d (\p{L}+ )+\p{L}+, \p{L}\p{L} \d\d\d\d\d</RegexText>
+            <Frequency>16</Frequency>
+          </PatternDistributionItem>
+          <PatternDistributionItem>
+            <RegexText>\d\d\d\d (\p{L}+ )+\p{L}+, \p{L}\p{L} \d\d\d\d\d</RegexText>
+            <Frequency>15</Frequency>
+          </PatternDistributionItem>
+          <PatternDistributionItem>
+            <RegexText>\d\d\d (\p{L}+ )+\p{L}+, \p{L}\p{L} \d\d\d\d\d</RegexText>
+            <Frequency>14</Frequency>
+          </PatternDistributionItem>
+          <PatternDistributionItem>
+            <RegexText>\d\d\d\d (\p{L}+ )+SUITE \d\d\d \p{L}+, \p{L}\p{L} \d\d\d\d\d</RegexText>
+            <Frequency>6</Frequency>
+          </PatternDistributionItem>
+          <PatternDistributionItem>
+            <RegexText>\d\d\d\d\d (\p{L}+ )+APT\. \d\d\d \p{L}+, \p{L}\p{L} \d\d\d\d\d</RegexText>
+            <Frequency>5</Frequency>
+          </PatternDistributionItem>
+          <PatternDistributionItem>
+            <RegexText>.*</RegexText>
+            <Frequency>44</Frequency>
+          </PatternDistributionItem>
+        </TopRegexPatterns>
+      </ColumnPatternProfile>
+      <FunctionalDependencyProfile IsExact="true" ProfileRequestID="">
+        <DataSourceID>{7026C571-A3FB-4E28-9F02-727C9A923ED0}</DataSourceID>
+        <Table DataSource="desktop-vbpgocs" Database="HealthCare_Staging" Schema="dbo" Table="StgDoctors" RowCount="100" />
+        <DeterminantColumns>
+          <Column Name="phoneNo" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        </DeterminantColumns>
+        <DependentColumn Name="address" SqlDbType="VarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IsExactFD>true</IsExactFD>
+      </FunctionalDependencyProfile>
+      <FunctionalDependencyProfile IsExact="true" ProfileRequestID="">
+        <DataSourceID>{7026C571-A3FB-4E28-9F02-727C9A923ED0}</DataSourceID>
+        <Table DataSource="desktop-vbpgocs" Database="HealthCare_Staging" Schema="dbo" Table="StgDoctors" RowCount="100" />
+        <DeterminantColumns>
+          <Column Name="name" SqlDbType="VarChar" MaxLength="100" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        </DeterminantColumns>
+        <DependentColumn Name="address" SqlDbType="VarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IsExactFD>true</IsExactFD>
+      </FunctionalDependencyProfile>
+      <FunctionalDependencyProfile IsExact="true" ProfileRequestID="">
+        <DataSourceID>{7026C571-A3FB-4E28-9F02-727C9A923ED0}</DataSourceID>
+        <Table DataSource="desktop-vbpgocs" Database="HealthCare_Staging" Schema="dbo" Table="StgDoctors" RowCount="100" />
+        <DeterminantColumns>
+          <Column Name="address" SqlDbType="VarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        </DeterminantColumns>
+        <DependentColumn Name="phoneNo" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IsExactFD>true</IsExactFD>
+      </FunctionalDependencyProfile>
+      <FunctionalDependencyProfile IsExact="true" ProfileRequestID="">
+        <DataSourceID>{7026C571-A3FB-4E28-9F02-727C9A923ED0}</DataSourceID>
+        <Table DataSource="desktop-vbpgocs" Database="HealthCare_Staging" Schema="dbo" Table="StgDoctors" RowCount="100" />
+        <DeterminantColumns>
+          <Column Name="name" SqlDbType="VarChar" MaxLength="100" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        </DeterminantColumns>
+        <DependentColumn Name="phoneNo" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IsExactFD>true</IsExactFD>
+      </FunctionalDependencyProfile>
+      <FunctionalDependencyProfile IsExact="true" ProfileRequestID="">
+        <DataSourceID>{7026C571-A3FB-4E28-9F02-727C9A923ED0}</DataSourceID>
+        <Table DataSource="desktop-vbpgocs" Database="HealthCare_Staging" Schema="dbo" Table="StgDoctors" RowCount="100" />
+        <DeterminantColumns>
+          <Column Name="address" SqlDbType="VarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        </DeterminantColumns>
+        <DependentColumn Name="specialization" SqlDbType="VarChar" MaxLength="100" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IsExactFD>true</IsExactFD>
+      </FunctionalDependencyProfile>
+      <FunctionalDependencyProfile IsExact="true" ProfileRequestID="">
+        <DataSourceID>{7026C571-A3FB-4E28-9F02-727C9A923ED0}</DataSourceID>
+        <Table DataSource="desktop-vbpgocs" Database="HealthCare_Staging" Schema="dbo" Table="StgDoctors" RowCount="100" />
+        <DeterminantColumns>
+          <Column Name="phoneNo" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        </DeterminantColumns>
+        <DependentColumn Name="specialization" SqlDbType="VarChar" MaxLength="100" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IsExactFD>true</IsExactFD>
+      </FunctionalDependencyProfile>
+      <FunctionalDependencyProfile IsExact="true" ProfileRequestID="">
+        <DataSourceID>{7026C571-A3FB-4E28-9F02-727C9A923ED0}</DataSourceID>
+        <Table DataSource="desktop-vbpgocs" Database="HealthCare_Staging" Schema="dbo" Table="StgDoctors" RowCount="100" />
+        <DeterminantColumns>
+          <Column Name="name" SqlDbType="VarChar" MaxLength="100" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        </DeterminantColumns>
+        <DependentColumn Name="specialization" SqlDbType="VarChar" MaxLength="100" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IsExactFD>true</IsExactFD>
+      </FunctionalDependencyProfile>
+      <FunctionalDependencyProfile IsExact="true" ProfileRequestID="">
+        <DataSourceID>{7026C571-A3FB-4E28-9F02-727C9A923ED0}</DataSourceID>
+        <Table DataSource="desktop-vbpgocs" Database="HealthCare_Staging" Schema="dbo" Table="StgDoctors" RowCount="100" />
+        <DeterminantColumns>
+          <Column Name="address" SqlDbType="VarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        </DeterminantColumns>
+        <DependentColumn Name="name" SqlDbType="VarChar" MaxLength="100" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IsExactFD>true</IsExactFD>
+      </FunctionalDependencyProfile>
+      <FunctionalDependencyProfile IsExact="true" ProfileRequestID="">
+        <DataSourceID>{7026C571-A3FB-4E28-9F02-727C9A923ED0}</DataSourceID>
+        <Table DataSource="desktop-vbpgocs" Database="HealthCare_Staging" Schema="dbo" Table="StgDoctors" RowCount="100" />
+        <DeterminantColumns>
+          <Column Name="phoneNo" SqlDbType="VarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        </DeterminantColumns>
+        <DependentColumn Name="name" SqlDbType="VarChar" MaxLength="100" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IsExactFD>true</IsExactFD>
+      </FunctionalDependencyProfile>
+    </Profiles>
+  </DataProfileOutput>
+</DataProfile>
