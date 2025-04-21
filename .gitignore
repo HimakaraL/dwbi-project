@@ -1,0 +1,23 @@
+# Ignore Visual Studio user-specific files
+.vs/
+*.user
+*.suo
+
+# Build results
+[Bb]in/
+[Oo]bj/
+*.exe
+*.dll
+
+# SSIS-specific files (optional)
+*.dtproj.user
+*.cache
+*.dbmdl
+
+# Logs
+*.log
+
+# Others
+*.pdb
+*.tmp
+*.bak

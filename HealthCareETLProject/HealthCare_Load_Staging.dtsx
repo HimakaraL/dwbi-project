@@ -1,0 +1,3253 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="4/21/2025 5:25:01 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-VBPGOCS"
+  DTS:CreatorName="DESKTOP-VBPGOCS\himak"
+  DTS:DTSID="{2A4B368A-FC4E-4DB5-AB79-115D825A4817}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="9"
+  DTS:VersionGUID="{55ED23B2-02B2-46C9-BFB0-165BB005DA95}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[desktop-vbpgocs.HealthCare_Source]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{E1C996E8-9B80-45E3-91A3-4BB4F7B2F7C8}"
+      DTS:ObjectName="desktop-vbpgocs.HealthCare_Source">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=desktop-vbpgocs;Initial Catalog=HealthCare_Source;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package-{E1C996E8-9B80-45E3-91A3-4BB4F7B2F7C8}desktop-vbpgocs.HealthCare_Source;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[desktop-vbpgocs.HealthCare_Staging]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{4630A844-24BB-46AA-A837-D6DB6A8A21F2}"
+      DTS:ObjectName="desktop-vbpgocs.HealthCare_Staging">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=desktop-vbpgocs;Initial Catalog=HealthCare_Staging;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package-{4630A844-24BB-46AA-A837-D6DB6A8A21F2}desktop-vbpgocs.HealthCare_Staging;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager for Doctors]"
+      DTS:CreationName="FLATFILE"
+      DTS:Description="Flat File Connection Manager for Doctors"
+      DTS:DTSID="{4FDB086A-653F-4A76-9506-7D5A5573A412}"
+      DTS:ObjectName="Flat File Connection Manager for Doctors">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\himak\Desktop\dwbi-project\CSVs\doctors.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="18"
+              DTS:TextQualified="True"
+              DTS:ObjectName="doctorId"
+              DTS:DTSID="{F9FAF64D-6A26-4187-BAE7-EB462134E687}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="18"
+              DTS:TextQualified="True"
+              DTS:ObjectName="registrationNo"
+              DTS:DTSID="{8074AD06-3F59-4C12-B9B8-430F07BD5794}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="name"
+              DTS:DTSID="{2F74B852-1692-4B7E-ADEB-ED5807ED809F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="18"
+              DTS:TextQualified="True"
+              DTS:ObjectName="experience"
+              DTS:DTSID="{15E318E3-9A3B-4BA0-B0F3-DF8C179DD34A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="specialization"
+              DTS:DTSID="{CAD85A0A-A6EF-474C-AD25-D97664400728}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="phoneNo"
+              DTS:DTSID="{26681624-CFF3-42DB-8861-EFD9CB459530}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="address"
+              DTS:DTSID="{EF4CAA9E-AFBE-434D-80CA-35197E38340C}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager for patients]"
+      DTS:CreationName="FLATFILE"
+      DTS:Description="Flat File Connection Manager for patients"
+      DTS:DTSID="{41673F11-642F-41AF-A29A-1B4AC03488CD}"
+      DTS:ObjectName="Flat File Connection Manager for patients">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\himak\Desktop\dwbi-project\CSVs\patients.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="18"
+              DTS:TextQualified="True"
+              DTS:ObjectName="patientId"
+              DTS:DTSID="{C8938068-2B29-4746-A71D-E66ECDF1EB2D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="name"
+              DTS:DTSID="{E2ABC1FF-6961-432D-9CA7-E8DE531C3928}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="18"
+              DTS:TextQualified="True"
+              DTS:ObjectName="age"
+              DTS:DTSID="{4D65F1EB-87AB-4794-A1F7-401BBB872305}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="phoneNo"
+              DTS:DTSID="{22DDB4E4-8FC9-4D46-9F30-96E36C0684A5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="address"
+              DTS:DTSID="{BAC6D6BD-C20F-4E27-A2A7-A19C1C75C45E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="sickness"
+              DTS:DTSID="{D408317C-7668-4739-BC17-E666BD554BB1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="assigned_doctor"
+              DTS:DTSID="{A1F1C39A-FA24-46C6-B7C6-52B9241E28BA}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager for Prescriptions]"
+      DTS:CreationName="FLATFILE"
+      DTS:Description="Flat File Connection Manager for Prescriptions"
+      DTS:DTSID="{BFADFCAF-AF21-44F5-A7DF-68BA5C380821}"
+      DTS:ObjectName="Flat File Connection Manager for Prescriptions">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\himak\Desktop\dwbi-project\CSVs\prescriptions.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="18"
+              DTS:TextQualified="True"
+              DTS:ObjectName="prescriptionId"
+              DTS:DTSID="{35AAB3EC-3BEE-43F0-B9A5-EB91D2D2B817}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="18"
+              DTS:TextQualified="True"
+              DTS:ObjectName="appointmentId"
+              DTS:DTSID="{D15B5511-F42B-45E0-BFC7-CF9861A72C86}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="medication"
+              DTS:DTSID="{049332C8-22EC-48EB-AB6F-F1B28BB04CAA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="dosage"
+              DTS:DTSID="{F436F258-16A0-418F-9FFC-BA1A2CB5494B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="frequency"
+              DTS:DTSID="{39E6BBFD-8FD1-4000-B99A-2FFE76F8BF4D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="duration"
+              DTS:DTSID="{6C7CD5F4-004F-401B-B76F-E92DC1B64D81}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Extract Appointments Data to Staging"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{31BB3000-35F6-4D14-9A7E-8EEAE0526ABE}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Extract Appointments Data to Staging"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:EventHandlers>
+        <DTS:EventHandler
+          DTS:refId="Package\Extract Appointments Data to Staging.EventHandlers[OnPreExecute]"
+          DTS:CreationName="OnPreExecute"
+          DTS:DTSID="{3A53FFB5-8EC6-4970-8958-692B9E3735C6}"
+          DTS:EventID="0"
+          DTS:EventName="OnPreExecute"
+          DTS:LocaleID="-1">
+          <DTS:Variables>
+            <DTS:Variable
+              DTS:CreationName=""
+              DTS:Description="The propagate property of the event"
+              DTS:DTSID="{F5E68246-A830-44D3-9628-31764833DCF7}"
+              DTS:IncludeInDebugDump="6789"
+              DTS:Namespace="System"
+              DTS:ObjectName="Propagate">
+              <DTS:VariableValue
+                DTS:DataType="11">-1</DTS:VariableValue>
+            </DTS:Variable>
+          </DTS:Variables>
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\Extract Appointments Data to Staging.EventHandlers[OnPreExecute]\Truncate Appointments Staging Table"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{FD0B597D-1268-43AE-ABEA-38FFA940FF4C}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Truncate Appointments Staging Table"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{4630A844-24BB-46AA-A837-D6DB6A8A21F2}"
+                  SQLTask:SqlStatementSource="truncate table dbo.StgAppointments" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+        </DTS:EventHandler>
+      </DTS:EventHandlers>
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Extract Appointments Data to Staging\Load data to Appointments Staging table"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Load data to Appointments Staging table"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[StgAppointments]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Extract Appointments Data to Staging\Load data to Appointments Staging table.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[desktop-vbpgocs.HealthCare_Staging]"
+                  connectionManagerRefId="Package.ConnectionManagers[desktop-vbpgocs.HealthCare_Staging]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Extract Appointments Data to Staging\Load data to Appointments Staging table.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Extract Appointments Data to Staging\Load data to Appointments Staging table.Inputs[OLE DB Destination Input].Columns[appointmentId]"
+                      cachedDataType="i4"
+                      cachedName="appointmentId"
+                      externalMetadataColumnId="Package\Extract Appointments Data to Staging\Load data to Appointments Staging table.Inputs[OLE DB Destination Input].ExternalColumns[appointmentId]"
+                      lineageId="Package\Extract Appointments Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[appointmentId]" />
+                    <inputColumn
+                      refId="Package\Extract Appointments Data to Staging\Load data to Appointments Staging table.Inputs[OLE DB Destination Input].Columns[patientId]"
+                      cachedDataType="i4"
+                      cachedName="patientId"
+                      externalMetadataColumnId="Package\Extract Appointments Data to Staging\Load data to Appointments Staging table.Inputs[OLE DB Destination Input].ExternalColumns[patientId]"
+                      lineageId="Package\Extract Appointments Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[patientId]" />
+                    <inputColumn
+                      refId="Package\Extract Appointments Data to Staging\Load data to Appointments Staging table.Inputs[OLE DB Destination Input].Columns[doctorId]"
+                      cachedDataType="i4"
+                      cachedName="doctorId"
+                      externalMetadataColumnId="Package\Extract Appointments Data to Staging\Load data to Appointments Staging table.Inputs[OLE DB Destination Input].ExternalColumns[doctorId]"
+                      lineageId="Package\Extract Appointments Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[doctorId]" />
+                    <inputColumn
+                      refId="Package\Extract Appointments Data to Staging\Load data to Appointments Staging table.Inputs[OLE DB Destination Input].Columns[date]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="date"
+                      externalMetadataColumnId="Package\Extract Appointments Data to Staging\Load data to Appointments Staging table.Inputs[OLE DB Destination Input].ExternalColumns[date]"
+                      lineageId="Package\Extract Appointments Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[date]" />
+                    <inputColumn
+                      refId="Package\Extract Appointments Data to Staging\Load data to Appointments Staging table.Inputs[OLE DB Destination Input].Columns[time]"
+                      cachedDataType="dbTime2"
+                      cachedName="time"
+                      cachedScale="7"
+                      externalMetadataColumnId="Package\Extract Appointments Data to Staging\Load data to Appointments Staging table.Inputs[OLE DB Destination Input].ExternalColumns[time]"
+                      lineageId="Package\Extract Appointments Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[time]" />
+                    <inputColumn
+                      refId="Package\Extract Appointments Data to Staging\Load data to Appointments Staging table.Inputs[OLE DB Destination Input].Columns[status]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="status"
+                      externalMetadataColumnId="Package\Extract Appointments Data to Staging\Load data to Appointments Staging table.Inputs[OLE DB Destination Input].ExternalColumns[status]"
+                      lineageId="Package\Extract Appointments Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[status]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Extract Appointments Data to Staging\Load data to Appointments Staging table.Inputs[OLE DB Destination Input].ExternalColumns[appointmentId]"
+                      dataType="i4"
+                      name="appointmentId" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Appointments Data to Staging\Load data to Appointments Staging table.Inputs[OLE DB Destination Input].ExternalColumns[patientId]"
+                      dataType="i4"
+                      name="patientId" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Appointments Data to Staging\Load data to Appointments Staging table.Inputs[OLE DB Destination Input].ExternalColumns[doctorId]"
+                      dataType="i4"
+                      name="doctorId" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Appointments Data to Staging\Load data to Appointments Staging table.Inputs[OLE DB Destination Input].ExternalColumns[date]"
+                      dataType="wstr"
+                      length="50"
+                      name="date" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Appointments Data to Staging\Load data to Appointments Staging table.Inputs[OLE DB Destination Input].ExternalColumns[time]"
+                      dataType="dbTime2"
+                      name="time"
+                      scale="7" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Appointments Data to Staging\Load data to Appointments Staging table.Inputs[OLE DB Destination Input].ExternalColumns[status]"
+                      dataType="wstr"
+                      length="50"
+                      name="status" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Extract Appointments Data to Staging\Load data to Appointments Staging table.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Extract Appointments Data to Staging\Load data to Appointments Staging table.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Extract Appointments Data to Staging\Load data to Appointments Staging table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Extract Appointments Data to Staging\Load data to Appointments Staging table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Extract Appointments Data to Staging\Load data to Appointments Staging table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Extract Appointments Data to Staging\Load data to Appointments Staging table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Extract Appointments Data to Staging\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[appointments]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Extract Appointments Data to Staging\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[desktop-vbpgocs.HealthCare_Source]"
+                  connectionManagerRefId="Package.ConnectionManagers[desktop-vbpgocs.HealthCare_Source]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Extract Appointments Data to Staging\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Extract Appointments Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[appointmentId]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Appointments Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[appointmentId]"
+                      lineageId="Package\Extract Appointments Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[appointmentId]"
+                      name="appointmentId"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extract Appointments Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[patientId]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Appointments Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[patientId]"
+                      lineageId="Package\Extract Appointments Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[patientId]"
+                      name="patientId"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extract Appointments Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[doctorId]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Appointments Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[doctorId]"
+                      lineageId="Package\Extract Appointments Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[doctorId]"
+                      name="doctorId"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extract Appointments Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[date]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Appointments Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[date]"
+                      length="50"
+                      lineageId="Package\Extract Appointments Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[date]"
+                      name="date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extract Appointments Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[time]"
+                      dataType="dbTime2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Appointments Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[time]"
+                      lineageId="Package\Extract Appointments Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[time]"
+                      name="time"
+                      scale="7"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extract Appointments Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[status]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Appointments Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[status]"
+                      length="50"
+                      lineageId="Package\Extract Appointments Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[status]"
+                      name="status"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Extract Appointments Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[appointmentId]"
+                      dataType="i4"
+                      name="appointmentId" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Appointments Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[patientId]"
+                      dataType="i4"
+                      name="patientId" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Appointments Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[doctorId]"
+                      dataType="i4"
+                      name="doctorId" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Appointments Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[date]"
+                      dataType="wstr"
+                      length="50"
+                      name="date" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Appointments Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[time]"
+                      dataType="dbTime2"
+                      name="time"
+                      scale="7" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Appointments Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[status]"
+                      dataType="wstr"
+                      length="50"
+                      name="status" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Extract Appointments Data to Staging\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Extract Appointments Data to Staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[appointmentId]"
+                      dataType="i4"
+                      lineageId="Package\Extract Appointments Data to Staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[appointmentId]"
+                      name="appointmentId" />
+                    <outputColumn
+                      refId="Package\Extract Appointments Data to Staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[patientId]"
+                      dataType="i4"
+                      lineageId="Package\Extract Appointments Data to Staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[patientId]"
+                      name="patientId" />
+                    <outputColumn
+                      refId="Package\Extract Appointments Data to Staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[doctorId]"
+                      dataType="i4"
+                      lineageId="Package\Extract Appointments Data to Staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[doctorId]"
+                      name="doctorId" />
+                    <outputColumn
+                      refId="Package\Extract Appointments Data to Staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[date]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Extract Appointments Data to Staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[date]"
+                      name="date" />
+                    <outputColumn
+                      refId="Package\Extract Appointments Data to Staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[time]"
+                      dataType="dbTime2"
+                      lineageId="Package\Extract Appointments Data to Staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[time]"
+                      name="time"
+                      scale="7" />
+                    <outputColumn
+                      refId="Package\Extract Appointments Data to Staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[status]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Extract Appointments Data to Staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[status]"
+                      name="status" />
+                    <outputColumn
+                      refId="Package\Extract Appointments Data to Staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Extract Appointments Data to Staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Extract Appointments Data to Staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Extract Appointments Data to Staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Extract Appointments Data to Staging.Paths[OLE DB Source Output]"
+              endId="Package\Extract Appointments Data to Staging\Load data to Appointments Staging table.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Extract Appointments Data to Staging\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Extract Billing Data to Staging"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{5421F89D-25F2-4C6B-8750-AF9BE747AEF0}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Extract Billing Data to Staging"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:EventHandlers>
+        <DTS:EventHandler
+          DTS:refId="Package\Extract Billing Data to Staging.EventHandlers[OnPreExecute]"
+          DTS:CreationName="OnPreExecute"
+          DTS:DTSID="{CAD987C6-E1D1-403F-92FD-CE19A875BF2A}"
+          DTS:EventID="0"
+          DTS:EventName="OnPreExecute"
+          DTS:LocaleID="-1">
+          <DTS:Variables>
+            <DTS:Variable
+              DTS:CreationName=""
+              DTS:Description="The propagate property of the event"
+              DTS:DTSID="{1452E2E2-983E-4E54-AD98-3937525854FA}"
+              DTS:IncludeInDebugDump="6789"
+              DTS:Namespace="System"
+              DTS:ObjectName="Propagate">
+              <DTS:VariableValue
+                DTS:DataType="11">-1</DTS:VariableValue>
+            </DTS:Variable>
+          </DTS:Variables>
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\Extract Billing Data to Staging.EventHandlers[OnPreExecute]\Truncate Billing Staging Table"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{B455E35D-CBC6-4FD9-A944-7DD385C6B0BD}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Truncate Billing Staging Table"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{4630A844-24BB-46AA-A837-D6DB6A8A21F2}"
+                  SQLTask:SqlStatementSource="truncate table dbo.StgBilling" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+        </DTS:EventHandler>
+      </DTS:EventHandlers>
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Extract Billing Data to Staging\Load data to Billing Staging table"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Load data to Billing Staging table"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[StgBilling]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Extract Billing Data to Staging\Load data to Billing Staging table.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[desktop-vbpgocs.HealthCare_Staging]"
+                  connectionManagerRefId="Package.ConnectionManagers[desktop-vbpgocs.HealthCare_Staging]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Extract Billing Data to Staging\Load data to Billing Staging table.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Extract Billing Data to Staging\Load data to Billing Staging table.Inputs[OLE DB Destination Input].Columns[billingId]"
+                      cachedDataType="i4"
+                      cachedName="billingId"
+                      externalMetadataColumnId="Package\Extract Billing Data to Staging\Load data to Billing Staging table.Inputs[OLE DB Destination Input].ExternalColumns[billingId]"
+                      lineageId="Package\Extract Billing Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[billingId]" />
+                    <inputColumn
+                      refId="Package\Extract Billing Data to Staging\Load data to Billing Staging table.Inputs[OLE DB Destination Input].Columns[appointmentId]"
+                      cachedDataType="i4"
+                      cachedName="appointmentId"
+                      externalMetadataColumnId="Package\Extract Billing Data to Staging\Load data to Billing Staging table.Inputs[OLE DB Destination Input].ExternalColumns[appointmentId]"
+                      lineageId="Package\Extract Billing Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[appointmentId]" />
+                    <inputColumn
+                      refId="Package\Extract Billing Data to Staging\Load data to Billing Staging table.Inputs[OLE DB Destination Input].Columns[amount]"
+                      cachedDataType="i4"
+                      cachedName="amount"
+                      externalMetadataColumnId="Package\Extract Billing Data to Staging\Load data to Billing Staging table.Inputs[OLE DB Destination Input].ExternalColumns[amount]"
+                      lineageId="Package\Extract Billing Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[amount]" />
+                    <inputColumn
+                      refId="Package\Extract Billing Data to Staging\Load data to Billing Staging table.Inputs[OLE DB Destination Input].Columns[paymentStatus]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="paymentStatus"
+                      externalMetadataColumnId="Package\Extract Billing Data to Staging\Load data to Billing Staging table.Inputs[OLE DB Destination Input].ExternalColumns[paymentStatus]"
+                      lineageId="Package\Extract Billing Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[paymentStatus]" />
+                    <inputColumn
+                      refId="Package\Extract Billing Data to Staging\Load data to Billing Staging table.Inputs[OLE DB Destination Input].Columns[paymentMethod]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="paymentMethod"
+                      externalMetadataColumnId="Package\Extract Billing Data to Staging\Load data to Billing Staging table.Inputs[OLE DB Destination Input].ExternalColumns[paymentMethod]"
+                      lineageId="Package\Extract Billing Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[paymentMethod]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Extract Billing Data to Staging\Load data to Billing Staging table.Inputs[OLE DB Destination Input].ExternalColumns[billingId]"
+                      dataType="i4"
+                      name="billingId" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Billing Data to Staging\Load data to Billing Staging table.Inputs[OLE DB Destination Input].ExternalColumns[appointmentId]"
+                      dataType="i4"
+                      name="appointmentId" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Billing Data to Staging\Load data to Billing Staging table.Inputs[OLE DB Destination Input].ExternalColumns[amount]"
+                      dataType="i4"
+                      name="amount" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Billing Data to Staging\Load data to Billing Staging table.Inputs[OLE DB Destination Input].ExternalColumns[paymentStatus]"
+                      dataType="wstr"
+                      length="50"
+                      name="paymentStatus" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Billing Data to Staging\Load data to Billing Staging table.Inputs[OLE DB Destination Input].ExternalColumns[paymentMethod]"
+                      dataType="wstr"
+                      length="50"
+                      name="paymentMethod" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Extract Billing Data to Staging\Load data to Billing Staging table.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Extract Billing Data to Staging\Load data to Billing Staging table.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Extract Billing Data to Staging\Load data to Billing Staging table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Extract Billing Data to Staging\Load data to Billing Staging table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Extract Billing Data to Staging\Load data to Billing Staging table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Extract Billing Data to Staging\Load data to Billing Staging table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Extract Billing Data to Staging\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[billing]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Extract Billing Data to Staging\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[desktop-vbpgocs.HealthCare_Source]"
+                  connectionManagerRefId="Package.ConnectionManagers[desktop-vbpgocs.HealthCare_Source]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Extract Billing Data to Staging\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Extract Billing Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[billingId]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Billing Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[billingId]"
+                      lineageId="Package\Extract Billing Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[billingId]"
+                      name="billingId"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extract Billing Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[appointmentId]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Billing Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[appointmentId]"
+                      lineageId="Package\Extract Billing Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[appointmentId]"
+                      name="appointmentId"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extract Billing Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[amount]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Billing Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[amount]"
+                      lineageId="Package\Extract Billing Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[amount]"
+                      name="amount"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extract Billing Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[paymentStatus]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Billing Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[paymentStatus]"
+                      length="50"
+                      lineageId="Package\Extract Billing Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[paymentStatus]"
+                      name="paymentStatus"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extract Billing Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[paymentMethod]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Billing Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[paymentMethod]"
+                      length="50"
+                      lineageId="Package\Extract Billing Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[paymentMethod]"
+                      name="paymentMethod"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Extract Billing Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[billingId]"
+                      dataType="i4"
+                      name="billingId" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Billing Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[appointmentId]"
+                      dataType="i4"
+                      name="appointmentId" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Billing Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[amount]"
+                      dataType="i4"
+                      name="amount" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Billing Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[paymentStatus]"
+                      dataType="wstr"
+                      length="50"
+                      name="paymentStatus" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Billing Data to Staging\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[paymentMethod]"
+                      dataType="wstr"
+                      length="50"
+                      name="paymentMethod" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Extract Billing Data to Staging\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Extract Billing Data to Staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[billingId]"
+                      dataType="i4"
+                      lineageId="Package\Extract Billing Data to Staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[billingId]"
+                      name="billingId" />
+                    <outputColumn
+                      refId="Package\Extract Billing Data to Staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[appointmentId]"
+                      dataType="i4"
+                      lineageId="Package\Extract Billing Data to Staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[appointmentId]"
+                      name="appointmentId" />
+                    <outputColumn
+                      refId="Package\Extract Billing Data to Staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[amount]"
+                      dataType="i4"
+                      lineageId="Package\Extract Billing Data to Staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[amount]"
+                      name="amount" />
+                    <outputColumn
+                      refId="Package\Extract Billing Data to Staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[paymentStatus]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Extract Billing Data to Staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[paymentStatus]"
+                      name="paymentStatus" />
+                    <outputColumn
+                      refId="Package\Extract Billing Data to Staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[paymentMethod]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Extract Billing Data to Staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[paymentMethod]"
+                      name="paymentMethod" />
+                    <outputColumn
+                      refId="Package\Extract Billing Data to Staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Extract Billing Data to Staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Extract Billing Data to Staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Extract Billing Data to Staging\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Extract Billing Data to Staging.Paths[OLE DB Source Output]"
+              endId="Package\Extract Billing Data to Staging\Load data to Billing Staging table.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Extract Billing Data to Staging\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Extract Doctors Data to Staging"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{89CE3BB3-BA95-4266-8DD3-F6FF25368586}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Extract Doctors Data to Staging"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:EventHandlers>
+        <DTS:EventHandler
+          DTS:refId="Package\Extract Doctors Data to Staging.EventHandlers[OnPreExecute]"
+          DTS:CreationName="OnPreExecute"
+          DTS:DTSID="{B296E548-50DA-4CE5-8EE6-B4E1058D05E5}"
+          DTS:EventID="704456906"
+          DTS:EventName="OnPreExecute"
+          DTS:LocaleID="-1">
+          <DTS:Variables>
+            <DTS:Variable
+              DTS:CreationName=""
+              DTS:Description="The propagate property of the event"
+              DTS:DTSID="{7909AEF2-D84B-4732-9CB2-0AE9FAE8B150}"
+              DTS:IncludeInDebugDump="6789"
+              DTS:Namespace="System"
+              DTS:ObjectName="Propagate">
+              <DTS:VariableValue
+                DTS:DataType="11">-1</DTS:VariableValue>
+            </DTS:Variable>
+          </DTS:Variables>
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\Extract Doctors Data to Staging.EventHandlers[OnPreExecute]\Truncate Doctors Staging Table"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{6DB30AFE-DC64-4C43-A8DB-D91356551F9F}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Truncate Doctors Staging Table"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{4630A844-24BB-46AA-A837-D6DB6A8A21F2}"
+                  SQLTask:SqlStatementSource="truncate table dbo.StgDoctors" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+        </DTS:EventHandler>
+      </DTS:EventHandlers>
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Extract Doctors Data to Staging\Flat File Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Flat File Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">true</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Extract Doctors Data to Staging\Flat File Source.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager for Doctors]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager for Doctors]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Extract Doctors Data to Staging\Flat File Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Extract Doctors Data to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[doctorId]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Doctors Data to Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[doctorId]"
+                      lineageId="Package\Extract Doctors Data to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[doctorId]"
+                      name="doctorId"
+                      precision="18"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Extract Doctors Data to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[registrationNo]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Doctors Data to Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[registrationNo]"
+                      lineageId="Package\Extract Doctors Data to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[registrationNo]"
+                      name="registrationNo"
+                      precision="18"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Extract Doctors Data to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Doctors Data to Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[name]"
+                      length="100"
+                      lineageId="Package\Extract Doctors Data to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[name]"
+                      name="name"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Extract Doctors Data to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[experience]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Doctors Data to Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[experience]"
+                      lineageId="Package\Extract Doctors Data to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[experience]"
+                      name="experience"
+                      precision="18"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Extract Doctors Data to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[specialization]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Doctors Data to Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[specialization]"
+                      length="100"
+                      lineageId="Package\Extract Doctors Data to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[specialization]"
+                      name="specialization"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Extract Doctors Data to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[phoneNo]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Doctors Data to Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[phoneNo]"
+                      length="50"
+                      lineageId="Package\Extract Doctors Data to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[phoneNo]"
+                      name="phoneNo"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Extract Doctors Data to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[address]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Doctors Data to Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[address]"
+                      length="255"
+                      lineageId="Package\Extract Doctors Data to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[address]"
+                      name="address"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Extract Doctors Data to Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[doctorId]"
+                      dataType="numeric"
+                      name="doctorId"
+                      precision="18" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Doctors Data to Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[registrationNo]"
+                      dataType="numeric"
+                      name="registrationNo"
+                      precision="18" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Doctors Data to Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="name" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Doctors Data to Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[experience]"
+                      dataType="numeric"
+                      name="experience"
+                      precision="18" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Doctors Data to Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[specialization]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="specialization" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Doctors Data to Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[phoneNo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="phoneNo" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Doctors Data to Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[address]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="address" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Extract Doctors Data to Staging\Flat File Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Extract Doctors Data to Staging\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Extract Doctors Data to Staging\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Extract Doctors Data to Staging\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Extract Doctors Data to Staging\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Extract Doctors Data to Staging\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Extract Doctors Data to Staging\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Extract Doctors Data to Staging\Load data to Doctors Staging table"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Load data to Doctors Staging table"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[StgDoctors]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Extract Doctors Data to Staging\Load data to Doctors Staging table.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[desktop-vbpgocs.HealthCare_Staging]"
+                  connectionManagerRefId="Package.ConnectionManagers[desktop-vbpgocs.HealthCare_Staging]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Extract Doctors Data to Staging\Load data to Doctors Staging table.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Extract Doctors Data to Staging\Load data to Doctors Staging table.Inputs[OLE DB Destination Input].Columns[doctorId]"
+                      cachedDataType="numeric"
+                      cachedName="doctorId"
+                      cachedPrecision="18"
+                      externalMetadataColumnId="Package\Extract Doctors Data to Staging\Load data to Doctors Staging table.Inputs[OLE DB Destination Input].ExternalColumns[doctorId]"
+                      lineageId="Package\Extract Doctors Data to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[doctorId]" />
+                    <inputColumn
+                      refId="Package\Extract Doctors Data to Staging\Load data to Doctors Staging table.Inputs[OLE DB Destination Input].Columns[registrationNo]"
+                      cachedDataType="numeric"
+                      cachedName="registrationNo"
+                      cachedPrecision="18"
+                      externalMetadataColumnId="Package\Extract Doctors Data to Staging\Load data to Doctors Staging table.Inputs[OLE DB Destination Input].ExternalColumns[registrationNo]"
+                      lineageId="Package\Extract Doctors Data to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[registrationNo]" />
+                    <inputColumn
+                      refId="Package\Extract Doctors Data to Staging\Load data to Doctors Staging table.Inputs[OLE DB Destination Input].Columns[name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="name"
+                      externalMetadataColumnId="Package\Extract Doctors Data to Staging\Load data to Doctors Staging table.Inputs[OLE DB Destination Input].ExternalColumns[name]"
+                      lineageId="Package\Extract Doctors Data to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[name]" />
+                    <inputColumn
+                      refId="Package\Extract Doctors Data to Staging\Load data to Doctors Staging table.Inputs[OLE DB Destination Input].Columns[experience]"
+                      cachedDataType="numeric"
+                      cachedName="experience"
+                      cachedPrecision="18"
+                      externalMetadataColumnId="Package\Extract Doctors Data to Staging\Load data to Doctors Staging table.Inputs[OLE DB Destination Input].ExternalColumns[experience]"
+                      lineageId="Package\Extract Doctors Data to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[experience]" />
+                    <inputColumn
+                      refId="Package\Extract Doctors Data to Staging\Load data to Doctors Staging table.Inputs[OLE DB Destination Input].Columns[specialization]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="specialization"
+                      externalMetadataColumnId="Package\Extract Doctors Data to Staging\Load data to Doctors Staging table.Inputs[OLE DB Destination Input].ExternalColumns[specialization]"
+                      lineageId="Package\Extract Doctors Data to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[specialization]" />
+                    <inputColumn
+                      refId="Package\Extract Doctors Data to Staging\Load data to Doctors Staging table.Inputs[OLE DB Destination Input].Columns[phoneNo]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="phoneNo"
+                      externalMetadataColumnId="Package\Extract Doctors Data to Staging\Load data to Doctors Staging table.Inputs[OLE DB Destination Input].ExternalColumns[phoneNo]"
+                      lineageId="Package\Extract Doctors Data to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[phoneNo]" />
+                    <inputColumn
+                      refId="Package\Extract Doctors Data to Staging\Load data to Doctors Staging table.Inputs[OLE DB Destination Input].Columns[address]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="address"
+                      externalMetadataColumnId="Package\Extract Doctors Data to Staging\Load data to Doctors Staging table.Inputs[OLE DB Destination Input].ExternalColumns[address]"
+                      lineageId="Package\Extract Doctors Data to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[address]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Extract Doctors Data to Staging\Load data to Doctors Staging table.Inputs[OLE DB Destination Input].ExternalColumns[doctorId]"
+                      dataType="numeric"
+                      name="doctorId"
+                      precision="18" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Doctors Data to Staging\Load data to Doctors Staging table.Inputs[OLE DB Destination Input].ExternalColumns[registrationNo]"
+                      dataType="numeric"
+                      name="registrationNo"
+                      precision="18" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Doctors Data to Staging\Load data to Doctors Staging table.Inputs[OLE DB Destination Input].ExternalColumns[name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="name" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Doctors Data to Staging\Load data to Doctors Staging table.Inputs[OLE DB Destination Input].ExternalColumns[experience]"
+                      dataType="numeric"
+                      name="experience"
+                      precision="18" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Doctors Data to Staging\Load data to Doctors Staging table.Inputs[OLE DB Destination Input].ExternalColumns[specialization]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="specialization" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Doctors Data to Staging\Load data to Doctors Staging table.Inputs[OLE DB Destination Input].ExternalColumns[phoneNo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="phoneNo" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Doctors Data to Staging\Load data to Doctors Staging table.Inputs[OLE DB Destination Input].ExternalColumns[address]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="address" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Extract Doctors Data to Staging\Load data to Doctors Staging table.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Extract Doctors Data to Staging\Load data to Doctors Staging table.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Extract Doctors Data to Staging\Load data to Doctors Staging table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Extract Doctors Data to Staging\Load data to Doctors Staging table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Extract Doctors Data to Staging\Load data to Doctors Staging table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Extract Doctors Data to Staging\Load data to Doctors Staging table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Extract Doctors Data to Staging.Paths[Flat File Source Output]"
+              endId="Package\Extract Doctors Data to Staging\Load data to Doctors Staging table.Inputs[OLE DB Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\Extract Doctors Data to Staging\Flat File Source.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Extract Patients Data to Staging"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{45E9DEDF-1DF9-4685-BAD2-FBA34C1B5A38}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Extract Patients Data to Staging"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:EventHandlers>
+        <DTS:EventHandler
+          DTS:refId="Package\Extract Patients Data to Staging.EventHandlers[OnPreExecute]"
+          DTS:CreationName="OnPreExecute"
+          DTS:DTSID="{F7187BCA-DF57-4734-AFB5-1BBD2FF6F91A}"
+          DTS:EventID="1469119216"
+          DTS:EventName="OnPreExecute"
+          DTS:LocaleID="-1">
+          <DTS:Variables>
+            <DTS:Variable
+              DTS:CreationName=""
+              DTS:Description="The propagate property of the event"
+              DTS:DTSID="{F981A843-2C1F-434E-B5D4-F27832F0BD20}"
+              DTS:IncludeInDebugDump="6789"
+              DTS:Namespace="System"
+              DTS:ObjectName="Propagate">
+              <DTS:VariableValue
+                DTS:DataType="11">-1</DTS:VariableValue>
+            </DTS:Variable>
+          </DTS:Variables>
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\Extract Patients Data to Staging.EventHandlers[OnPreExecute]\Truncate Patients Staging Table"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{6B82B7B0-8E08-4DE7-9D7B-ABD3D9E0009C}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Truncate Patients Staging Table"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{4630A844-24BB-46AA-A837-D6DB6A8A21F2}"
+                  SQLTask:SqlStatementSource="truncate table dbo.StgPatients" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+        </DTS:EventHandler>
+      </DTS:EventHandlers>
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Extract Patients Data to Staging\Flat File Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Flat File Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Extract Patients Data to Staging\Flat File Source.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager for patients]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager for patients]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Extract Patients Data to Staging\Flat File Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Extract Patients Data to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[patientId]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Patients Data to Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[patientId]"
+                      lineageId="Package\Extract Patients Data to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[patientId]"
+                      name="patientId"
+                      precision="18"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Extract Patients Data to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Patients Data to Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[name]"
+                      length="100"
+                      lineageId="Package\Extract Patients Data to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[name]"
+                      name="name"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Extract Patients Data to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[age]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Patients Data to Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[age]"
+                      lineageId="Package\Extract Patients Data to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[age]"
+                      name="age"
+                      precision="18"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Extract Patients Data to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[phoneNo]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Patients Data to Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[phoneNo]"
+                      length="50"
+                      lineageId="Package\Extract Patients Data to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[phoneNo]"
+                      name="phoneNo"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Extract Patients Data to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[address]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Patients Data to Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[address]"
+                      length="255"
+                      lineageId="Package\Extract Patients Data to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[address]"
+                      name="address"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Extract Patients Data to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[sickness]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Patients Data to Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[sickness]"
+                      length="50"
+                      lineageId="Package\Extract Patients Data to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[sickness]"
+                      name="sickness"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Extract Patients Data to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[assigned_doctor]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Patients Data to Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[assigned_doctor]"
+                      length="100"
+                      lineageId="Package\Extract Patients Data to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[assigned_doctor]"
+                      name="assigned_doctor"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Extract Patients Data to Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[patientId]"
+                      dataType="numeric"
+                      name="patientId"
+                      precision="18" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Patients Data to Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="name" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Patients Data to Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[age]"
+                      dataType="numeric"
+                      name="age"
+                      precision="18" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Patients Data to Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[phoneNo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="phoneNo" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Patients Data to Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[address]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="address" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Patients Data to Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[sickness]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="sickness" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Patients Data to Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[assigned_doctor]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="assigned_doctor" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Extract Patients Data to Staging\Flat File Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Extract Patients Data to Staging\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Extract Patients Data to Staging\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Extract Patients Data to Staging\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Extract Patients Data to Staging\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Extract Patients Data to Staging\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Extract Patients Data to Staging\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Extract Patients Data to Staging\Load data to Patients Staging table"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Load data to Patients Staging table"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[StgPatients]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Extract Patients Data to Staging\Load data to Patients Staging table.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[desktop-vbpgocs.HealthCare_Staging]"
+                  connectionManagerRefId="Package.ConnectionManagers[desktop-vbpgocs.HealthCare_Staging]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Extract Patients Data to Staging\Load data to Patients Staging table.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Extract Patients Data to Staging\Load data to Patients Staging table.Inputs[OLE DB Destination Input].Columns[patientId]"
+                      cachedDataType="numeric"
+                      cachedName="patientId"
+                      cachedPrecision="18"
+                      externalMetadataColumnId="Package\Extract Patients Data to Staging\Load data to Patients Staging table.Inputs[OLE DB Destination Input].ExternalColumns[patientId]"
+                      lineageId="Package\Extract Patients Data to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[patientId]" />
+                    <inputColumn
+                      refId="Package\Extract Patients Data to Staging\Load data to Patients Staging table.Inputs[OLE DB Destination Input].Columns[name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="name"
+                      externalMetadataColumnId="Package\Extract Patients Data to Staging\Load data to Patients Staging table.Inputs[OLE DB Destination Input].ExternalColumns[name]"
+                      lineageId="Package\Extract Patients Data to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[name]" />
+                    <inputColumn
+                      refId="Package\Extract Patients Data to Staging\Load data to Patients Staging table.Inputs[OLE DB Destination Input].Columns[age]"
+                      cachedDataType="numeric"
+                      cachedName="age"
+                      cachedPrecision="18"
+                      externalMetadataColumnId="Package\Extract Patients Data to Staging\Load data to Patients Staging table.Inputs[OLE DB Destination Input].ExternalColumns[age]"
+                      lineageId="Package\Extract Patients Data to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[age]" />
+                    <inputColumn
+                      refId="Package\Extract Patients Data to Staging\Load data to Patients Staging table.Inputs[OLE DB Destination Input].Columns[phoneNo]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="phoneNo"
+                      externalMetadataColumnId="Package\Extract Patients Data to Staging\Load data to Patients Staging table.Inputs[OLE DB Destination Input].ExternalColumns[phoneNo]"
+                      lineageId="Package\Extract Patients Data to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[phoneNo]" />
+                    <inputColumn
+                      refId="Package\Extract Patients Data to Staging\Load data to Patients Staging table.Inputs[OLE DB Destination Input].Columns[address]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="address"
+                      externalMetadataColumnId="Package\Extract Patients Data to Staging\Load data to Patients Staging table.Inputs[OLE DB Destination Input].ExternalColumns[address]"
+                      lineageId="Package\Extract Patients Data to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[address]" />
+                    <inputColumn
+                      refId="Package\Extract Patients Data to Staging\Load data to Patients Staging table.Inputs[OLE DB Destination Input].Columns[sickness]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="sickness"
+                      externalMetadataColumnId="Package\Extract Patients Data to Staging\Load data to Patients Staging table.Inputs[OLE DB Destination Input].ExternalColumns[sickness]"
+                      lineageId="Package\Extract Patients Data to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[sickness]" />
+                    <inputColumn
+                      refId="Package\Extract Patients Data to Staging\Load data to Patients Staging table.Inputs[OLE DB Destination Input].Columns[assigned_doctor]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="assigned_doctor"
+                      externalMetadataColumnId="Package\Extract Patients Data to Staging\Load data to Patients Staging table.Inputs[OLE DB Destination Input].ExternalColumns[assigned_doctor]"
+                      lineageId="Package\Extract Patients Data to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[assigned_doctor]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Extract Patients Data to Staging\Load data to Patients Staging table.Inputs[OLE DB Destination Input].ExternalColumns[patientId]"
+                      dataType="numeric"
+                      name="patientId"
+                      precision="18" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Patients Data to Staging\Load data to Patients Staging table.Inputs[OLE DB Destination Input].ExternalColumns[name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="name" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Patients Data to Staging\Load data to Patients Staging table.Inputs[OLE DB Destination Input].ExternalColumns[age]"
+                      dataType="numeric"
+                      name="age"
+                      precision="18" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Patients Data to Staging\Load data to Patients Staging table.Inputs[OLE DB Destination Input].ExternalColumns[phoneNo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="phoneNo" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Patients Data to Staging\Load data to Patients Staging table.Inputs[OLE DB Destination Input].ExternalColumns[address]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="address" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Patients Data to Staging\Load data to Patients Staging table.Inputs[OLE DB Destination Input].ExternalColumns[sickness]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="sickness" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Patients Data to Staging\Load data to Patients Staging table.Inputs[OLE DB Destination Input].ExternalColumns[assigned_doctor]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="assigned_doctor" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Extract Patients Data to Staging\Load data to Patients Staging table.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Extract Patients Data to Staging\Load data to Patients Staging table.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Extract Patients Data to Staging\Load data to Patients Staging table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Extract Patients Data to Staging\Load data to Patients Staging table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Extract Patients Data to Staging\Load data to Patients Staging table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Extract Patients Data to Staging\Load data to Patients Staging table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Extract Patients Data to Staging.Paths[Flat File Source Output]"
+              endId="Package\Extract Patients Data to Staging\Load data to Patients Staging table.Inputs[OLE DB Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\Extract Patients Data to Staging\Flat File Source.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Extract Prescription Data to Staging"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{CB03C1AF-6AA0-48A7-9725-0849FC20155E}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Extract Prescription Data to Staging"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:EventHandlers>
+        <DTS:EventHandler
+          DTS:refId="Package\Extract Prescription Data to Staging.EventHandlers[OnPreExecute]"
+          DTS:CreationName="OnPreExecute"
+          DTS:DTSID="{E5A179D5-C832-495B-BC34-F7CC02A8E50D}"
+          DTS:EventID="0"
+          DTS:EventName="OnPreExecute"
+          DTS:LocaleID="-1">
+          <DTS:Variables>
+            <DTS:Variable
+              DTS:CreationName=""
+              DTS:Description="The propagate property of the event"
+              DTS:DTSID="{5AD20A81-7859-45D5-9524-6A7DE53628ED}"
+              DTS:IncludeInDebugDump="6789"
+              DTS:Namespace="System"
+              DTS:ObjectName="Propagate">
+              <DTS:VariableValue
+                DTS:DataType="11">-1</DTS:VariableValue>
+            </DTS:Variable>
+          </DTS:Variables>
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\Extract Prescription Data to Staging.EventHandlers[OnPreExecute]\Truncate Prescription Staging Table"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{6DEC3F3F-1B9E-49D9-8BEE-8DC3660B2FE4}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Truncate Prescription Staging Table"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{4630A844-24BB-46AA-A837-D6DB6A8A21F2}"
+                  SQLTask:SqlStatementSource="truncate table dbo.StgPrescription" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+        </DTS:EventHandler>
+      </DTS:EventHandlers>
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Extract Prescription Data to Staging\Flat File Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Flat File Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">true</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Extract Prescription Data to Staging\Flat File Source.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager for Prescriptions]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager for Prescriptions]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Extract Prescription Data to Staging\Flat File Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Extract Prescription Data to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[prescriptionId]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Prescription Data to Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[prescriptionId]"
+                      lineageId="Package\Extract Prescription Data to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[prescriptionId]"
+                      name="prescriptionId"
+                      precision="18"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Extract Prescription Data to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[appointmentId]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Prescription Data to Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[appointmentId]"
+                      lineageId="Package\Extract Prescription Data to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[appointmentId]"
+                      name="appointmentId"
+                      precision="18"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Extract Prescription Data to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[medication]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Prescription Data to Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[medication]"
+                      length="255"
+                      lineageId="Package\Extract Prescription Data to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[medication]"
+                      name="medication"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Extract Prescription Data to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[dosage]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Prescription Data to Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[dosage]"
+                      length="255"
+                      lineageId="Package\Extract Prescription Data to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[dosage]"
+                      name="dosage"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Extract Prescription Data to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[frequency]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Prescription Data to Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[frequency]"
+                      length="255"
+                      lineageId="Package\Extract Prescription Data to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[frequency]"
+                      name="frequency"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Extract Prescription Data to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[duration]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Prescription Data to Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[duration]"
+                      length="255"
+                      lineageId="Package\Extract Prescription Data to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[duration]"
+                      name="duration"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Extract Prescription Data to Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[prescriptionId]"
+                      dataType="numeric"
+                      name="prescriptionId"
+                      precision="18" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Prescription Data to Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[appointmentId]"
+                      dataType="numeric"
+                      name="appointmentId"
+                      precision="18" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Prescription Data to Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[medication]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="medication" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Prescription Data to Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[dosage]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="dosage" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Prescription Data to Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[frequency]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="frequency" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Prescription Data to Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[duration]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="duration" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Extract Prescription Data to Staging\Flat File Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Extract Prescription Data to Staging\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Extract Prescription Data to Staging\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Extract Prescription Data to Staging\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Extract Prescription Data to Staging\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Extract Prescription Data to Staging\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Extract Prescription Data to Staging\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Extract Prescription Data to Staging\Load data to Prescription Staging table"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Load data to Prescription Staging table"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[StgPrescription]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Extract Prescription Data to Staging\Load data to Prescription Staging table.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[desktop-vbpgocs.HealthCare_Staging]"
+                  connectionManagerRefId="Package.ConnectionManagers[desktop-vbpgocs.HealthCare_Staging]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Extract Prescription Data to Staging\Load data to Prescription Staging table.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Extract Prescription Data to Staging\Load data to Prescription Staging table.Inputs[OLE DB Destination Input].Columns[prescriptionId]"
+                      cachedDataType="numeric"
+                      cachedName="prescriptionId"
+                      cachedPrecision="18"
+                      externalMetadataColumnId="Package\Extract Prescription Data to Staging\Load data to Prescription Staging table.Inputs[OLE DB Destination Input].ExternalColumns[prescriptionId]"
+                      lineageId="Package\Extract Prescription Data to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[prescriptionId]" />
+                    <inputColumn
+                      refId="Package\Extract Prescription Data to Staging\Load data to Prescription Staging table.Inputs[OLE DB Destination Input].Columns[appointmentId]"
+                      cachedDataType="numeric"
+                      cachedName="appointmentId"
+                      cachedPrecision="18"
+                      externalMetadataColumnId="Package\Extract Prescription Data to Staging\Load data to Prescription Staging table.Inputs[OLE DB Destination Input].ExternalColumns[appointmentId]"
+                      lineageId="Package\Extract Prescription Data to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[appointmentId]" />
+                    <inputColumn
+                      refId="Package\Extract Prescription Data to Staging\Load data to Prescription Staging table.Inputs[OLE DB Destination Input].Columns[medication]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="medication"
+                      externalMetadataColumnId="Package\Extract Prescription Data to Staging\Load data to Prescription Staging table.Inputs[OLE DB Destination Input].ExternalColumns[medication]"
+                      lineageId="Package\Extract Prescription Data to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[medication]" />
+                    <inputColumn
+                      refId="Package\Extract Prescription Data to Staging\Load data to Prescription Staging table.Inputs[OLE DB Destination Input].Columns[dosage]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="dosage"
+                      externalMetadataColumnId="Package\Extract Prescription Data to Staging\Load data to Prescription Staging table.Inputs[OLE DB Destination Input].ExternalColumns[dosage]"
+                      lineageId="Package\Extract Prescription Data to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[dosage]" />
+                    <inputColumn
+                      refId="Package\Extract Prescription Data to Staging\Load data to Prescription Staging table.Inputs[OLE DB Destination Input].Columns[frequency]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="frequency"
+                      externalMetadataColumnId="Package\Extract Prescription Data to Staging\Load data to Prescription Staging table.Inputs[OLE DB Destination Input].ExternalColumns[frequency]"
+                      lineageId="Package\Extract Prescription Data to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[frequency]" />
+                    <inputColumn
+                      refId="Package\Extract Prescription Data to Staging\Load data to Prescription Staging table.Inputs[OLE DB Destination Input].Columns[duration]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="duration"
+                      externalMetadataColumnId="Package\Extract Prescription Data to Staging\Load data to Prescription Staging table.Inputs[OLE DB Destination Input].ExternalColumns[duration]"
+                      lineageId="Package\Extract Prescription Data to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[duration]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Extract Prescription Data to Staging\Load data to Prescription Staging table.Inputs[OLE DB Destination Input].ExternalColumns[prescriptionId]"
+                      dataType="numeric"
+                      name="prescriptionId"
+                      precision="18" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Prescription Data to Staging\Load data to Prescription Staging table.Inputs[OLE DB Destination Input].ExternalColumns[appointmentId]"
+                      dataType="numeric"
+                      name="appointmentId"
+                      precision="18" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Prescription Data to Staging\Load data to Prescription Staging table.Inputs[OLE DB Destination Input].ExternalColumns[medication]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="medication" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Prescription Data to Staging\Load data to Prescription Staging table.Inputs[OLE DB Destination Input].ExternalColumns[dosage]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="dosage" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Prescription Data to Staging\Load data to Prescription Staging table.Inputs[OLE DB Destination Input].ExternalColumns[frequency]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="frequency" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Prescription Data to Staging\Load data to Prescription Staging table.Inputs[OLE DB Destination Input].ExternalColumns[duration]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="duration" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Extract Prescription Data to Staging\Load data to Prescription Staging table.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Extract Prescription Data to Staging\Load data to Prescription Staging table.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Extract Prescription Data to Staging\Load data to Prescription Staging table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Extract Prescription Data to Staging\Load data to Prescription Staging table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Extract Prescription Data to Staging\Load data to Prescription Staging table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Extract Prescription Data to Staging\Load data to Prescription Staging table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Extract Prescription Data to Staging.Paths[Flat File Source Output]"
+              endId="Package\Extract Prescription Data to Staging\Load data to Prescription Staging table.Inputs[OLE DB Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\Extract Prescription Data to Staging\Flat File Source.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{8033D083-7C53-40D1-96E6-C1D3B3146DE6}"
+      DTS:From="Package\Extract Patients Data to Staging"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Extract Doctors Data to Staging" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{44C89945-A253-47CE-93C7-A9C5AF03E1BA}"
+      DTS:From="Package\Extract Doctors Data to Staging"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Extract Appointments Data to Staging" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{9661E2E1-BF00-45CE-96C2-5946109E1D74}"
+      DTS:From="Package\Extract Appointments Data to Staging"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Extract Prescription Data to Staging" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{805CE202-7C0D-4E74-9738-0480F67AA11E}"
+      DTS:From="Package\Extract Prescription Data to Staging"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\Extract Billing Data to Staging" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="230.666666666667,42.6666666666667"
+          Id="Package\Extract Patients Data to Staging"
+          TopLeft="171.874992316589,39.684210090591" />
+        <NodeLayout
+          Size="228,42.6666666666667"
+          Id="Package\Extract Doctors Data to Staging"
+          TopLeft="204.374990863726,130.684209091429" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="287.208325649922,82.3508767572577">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="31.1666652138035,48.3333323341713"
+              Start="0,0"
+              End="31.1666652138035,40.8333323341713">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.1666661670857" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.1666661670857"
+                    Point2="0,24.1666661670857"
+                    Point3="4,24.1666661670857" />
+                  <mssgle:LineSegment
+                    End="27.1666652138035,24.1666661670857" />
+                  <mssgle:CubicBezierSegment
+                    Point1="27.1666652138035,24.1666661670857"
+                    Point2="31.1666652138035,24.1666661670857"
+                    Point3="31.1666652138035,28.1666661670857" />
+                  <mssgle:LineSegment
+                    End="31.1666652138035,40.8333323341713" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="248,42.6666666666667"
+          Id="Package\Extract Prescription Data to Staging"
+          TopLeft="203.124990919605,274.368418040121" />
+        <NodeLayout
+          Size="257.333333333334,42.6666666666667"
+          Id="Package\Extract Appointments Data to Staging"
+          TopLeft="237.499989382923,202.280699921337" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="318.374990863726,173.350875758096">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="47.7916651858637,28.9298241632412"
+              Start="0,0"
+              End="47.7916651858637,21.4298241632412">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,10.4649120816206" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10.4649120816206"
+                    Point2="0,14.4649120816206"
+                    Point3="4,14.4649120816206" />
+                  <mssgle:LineSegment
+                    End="43.7916651858637,14.4649120816206" />
+                  <mssgle:CubicBezierSegment
+                    Point1="43.7916651858637,14.4649120816206"
+                    Point2="47.7916651858637,14.4649120816206"
+                    Point3="47.7916651858637,18.4649120816206" />
+                  <mssgle:LineSegment
+                    End="47.7916651858637,21.4298241632412" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="366.16665604959,244.947366588004">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-39.0416651299843,29.4210514521171"
+              Start="0,0"
+              End="-39.0416651299843,21.9210514521171">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,10.7105257260585" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10.7105257260585"
+                    Point2="0,14.7105257260585"
+                    Point3="-4,14.7105257260585" />
+                  <mssgle:LineSegment
+                    End="-35.0416651299843,14.7105257260585" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-35.0416651299843,14.7105257260585"
+                    Point2="-39.0416651299843,14.7105257260585"
+                    Point3="-39.0416651299843,18.7105257260585" />
+                  <mssgle:LineSegment
+                    End="-39.0416651299843,21.9210514521171" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="220,42.6666666666667"
+          Id="Package\Extract Billing Data to Staging"
+          TopLeft="228.749989774078,360.122804110208" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="327.124990919605,317.035084706787">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="11.6249988544733,43.0877194034205"
+              Start="0,0"
+              End="11.6249988544733,35.5877194034205">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.5438597017102" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.5438597017102"
+                    Point2="0,21.5438597017102"
+                    Point3="4,21.5438597017102" />
+                  <mssgle:LineSegment
+                    End="7.62499885447329,21.5438597017102" />
+                  <mssgle:CubicBezierSegment
+                    Point1="7.62499885447329,21.5438597017102"
+                    Point2="11.6249988544733,21.5438597017102"
+                    Point3="11.6249988544733,25.5438597017102" />
+                  <mssgle:LineSegment
+                    End="11.6249988544733,35.5877194034205" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Extract Patients Data to Staging">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="154.666666666667,42.6666666666667"
+          Id="Package\Extract Patients Data to Staging\Flat File Source"
+          TopLeft="204.999990835786,32.1578943837548" />
+        <NodeLayout
+          Size="245.333333333334,42.6666666666667"
+          Id="Package\Extract Patients Data to Staging\Load data to Patients Staging table"
+          TopLeft="206.249990779907,121.105261828183" />
+        <EdgeLayout
+          Id="Package\Extract Patients Data to Staging.Paths[Flat File Source Output]"
+          TopLeft="282.33332416912,74.8245610504214">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="46.583333277454,46.2807007777614"
+              Start="0,0"
+              End="46.583333277454,38.7807007777614">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.1403503888807" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.1403503888807"
+                    Point2="0,23.1403503888807"
+                    Point3="4,23.1403503888807" />
+                  <mssgle:LineSegment
+                    End="42.583333277454,23.1403503888807" />
+                  <mssgle:CubicBezierSegment
+                    Point1="42.583333277454,23.1403503888807"
+                    Point2="46.583333277454,23.1403503888807"
+                    Point3="46.583333277454,27.1403503888807" />
+                  <mssgle:LineSegment
+                    End="46.583333277454,38.7807007777614" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Extract Patients Data to Staging\Load data to Patients Staging table">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <DtsEventHandler
+    design-time-name="Package\Extract Patients Data to Staging.EventHandlers[OnPreExecute]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="232,42.6666666666667"
+          Id="Package\Extract Patients Data to Staging.EventHandlers[OnPreExecute]\Truncate Patients Staging Table"
+          TopLeft="420.999987453223,98.9999970495702" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <TaskHost
+    design-time-name="Package\Extract Doctors Data to Staging">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="154.666666666667,42.6666666666667"
+          Id="Package\Extract Doctors Data to Staging\Flat File Source"
+          TopLeft="385.999988496304,81.9999975562096" />
+        <NodeLayout
+          Size="244,42.6666666666667"
+          Id="Package\Extract Doctors Data to Staging\Load data to Doctors Staging table"
+          TopLeft="383.999988555909,202.666660646598" />
+        <EdgeLayout
+          Id="Package\Extract Doctors Data to Staging.Paths[Flat File Source Output]"
+          TopLeft="463.333321829637,124.666664222876">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="42.6666667262716,77.9999964237214"
+              Start="0,0"
+              End="42.6666667262716,70.4999964237214">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.9999982118607" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,34.9999982118607"
+                    Point2="0,38.9999982118607"
+                    Point3="4,38.9999982118607" />
+                  <mssgle:LineSegment
+                    End="38.6666667262716,38.9999982118607" />
+                  <mssgle:CubicBezierSegment
+                    Point1="38.6666667262716,38.9999982118607"
+                    Point2="42.6666667262716,38.9999982118607"
+                    Point3="42.6666667262716,42.9999982118607" />
+                  <mssgle:LineSegment
+                    End="42.6666667262716,70.4999964237214" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Extract Doctors Data to Staging\Load data to Doctors Staging table">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <DtsEventHandler
+    design-time-name="Package\Extract Doctors Data to Staging.EventHandlers[OnPreExecute]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="230.666666666667,42.6666666666667"
+          Id="Package\Extract Doctors Data to Staging.EventHandlers[OnPreExecute]\Truncate Doctors Staging Table"
+          TopLeft="393.999988257885,116.999996513128" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <TaskHost
+    design-time-name="Package\Extract Prescription Data to Staging">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="154.666666666667,42.6666666666667"
+          Id="Package\Extract Prescription Data to Staging\Flat File Source"
+          TopLeft="416.999987572432,65.9999980330468" />
+        <NodeLayout
+          Size="262.666666666667,42.6666666666667"
+          Id="Package\Extract Prescription Data to Staging\Load data to Prescription Staging table"
+          TopLeft="413.999987661839,158.999995261431" />
+        <EdgeLayout
+          Id="Package\Extract Prescription Data to Staging.Paths[Flat File Source Output]"
+          TopLeft="494.333320905765,108.666664699713">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="51.000000089407,50.3333305617174"
+              Start="0,0"
+              End="51.000000089407,42.8333305617174">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.1666652808587" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21.1666652808587"
+                    Point2="0,25.1666652808587"
+                    Point3="4,25.1666652808587" />
+                  <mssgle:LineSegment
+                    End="47.000000089407,25.1666652808587" />
+                  <mssgle:CubicBezierSegment
+                    Point1="47.000000089407,25.1666652808587"
+                    Point2="51.000000089407,25.1666652808587"
+                    Point3="51.000000089407,29.1666652808587" />
+                  <mssgle:LineSegment
+                    End="51.000000089407,42.8333305617174" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Extract Prescription Data to Staging\Load data to Prescription Staging table">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <DtsEventHandler
+    design-time-name="Package\Extract Prescription Data to Staging.EventHandlers[OnPreExecute]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="249.333333333334,42.6666666666667"
+          Id="Package\Extract Prescription Data to Staging.EventHandlers[OnPreExecute]\Truncate Prescription Staging Table"
+          TopLeft="409.999987781048,134.999995976687" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <TaskHost
+    design-time-name="Package\Extract Appointments Data to Staging">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="154.666666666667,42.6666666666667"
+          Id="Package\Extract Appointments Data to Staging\OLE DB Source"
+          TopLeft="412.999987691641,31.9999990463257" />
+        <NodeLayout
+          Size="272,42.6666666666667"
+          Id="Package\Extract Appointments Data to Staging\Load data to Appointments Staging table"
+          TopLeft="406.999987870455,117.999996483326" />
+        <EdgeLayout
+          Id="Package\Extract Appointments Data to Staging.Paths[OLE DB Source Output]"
+          TopLeft="490.333321024975,74.6666657129924">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="52.6666668454806,43.3333307703337"
+              Start="0,0"
+              End="52.6666668454806,35.8333307703337">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.6666653851668" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.6666653851668"
+                    Point2="0,21.6666653851668"
+                    Point3="4,21.6666653851668" />
+                  <mssgle:LineSegment
+                    End="48.6666668454806,21.6666653851668" />
+                  <mssgle:CubicBezierSegment
+                    Point1="48.6666668454806,21.6666653851668"
+                    Point2="52.6666668454806,21.6666653851668"
+                    Point3="52.6666668454806,25.6666653851668" />
+                  <mssgle:LineSegment
+                    End="52.6666668454806,35.8333307703337" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Extract Appointments Data to Staging\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Extract Appointments Data to Staging\Load data to Appointments Staging table">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <DtsEventHandler
+    design-time-name="Package\Extract Appointments Data to Staging.EventHandlers[OnPreExecute]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="258.666666666667,42.6666666666667"
+          Id="Package\Extract Appointments Data to Staging.EventHandlers[OnPreExecute]\Truncate Appointments Staging Table"
+          TopLeft="419.999987483025,90.9999972879888" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <TaskHost
+    design-time-name="Package\Extract Billing Data to Staging">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="154.666666666667,42.6666666666667"
+          Id="Package\Extract Billing Data to Staging\OLE DB Source"
+          TopLeft="402.999987989664,45.9999986290932" />
+        <NodeLayout
+          Size="236,42.6666666666667"
+          Id="Package\Extract Billing Data to Staging\Load data to Billing Staging table"
+          TopLeft="386.999988466502,151.999995470047" />
+        <EdgeLayout
+          Id="Package\Extract Billing Data to Staging.Paths[OLE DB Source Output]"
+          TopLeft="480.333321322998,88.6666652957599">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="24.666667143504,63.3333301742872"
+              Start="0,0"
+              End="24.666667143504,55.8333301742872">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.6666650871436" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,27.6666650871436"
+                    Point2="0,31.6666650871436"
+                    Point3="4,31.6666650871436" />
+                  <mssgle:LineSegment
+                    End="20.666667143504,31.6666650871436" />
+                  <mssgle:CubicBezierSegment
+                    Point1="20.666667143504,31.6666650871436"
+                    Point2="24.666667143504,31.6666650871436"
+                    Point3="24.666667143504,35.6666650871436" />
+                  <mssgle:LineSegment
+                    End="24.666667143504,55.8333301742872" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Extract Billing Data to Staging\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Extract Billing Data to Staging\Load data to Billing Staging table">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <DtsEventHandler
+    design-time-name="Package\Extract Billing Data to Staging.EventHandlers[OnPreExecute]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="221.333333333334,42.6666666666667"
+          Id="Package\Extract Billing Data to Staging.EventHandlers[OnPreExecute]\Truncate Billing Staging Table"
+          TopLeft="396.999988168478,129.999996125698" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
