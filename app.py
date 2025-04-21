@@ -88,7 +88,7 @@ def generate_doctor_data(n):
             'name': faker.name(),
             'experience': random.randint(1, 30),
             'specialization': specialization,
-            'phoneNo': faker.phone_number(),
+            'phoneNo' : '07'+ random.choice('1234')+ ''.join(str(random.randint(0, 9)) for _ in range(7)),
             'address': faker.address()
         })
     return doctors
@@ -110,7 +110,7 @@ def generate_patient_data(n):
             'patientId': i,
             'name': faker.name(),
             'age': random.randint(1, 90),
-            'phoneNo': faker.phone_number(),
+            'phoneNo' : '07'+ random.choice('1234')+ ''.join(str(random.randint(0, 9)) for _ in range(7)),
             'address': faker.address(),
             'sickness': sickness,
             'assigned_doctor': assigned_doctor
@@ -131,7 +131,7 @@ def generate_appointment_data(n):
             'appointmentId': i,
             'patientId': patient['patientId'],
             'doctorId': patient['assigned_doctor'],
-            'date': date.strftime('%Y-%m-%d'),
+            'date': "'" + date.strftime('%Y-%m-%d'),
             'time': faker.time(),
             'status': random.choices(['Scheduled', 'Completed', 'Cancelled'], weights=[0.2, 0.7, 0.1])[0]
         })
