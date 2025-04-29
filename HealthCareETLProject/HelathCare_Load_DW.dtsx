@@ -9,10 +9,11 @@
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="16.0.5685.0"
   DTS:LocaleID="1033"
+  DTS:MaxErrorCount="20"
   DTS:ObjectName="HelathCare_Load_DW"
   DTS:PackageType="5"
-  DTS:VersionBuild="43"
-  DTS:VersionGUID="{067E57B7-999A-448A-B304-99F9944AE7E3}">
+  DTS:VersionBuild="65"
+  DTS:VersionGUID="{7B0444BC-B069-49C2-9785-CB7C284B6F94}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -53,6 +54,46 @@
       DTS:ObjectName="Transform and Load Billing Data"
       DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
+      <DTS:EventHandlers>
+        <DTS:EventHandler
+          DTS:refId="Package\Transform and Load Billing Data.EventHandlers[OnPreExecute]"
+          DTS:CreationName="OnPreExecute"
+          DTS:DTSID="{4FA643FD-B106-4589-A6C8-6D12ABAFFCFD}"
+          DTS:EventID="0"
+          DTS:EventName="OnPreExecute"
+          DTS:LocaleID="-1">
+          <DTS:Variables>
+            <DTS:Variable
+              DTS:CreationName=""
+              DTS:Description="The propagate property of the event"
+              DTS:DTSID="{65F201FD-8C07-409B-9D3C-73D8F562EAAD}"
+              DTS:IncludeInDebugDump="6789"
+              DTS:Namespace="System"
+              DTS:ObjectName="Propagate">
+              <DTS:VariableValue
+                DTS:DataType="11">-1</DTS:VariableValue>
+            </DTS:Variable>
+          </DTS:Variables>
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\Transform and Load Billing Data.EventHandlers[OnPreExecute]\Execute SQL Task"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{CB25A0FA-5609-48DE-B839-E0514402B9BE}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Execute SQL Task"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{632FFE60-2EA7-4F60-AFAC-2E036643B97A}"
+                  SQLTask:SqlStatementSource="TRUNCATE TABLE dbo.FactBilling" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+        </DTS:EventHandler>
+      </DTS:EventHandlers>
       <DTS:ObjectData>
         <pipeline
           version="1">
@@ -206,13 +247,13 @@
                       cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="paymentStatus"
-                      lineageId="Package\Transform and Load Billing Data\Union All.Outputs[Union All Output 1].Columns[paymentStatus]" />
+                      lineageId="Package\Transform and Load Billing Data\Load From Appointments with Prescriptions Data.Outputs[OLE DB Source Output].Columns[paymentStatus]" />
                     <inputColumn
                       refId="Package\Transform and Load Billing Data\Data Conversion 1.Inputs[Data Conversion Input].Columns[paymentMethod]"
                       cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="paymentMethod"
-                      lineageId="Package\Transform and Load Billing Data\Union All.Outputs[Union All Output 1].Columns[paymentMethod]" />
+                      lineageId="Package\Transform and Load Billing Data\Load From Appointments with Prescriptions Data.Outputs[OLE DB Source Output].Columns[paymentMethod]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -239,7 +280,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Transform and Load Billing Data\Union All.Outputs[Union All Output 1].Columns[paymentStatus]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Transform and Load Billing Data\Load From Appointments with Prescriptions Data.Outputs[OLE DB Source Output].Columns[paymentStatus]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -261,7 +302,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Transform and Load Billing Data\Union All.Outputs[Union All Output 1].Columns[paymentMethod]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Transform and Load Billing Data\Load From Appointments with Prescriptions Data.Outputs[OLE DB Source Output].Columns[paymentMethod]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -377,11 +418,128 @@
               </outputs>
             </component>
             <component
-              refId="Package\Transform and Load Billing Data\Load FactBilling"
+              refId="Package\Transform and Load Billing Data\Derived Column 1"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column 1"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Transform and Load Billing Data\Derived Column 1.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Transform and Load Billing Data\Derived Column 1.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Transform and Load Billing Data\Derived Column 1.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Transform and Load Billing Data\Derived Column 1.Outputs[Derived Column Output].Columns[accm_txn_create_time]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Transform and Load Billing Data\Derived Column 1.Outputs[Derived Column Output].Columns[accm_txn_create_time]"
+                      name="accm_txn_create_time"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Transform and Load Billing Data\Derived Column 1.Outputs[Derived Column Output].Columns[accm_txn_complete_time]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Transform and Load Billing Data\Derived Column 1.Outputs[Derived Column Output].Columns[accm_txn_complete_time]"
+                      name="accm_txn_complete_time"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">NULL(DT_DBTIMESTAMP)</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">NULL(DT_DBTIMESTAMP)</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Transform and Load Billing Data\Derived Column 1.Outputs[Derived Column Output].Columns[txn_process_time_hours]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Transform and Load Billing Data\Derived Column 1.Outputs[Derived Column Output].Columns[txn_process_time_hours]"
+                      name="txn_process_time_hours"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">NULL(DT_I4)</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">NULL(DT_I4)</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Transform and Load Billing Data\Derived Column 1.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Transform and Load Billing Data\Derived Column 1.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Transform and Load Billing Data\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Transform and Load Billing Data\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Transform and Load Billing Data\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Transform and Load Billing Data\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Transform and Load Billing Data\Load FactBilling 1"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
-              name="Load FactBilling"
+              name="Load FactBilling 1"
               usesDispositions="true"
               version="4">
               <properties>
@@ -434,7 +592,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Transform and Load Billing Data\Load FactBilling.Connections[OleDbConnection]"
+                  refId="Package\Transform and Load Billing Data\Load FactBilling 1.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[DESKTOP-VBPGOCS.HealthCare_DW]"
                   connectionManagerRefId="Package.ConnectionManagers[DESKTOP-VBPGOCS.HealthCare_DW]"
                   description="The OLE DB runtime connection used to access the database."
@@ -442,126 +600,144 @@
               </connections>
               <inputs>
                 <input
-                  refId="Package\Transform and Load Billing Data\Load FactBilling.Inputs[OLE DB Destination Input]"
+                  refId="Package\Transform and Load Billing Data\Load FactBilling 1.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Transform and Load Billing Data\Load FactBilling.Inputs[OLE DB Destination Input].Columns[amount]"
+                      refId="Package\Transform and Load Billing Data\Load FactBilling 1.Inputs[OLE DB Destination Input].Columns[amount]"
                       cachedDataType="i4"
                       cachedName="amount"
-                      externalMetadataColumnId="Package\Transform and Load Billing Data\Load FactBilling.Inputs[OLE DB Destination Input].ExternalColumns[amount]"
-                      lineageId="Package\Transform and Load Billing Data\Union All.Outputs[Union All Output 1].Columns[amount]" />
+                      externalMetadataColumnId="Package\Transform and Load Billing Data\Load FactBilling 1.Inputs[OLE DB Destination Input].ExternalColumns[amount]"
+                      lineageId="Package\Transform and Load Billing Data\Load From Appointments with Prescriptions Data.Outputs[OLE DB Source Output].Columns[amount]" />
                     <inputColumn
-                      refId="Package\Transform and Load Billing Data\Load FactBilling.Inputs[OLE DB Destination Input].Columns[billingId]"
+                      refId="Package\Transform and Load Billing Data\Load FactBilling 1.Inputs[OLE DB Destination Input].Columns[billingId]"
                       cachedDataType="i4"
                       cachedName="billingId"
-                      externalMetadataColumnId="Package\Transform and Load Billing Data\Load FactBilling.Inputs[OLE DB Destination Input].ExternalColumns[billing_id]"
-                      lineageId="Package\Transform and Load Billing Data\Union All.Outputs[Union All Output 1].Columns[billingId]" />
+                      externalMetadataColumnId="Package\Transform and Load Billing Data\Load FactBilling 1.Inputs[OLE DB Destination Input].ExternalColumns[billing_id]"
+                      lineageId="Package\Transform and Load Billing Data\Load From Appointments with Prescriptions Data.Outputs[OLE DB Source Output].Columns[billingId]" />
                     <inputColumn
-                      refId="Package\Transform and Load Billing Data\Load FactBilling.Inputs[OLE DB Destination Input].Columns[patientId]"
-                      cachedDataType="i4"
-                      cachedName="patientId"
-                      externalMetadataColumnId="Package\Transform and Load Billing Data\Load FactBilling.Inputs[OLE DB Destination Input].ExternalColumns[patient_sk]"
-                      lineageId="Package\Transform and Load Billing Data\Union All.Outputs[Union All Output 1].Columns[patientId]" />
-                    <inputColumn
-                      refId="Package\Transform and Load Billing Data\Load FactBilling.Inputs[OLE DB Destination Input].Columns[doctorId]"
+                      refId="Package\Transform and Load Billing Data\Load FactBilling 1.Inputs[OLE DB Destination Input].Columns[doctorId]"
                       cachedDataType="i4"
                       cachedName="doctorId"
-                      externalMetadataColumnId="Package\Transform and Load Billing Data\Load FactBilling.Inputs[OLE DB Destination Input].ExternalColumns[doctor_id]"
-                      lineageId="Package\Transform and Load Billing Data\Union All.Outputs[Union All Output 1].Columns[doctorId]" />
+                      externalMetadataColumnId="Package\Transform and Load Billing Data\Load FactBilling 1.Inputs[OLE DB Destination Input].ExternalColumns[doctor_id]"
+                      lineageId="Package\Transform and Load Billing Data\Load From Appointments with Prescriptions Data.Outputs[OLE DB Source Output].Columns[doctorId]" />
                     <inputColumn
-                      refId="Package\Transform and Load Billing Data\Load FactBilling.Inputs[OLE DB Destination Input].Columns[prescriptionId_converted]"
+                      refId="Package\Transform and Load Billing Data\Load FactBilling 1.Inputs[OLE DB Destination Input].Columns[prescriptionId_converted]"
                       cachedDataType="i4"
                       cachedName="prescriptionId_converted"
-                      externalMetadataColumnId="Package\Transform and Load Billing Data\Load FactBilling.Inputs[OLE DB Destination Input].ExternalColumns[prescription_id]"
-                      lineageId="Package\Transform and Load Billing Data\Union All.Outputs[Union All Output 1].Columns[prescriptionId_converted]" />
+                      externalMetadataColumnId="Package\Transform and Load Billing Data\Load FactBilling 1.Inputs[OLE DB Destination Input].ExternalColumns[prescription_id]"
+                      lineageId="Package\Transform and Load Billing Data\Data Conversion.Outputs[Data Conversion Output].Columns[prescriptionId_converted]" />
                     <inputColumn
-                      refId="Package\Transform and Load Billing Data\Load FactBilling.Inputs[OLE DB Destination Input].Columns[date_id]"
+                      refId="Package\Transform and Load Billing Data\Load FactBilling 1.Inputs[OLE DB Destination Input].Columns[date_id]"
                       cachedDataType="i4"
                       cachedName="date_id"
-                      externalMetadataColumnId="Package\Transform and Load Billing Data\Load FactBilling.Inputs[OLE DB Destination Input].ExternalColumns[date_id]"
-                      lineageId="Package\Transform and Load Billing Data\Union All.Outputs[Union All Output 1].Columns[date_id]" />
+                      externalMetadataColumnId="Package\Transform and Load Billing Data\Load FactBilling 1.Inputs[OLE DB Destination Input].ExternalColumns[date_id]"
+                      lineageId="Package\Transform and Load Billing Data\Lookup for DimDate.Outputs[Lookup Match Output].Columns[date_id]" />
                     <inputColumn
-                      refId="Package\Transform and Load Billing Data\Load FactBilling.Inputs[OLE DB Destination Input].Columns[paymentStatus_converted]"
+                      refId="Package\Transform and Load Billing Data\Load FactBilling 1.Inputs[OLE DB Destination Input].Columns[paymentStatus_converted]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="paymentStatus_converted"
-                      externalMetadataColumnId="Package\Transform and Load Billing Data\Load FactBilling.Inputs[OLE DB Destination Input].ExternalColumns[payment_status]"
+                      externalMetadataColumnId="Package\Transform and Load Billing Data\Load FactBilling 1.Inputs[OLE DB Destination Input].ExternalColumns[payment_status]"
                       lineageId="Package\Transform and Load Billing Data\Data Conversion 1.Outputs[Data Conversion Output].Columns[paymentStatus_converted]" />
                     <inputColumn
-                      refId="Package\Transform and Load Billing Data\Load FactBilling.Inputs[OLE DB Destination Input].Columns[paymentMethod_converted]"
+                      refId="Package\Transform and Load Billing Data\Load FactBilling 1.Inputs[OLE DB Destination Input].Columns[paymentMethod_converted]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="paymentMethod_converted"
-                      externalMetadataColumnId="Package\Transform and Load Billing Data\Load FactBilling.Inputs[OLE DB Destination Input].ExternalColumns[payment_method]"
+                      externalMetadataColumnId="Package\Transform and Load Billing Data\Load FactBilling 1.Inputs[OLE DB Destination Input].ExternalColumns[payment_method]"
                       lineageId="Package\Transform and Load Billing Data\Data Conversion 1.Outputs[Data Conversion Output].Columns[paymentMethod_converted]" />
+                    <inputColumn
+                      refId="Package\Transform and Load Billing Data\Load FactBilling 1.Inputs[OLE DB Destination Input].Columns[accm_txn_create_time]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="accm_txn_create_time"
+                      externalMetadataColumnId="Package\Transform and Load Billing Data\Load FactBilling 1.Inputs[OLE DB Destination Input].ExternalColumns[accm_txn_create_time]"
+                      lineageId="Package\Transform and Load Billing Data\Derived Column 1.Outputs[Derived Column Output].Columns[accm_txn_create_time]" />
+                    <inputColumn
+                      refId="Package\Transform and Load Billing Data\Load FactBilling 1.Inputs[OLE DB Destination Input].Columns[patient_sk]"
+                      cachedDataType="i4"
+                      cachedName="patient_sk"
+                      externalMetadataColumnId="Package\Transform and Load Billing Data\Load FactBilling 1.Inputs[OLE DB Destination Input].ExternalColumns[patient_sk]"
+                      lineageId="Package\Transform and Load Billing Data\Lookup for DimPatients.Outputs[Lookup Match Output].Columns[patient_sk]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Transform and Load Billing Data\Load FactBilling.Inputs[OLE DB Destination Input].ExternalColumns[billing_id]"
+                      refId="Package\Transform and Load Billing Data\Load FactBilling 1.Inputs[OLE DB Destination Input].ExternalColumns[billing_id]"
                       dataType="i4"
                       name="billing_id" />
                     <externalMetadataColumn
-                      refId="Package\Transform and Load Billing Data\Load FactBilling.Inputs[OLE DB Destination Input].ExternalColumns[patient_sk]"
+                      refId="Package\Transform and Load Billing Data\Load FactBilling 1.Inputs[OLE DB Destination Input].ExternalColumns[patient_sk]"
                       dataType="i4"
                       name="patient_sk" />
                     <externalMetadataColumn
-                      refId="Package\Transform and Load Billing Data\Load FactBilling.Inputs[OLE DB Destination Input].ExternalColumns[doctor_id]"
+                      refId="Package\Transform and Load Billing Data\Load FactBilling 1.Inputs[OLE DB Destination Input].ExternalColumns[doctor_id]"
                       dataType="i4"
                       name="doctor_id" />
                     <externalMetadataColumn
-                      refId="Package\Transform and Load Billing Data\Load FactBilling.Inputs[OLE DB Destination Input].ExternalColumns[prescription_id]"
+                      refId="Package\Transform and Load Billing Data\Load FactBilling 1.Inputs[OLE DB Destination Input].ExternalColumns[prescription_id]"
                       dataType="i4"
                       name="prescription_id" />
                     <externalMetadataColumn
-                      refId="Package\Transform and Load Billing Data\Load FactBilling.Inputs[OLE DB Destination Input].ExternalColumns[date_id]"
+                      refId="Package\Transform and Load Billing Data\Load FactBilling 1.Inputs[OLE DB Destination Input].ExternalColumns[date_id]"
                       dataType="i4"
                       name="date_id" />
                     <externalMetadataColumn
-                      refId="Package\Transform and Load Billing Data\Load FactBilling.Inputs[OLE DB Destination Input].ExternalColumns[amount]"
+                      refId="Package\Transform and Load Billing Data\Load FactBilling 1.Inputs[OLE DB Destination Input].ExternalColumns[amount]"
                       dataType="numeric"
                       name="amount"
                       precision="10"
                       scale="2" />
                     <externalMetadataColumn
-                      refId="Package\Transform and Load Billing Data\Load FactBilling.Inputs[OLE DB Destination Input].ExternalColumns[payment_status]"
+                      refId="Package\Transform and Load Billing Data\Load FactBilling 1.Inputs[OLE DB Destination Input].ExternalColumns[payment_status]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="payment_status" />
                     <externalMetadataColumn
-                      refId="Package\Transform and Load Billing Data\Load FactBilling.Inputs[OLE DB Destination Input].ExternalColumns[payment_method]"
+                      refId="Package\Transform and Load Billing Data\Load FactBilling 1.Inputs[OLE DB Destination Input].ExternalColumns[payment_method]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="payment_method" />
+                    <externalMetadataColumn
+                      refId="Package\Transform and Load Billing Data\Load FactBilling 1.Inputs[OLE DB Destination Input].ExternalColumns[accm_txn_create_time]"
+                      dataType="dbTimeStamp"
+                      name="accm_txn_create_time" />
+                    <externalMetadataColumn
+                      refId="Package\Transform and Load Billing Data\Load FactBilling 1.Inputs[OLE DB Destination Input].ExternalColumns[accm_txn_complete_time]"
+                      dataType="dbTimeStamp"
+                      name="accm_txn_complete_time" />
+                    <externalMetadataColumn
+                      refId="Package\Transform and Load Billing Data\Load FactBilling 1.Inputs[OLE DB Destination Input].ExternalColumns[txn_process_time_hours]"
+                      dataType="i4"
+                      name="txn_process_time_hours" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Transform and Load Billing Data\Load FactBilling.Outputs[OLE DB Destination Error Output]"
+                  refId="Package\Transform and Load Billing Data\Load FactBilling 1.Outputs[OLE DB Destination Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Transform and Load Billing Data\Load FactBilling.Inputs[OLE DB Destination Input]">
+                  synchronousInputId="Package\Transform and Load Billing Data\Load FactBilling 1.Inputs[OLE DB Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Transform and Load Billing Data\Load FactBilling.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\Transform and Load Billing Data\Load FactBilling 1.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Transform and Load Billing Data\Load FactBilling.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Transform and Load Billing Data\Load FactBilling 1.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Transform and Load Billing Data\Load FactBilling.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\Transform and Load Billing Data\Load FactBilling 1.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Transform and Load Billing Data\Load FactBilling.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Transform and Load Billing Data\Load FactBilling 1.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -847,6 +1023,147 @@ JOIN dbo.StgPrescription p ON p.appointmentId = a.appointmentId</property>
               </outputs>
             </component>
             <component
+              refId="Package\Transform and Load Billing Data\Lookup DimDoctors"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup DimDoctors"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[DimDoctors]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[DimDoctors]) [refTable]
+where [refTable].[doctor_id] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="doctor_id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="name" dataType="DT_STR" length="100" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="specialization" dataType="DT_STR" length="100" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Transform and Load Billing Data\Load From Appointments with Prescriptions Data.Outputs[OLE DB Source Output].Columns[doctorId]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Transform and Load Billing Data\Lookup DimDoctors.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-VBPGOCS.HealthCare_DW]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-VBPGOCS.HealthCare_DW]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Transform and Load Billing Data\Lookup DimDoctors.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Transform and Load Billing Data\Lookup DimDoctors.Inputs[Lookup Input].Columns[doctorId]"
+                      cachedDataType="i4"
+                      cachedName="doctorId"
+                      lineageId="Package\Transform and Load Billing Data\Load From Appointments with Prescriptions Data.Outputs[OLE DB Source Output].Columns[doctorId]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">doctor_id</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Transform and Load Billing Data\Lookup DimDoctors.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Transform and Load Billing Data\Lookup DimDoctors.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Transform and Load Billing Data\Lookup DimDoctors.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Transform and Load Billing Data\Lookup DimDoctors.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Transform and Load Billing Data\Lookup DimDoctors.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Transform and Load Billing Data\Lookup DimDoctors.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Transform and Load Billing Data\Lookup DimDoctors.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Transform and Load Billing Data\Lookup DimDoctors.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Transform and Load Billing Data\Lookup DimDoctors.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Transform and Load Billing Data\Lookup DimDoctors.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
               refId="Package\Transform and Load Billing Data\Lookup for DimDate"
               componentClassID="Microsoft.Lookup"
               contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
@@ -882,7 +1199,7 @@ where [refTable].[FullDate] = ?</property>
                   dataType="System.Int32"
                   description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
                   name="NoMatchBehavior"
-                  typeConverter="LookupNoMatchBehavior">0</property>
+                  typeConverter="LookupNoMatchBehavior">1</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
@@ -950,7 +1267,6 @@ where [refTable].[FullDate] = ?</property>
                 <output
                   refId="Package\Transform and Load Billing Data\Lookup for DimDate.Outputs[Lookup Match Output]"
                   errorOrTruncationOperation="Lookup"
-                  errorRowDisposition="FailComponent"
                   exclusionGroup="1"
                   name="Lookup Match Output"
                   synchronousInputId="Package\Transform and Load Billing Data\Lookup for DimDate.Inputs[Lookup Input]">
@@ -1018,17 +1334,13 @@ where [refTable].[FullDate] = ?</property>
                   description="Specifies the SQL statement that generates the lookup table."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT patient_id, patient_sk 
-
-FROM DimPatients</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[DimPatients]</property>
                 <property
                   dataType="System.String"
                   description="Specifies a SQL statement that uses parameters to generate the lookup table."
                   expressionType="Notify"
                   name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (SELECT patient_id, patient_sk 
-
-FROM DimPatients) [refTable]
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[DimPatients]) [refTable]
 where [refTable].[patient_id] = ?</property>
                 <property
                   dataType="System.Int32"
@@ -1044,7 +1356,7 @@ where [refTable].[patient_id] = ?</property>
                   dataType="System.Int32"
                   description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
                   name="NoMatchBehavior"
-                  typeConverter="LookupNoMatchBehavior">0</property>
+                  typeConverter="LookupNoMatchBehavior">1</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
@@ -1060,7 +1372,7 @@ where [refTable].[patient_id] = ?</property>
                 <property
                   dataType="System.String"
                   description="Indicates whether to reference metadata in an XML format."
-                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="patient_id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="patient_sk" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="patient_sk" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="patient_id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="name" dataType="DT_STR" length="100" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="age" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="address" dataType="DT_STR" length="255" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="sickness" dataType="DT_STR" length="255" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="assigned_doctor" dataType="DT_STR" length="100" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="StartDate" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="EndDate" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="IsCurrent" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                 <property
                   containsID="true"
                   dataType="System.String"
@@ -1112,7 +1424,6 @@ where [refTable].[patient_id] = ?</property>
                 <output
                   refId="Package\Transform and Load Billing Data\Lookup for DimPatients.Outputs[Lookup Match Output]"
                   errorOrTruncationOperation="Lookup"
-                  errorRowDisposition="FailComponent"
                   exclusionGroup="1"
                   name="Lookup Match Output"
                   synchronousInputId="Package\Transform and Load Billing Data\Lookup for DimPatients.Inputs[Lookup Input]">
@@ -1202,7 +1513,7 @@ where [refTable].[prescription_id] = ?</property>
                   dataType="System.Int32"
                   description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
                   name="NoMatchBehavior"
-                  typeConverter="LookupNoMatchBehavior">0</property>
+                  typeConverter="LookupNoMatchBehavior">1</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
@@ -1270,26 +1581,9 @@ where [refTable].[prescription_id] = ?</property>
                 <output
                   refId="Package\Transform and Load Billing Data\Lookup for DimPrescription.Outputs[Lookup Match Output]"
                   errorOrTruncationOperation="Lookup"
-                  errorRowDisposition="FailComponent"
                   exclusionGroup="1"
                   name="Lookup Match Output"
                   synchronousInputId="Package\Transform and Load Billing Data\Lookup for DimPrescription.Inputs[Lookup Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Transform and Load Billing Data\Lookup for DimPrescription.Outputs[Lookup Match Output].Columns[prescription_id]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Copy Column"
-                      lineageId="Package\Transform and Load Billing Data\Lookup for DimPrescription.Outputs[Lookup Match Output].Columns[prescription_id]"
-                      name="prescription_id"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Specifies the column in the reference table from which a column is copied."
-                          name="CopyFromReferenceColumn">prescription_id</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
                   <externalMetadataColumns />
                 </output>
                 <output
@@ -1324,675 +1618,53 @@ where [refTable].[prescription_id] = ?</property>
                 </output>
               </outputs>
             </component>
-            <component
-              refId="Package\Transform and Load Billing Data\Multicast"
-              componentClassID="Microsoft.Multicast"
-              contactInfo="Multicast;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-              description="Distributes every input row to every row in one or more outputs. For example, branch your data flow to make a copy of data so that some values can be masked before sharing with external partners."
-              name="Multicast">
-              <inputs>
-                <input
-                  refId="Package\Transform and Load Billing Data\Multicast.Inputs[Multicast Input 1]"
-                  name="Multicast Input 1">
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Transform and Load Billing Data\Multicast.Outputs[Multicast Output 1]"
-                  deleteOutputOnPathDetached="true"
-                  name="Multicast Output 1"
-                  synchronousInputId="Package\Transform and Load Billing Data\Multicast.Inputs[Multicast Input 1]">
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Transform and Load Billing Data\Multicast.Outputs[Multicast Output 3]"
-                  deleteOutputOnPathDetached="true"
-                  name="Multicast Output 3"
-                  synchronousInputId="Package\Transform and Load Billing Data\Multicast.Inputs[Multicast Input 1]">
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Transform and Load Billing Data\Multicast.Outputs[Multicast Output 5]"
-                  dangling="true"
-                  deleteOutputOnPathDetached="true"
-                  name="Multicast Output 5"
-                  synchronousInputId="Package\Transform and Load Billing Data\Multicast.Inputs[Multicast Input 1]">
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Transform and Load Billing Data\Multicast.Outputs[Multicast Output 2]"
-                  deleteOutputOnPathDetached="true"
-                  name="Multicast Output 2"
-                  synchronousInputId="Package\Transform and Load Billing Data\Multicast.Inputs[Multicast Input 1]">
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Transform and Load Billing Data\Union All"
-              componentClassID="Microsoft.UnionAll"
-              contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
-              description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
-              name="Union All"
-              version="1">
-              <inputs>
-                <input
-                  refId="Package\Transform and Load Billing Data\Union All.Inputs[Union All Input 1]"
-                  name="Union All Input 1">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Transform and Load Billing Data\Union All.Inputs[Union All Input 1].Columns[billingId]"
-                      cachedDataType="i4"
-                      cachedName="billingId"
-                      lineageId="Package\Transform and Load Billing Data\Load From Appointments with Prescriptions Data.Outputs[OLE DB Source Output].Columns[billingId]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Transform and Load Billing Data\Union All.Outputs[Union All Output 1].Columns[billingId]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Transform and Load Billing Data\Union All.Inputs[Union All Input 1].Columns[amount]"
-                      cachedDataType="i4"
-                      cachedName="amount"
-                      lineageId="Package\Transform and Load Billing Data\Load From Appointments with Prescriptions Data.Outputs[OLE DB Source Output].Columns[amount]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Transform and Load Billing Data\Union All.Outputs[Union All Output 1].Columns[amount]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Transform and Load Billing Data\Union All.Inputs[Union All Input 1].Columns[paymentStatus]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="paymentStatus"
-                      lineageId="Package\Transform and Load Billing Data\Load From Appointments with Prescriptions Data.Outputs[OLE DB Source Output].Columns[paymentStatus]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Transform and Load Billing Data\Union All.Outputs[Union All Output 1].Columns[paymentStatus]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Transform and Load Billing Data\Union All.Inputs[Union All Input 1].Columns[paymentMethod]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="paymentMethod"
-                      lineageId="Package\Transform and Load Billing Data\Load From Appointments with Prescriptions Data.Outputs[OLE DB Source Output].Columns[paymentMethod]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Transform and Load Billing Data\Union All.Outputs[Union All Output 1].Columns[paymentMethod]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Transform and Load Billing Data\Union All.Inputs[Union All Input 1].Columns[appointmentId]"
-                      cachedDataType="i4"
-                      cachedName="appointmentId"
-                      lineageId="Package\Transform and Load Billing Data\Load From Appointments with Prescriptions Data.Outputs[OLE DB Source Output].Columns[appointmentId]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Transform and Load Billing Data\Union All.Outputs[Union All Output 1].Columns[appointmentId]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Transform and Load Billing Data\Union All.Inputs[Union All Input 1].Columns[patientId]"
-                      cachedDataType="i4"
-                      cachedName="patientId"
-                      lineageId="Package\Transform and Load Billing Data\Load From Appointments with Prescriptions Data.Outputs[OLE DB Source Output].Columns[patientId]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Transform and Load Billing Data\Union All.Outputs[Union All Output 1].Columns[patientId]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Transform and Load Billing Data\Union All.Inputs[Union All Input 1].Columns[doctorId]"
-                      cachedDataType="i4"
-                      cachedName="doctorId"
-                      lineageId="Package\Transform and Load Billing Data\Load From Appointments with Prescriptions Data.Outputs[OLE DB Source Output].Columns[doctorId]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Transform and Load Billing Data\Union All.Outputs[Union All Output 1].Columns[doctorId]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Transform and Load Billing Data\Union All.Inputs[Union All Input 1].Columns[date]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="date"
-                      lineageId="Package\Transform and Load Billing Data\Load From Appointments with Prescriptions Data.Outputs[OLE DB Source Output].Columns[date]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Transform and Load Billing Data\Union All.Outputs[Union All Output 1].Columns[date]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Transform and Load Billing Data\Union All.Inputs[Union All Input 1].Columns[prescriptionId]"
-                      cachedDataType="numeric"
-                      cachedName="prescriptionId"
-                      cachedPrecision="18"
-                      lineageId="Package\Transform and Load Billing Data\Load From Appointments with Prescriptions Data.Outputs[OLE DB Source Output].Columns[prescriptionId]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Transform and Load Billing Data\Union All.Outputs[Union All Output 1].Columns[prescriptionId]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Transform and Load Billing Data\Union All.Inputs[Union All Input 1].Columns[CleanedDate]"
-                      cachedDataType="dbDate"
-                      cachedName="CleanedDate"
-                      lineageId="Package\Transform and Load Billing Data\Derived Column.Outputs[Derived Column Output].Columns[CleanedDate]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Transform and Load Billing Data\Union All.Outputs[Union All Output 1].Columns[CleanedDate]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Transform and Load Billing Data\Union All.Inputs[Union All Input 1].Columns[prescriptionId_converted]"
-                      cachedDataType="i4"
-                      cachedName="prescriptionId_converted"
-                      lineageId="Package\Transform and Load Billing Data\Data Conversion.Outputs[Data Conversion Output].Columns[prescriptionId_converted]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Transform and Load Billing Data\Union All.Outputs[Union All Output 1].Columns[prescriptionId_converted]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Transform and Load Billing Data\Union All.Inputs[Union All Input 1].Columns[date_id]"
-                      cachedDataType="i4"
-                      cachedName="date_id"
-                      lineageId="Package\Transform and Load Billing Data\Lookup for DimDate.Outputs[Lookup Match Output].Columns[date_id]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Transform and Load Billing Data\Union All.Outputs[Union All Output 1].Columns[date_id]}</property>
-                      </properties>
-                    </inputColumn>
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-                <input
-                  refId="Package\Transform and Load Billing Data\Union All.Inputs[Union All Input 2]"
-                  hasSideEffects="true"
-                  name="Union All Input 2">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Transform and Load Billing Data\Union All.Inputs[Union All Input 2].Columns[billingId]"
-                      cachedDataType="i4"
-                      cachedName="billingId"
-                      lineageId="Package\Transform and Load Billing Data\Load From Appointments with Prescriptions Data.Outputs[OLE DB Source Output].Columns[billingId]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Transform and Load Billing Data\Union All.Outputs[Union All Output 1].Columns[billingId]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Transform and Load Billing Data\Union All.Inputs[Union All Input 2].Columns[amount]"
-                      cachedDataType="i4"
-                      cachedName="amount"
-                      lineageId="Package\Transform and Load Billing Data\Load From Appointments with Prescriptions Data.Outputs[OLE DB Source Output].Columns[amount]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Transform and Load Billing Data\Union All.Outputs[Union All Output 1].Columns[amount]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Transform and Load Billing Data\Union All.Inputs[Union All Input 2].Columns[paymentStatus]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="paymentStatus"
-                      lineageId="Package\Transform and Load Billing Data\Load From Appointments with Prescriptions Data.Outputs[OLE DB Source Output].Columns[paymentStatus]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Transform and Load Billing Data\Union All.Outputs[Union All Output 1].Columns[paymentStatus]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Transform and Load Billing Data\Union All.Inputs[Union All Input 2].Columns[paymentMethod]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="paymentMethod"
-                      lineageId="Package\Transform and Load Billing Data\Load From Appointments with Prescriptions Data.Outputs[OLE DB Source Output].Columns[paymentMethod]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Transform and Load Billing Data\Union All.Outputs[Union All Output 1].Columns[paymentMethod]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Transform and Load Billing Data\Union All.Inputs[Union All Input 2].Columns[appointmentId]"
-                      cachedDataType="i4"
-                      cachedName="appointmentId"
-                      lineageId="Package\Transform and Load Billing Data\Load From Appointments with Prescriptions Data.Outputs[OLE DB Source Output].Columns[appointmentId]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Transform and Load Billing Data\Union All.Outputs[Union All Output 1].Columns[appointmentId]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Transform and Load Billing Data\Union All.Inputs[Union All Input 2].Columns[patientId]"
-                      cachedDataType="i4"
-                      cachedName="patientId"
-                      lineageId="Package\Transform and Load Billing Data\Load From Appointments with Prescriptions Data.Outputs[OLE DB Source Output].Columns[patientId]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Transform and Load Billing Data\Union All.Outputs[Union All Output 1].Columns[patientId]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Transform and Load Billing Data\Union All.Inputs[Union All Input 2].Columns[doctorId]"
-                      cachedDataType="i4"
-                      cachedName="doctorId"
-                      lineageId="Package\Transform and Load Billing Data\Load From Appointments with Prescriptions Data.Outputs[OLE DB Source Output].Columns[doctorId]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Transform and Load Billing Data\Union All.Outputs[Union All Output 1].Columns[doctorId]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Transform and Load Billing Data\Union All.Inputs[Union All Input 2].Columns[date]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="date"
-                      lineageId="Package\Transform and Load Billing Data\Load From Appointments with Prescriptions Data.Outputs[OLE DB Source Output].Columns[date]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Transform and Load Billing Data\Union All.Outputs[Union All Output 1].Columns[date]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Transform and Load Billing Data\Union All.Inputs[Union All Input 2].Columns[prescriptionId]"
-                      cachedDataType="numeric"
-                      cachedName="prescriptionId"
-                      cachedPrecision="18"
-                      lineageId="Package\Transform and Load Billing Data\Load From Appointments with Prescriptions Data.Outputs[OLE DB Source Output].Columns[prescriptionId]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Transform and Load Billing Data\Union All.Outputs[Union All Output 1].Columns[prescriptionId]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Transform and Load Billing Data\Union All.Inputs[Union All Input 2].Columns[CleanedDate]"
-                      cachedDataType="dbDate"
-                      cachedName="CleanedDate"
-                      lineageId="Package\Transform and Load Billing Data\Derived Column.Outputs[Derived Column Output].Columns[CleanedDate]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Transform and Load Billing Data\Union All.Outputs[Union All Output 1].Columns[CleanedDate]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Transform and Load Billing Data\Union All.Inputs[Union All Input 2].Columns[prescriptionId_converted]"
-                      cachedDataType="i4"
-                      cachedName="prescriptionId_converted"
-                      lineageId="Package\Transform and Load Billing Data\Data Conversion.Outputs[Data Conversion Output].Columns[prescriptionId_converted]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Transform and Load Billing Data\Union All.Outputs[Union All Output 1].Columns[prescriptionId_converted]}</property>
-                      </properties>
-                    </inputColumn>
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-                <input
-                  refId="Package\Transform and Load Billing Data\Union All.Inputs[Union All Input 3]"
-                  hasSideEffects="true"
-                  name="Union All Input 3">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Transform and Load Billing Data\Union All.Inputs[Union All Input 3].Columns[billingId]"
-                      cachedDataType="i4"
-                      cachedName="billingId"
-                      lineageId="Package\Transform and Load Billing Data\Load From Appointments with Prescriptions Data.Outputs[OLE DB Source Output].Columns[billingId]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Transform and Load Billing Data\Union All.Outputs[Union All Output 1].Columns[billingId]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Transform and Load Billing Data\Union All.Inputs[Union All Input 3].Columns[amount]"
-                      cachedDataType="i4"
-                      cachedName="amount"
-                      lineageId="Package\Transform and Load Billing Data\Load From Appointments with Prescriptions Data.Outputs[OLE DB Source Output].Columns[amount]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Transform and Load Billing Data\Union All.Outputs[Union All Output 1].Columns[amount]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Transform and Load Billing Data\Union All.Inputs[Union All Input 3].Columns[paymentStatus]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="paymentStatus"
-                      lineageId="Package\Transform and Load Billing Data\Load From Appointments with Prescriptions Data.Outputs[OLE DB Source Output].Columns[paymentStatus]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Transform and Load Billing Data\Union All.Outputs[Union All Output 1].Columns[paymentStatus]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Transform and Load Billing Data\Union All.Inputs[Union All Input 3].Columns[paymentMethod]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="paymentMethod"
-                      lineageId="Package\Transform and Load Billing Data\Load From Appointments with Prescriptions Data.Outputs[OLE DB Source Output].Columns[paymentMethod]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Transform and Load Billing Data\Union All.Outputs[Union All Output 1].Columns[paymentMethod]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Transform and Load Billing Data\Union All.Inputs[Union All Input 3].Columns[appointmentId]"
-                      cachedDataType="i4"
-                      cachedName="appointmentId"
-                      lineageId="Package\Transform and Load Billing Data\Load From Appointments with Prescriptions Data.Outputs[OLE DB Source Output].Columns[appointmentId]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Transform and Load Billing Data\Union All.Outputs[Union All Output 1].Columns[appointmentId]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Transform and Load Billing Data\Union All.Inputs[Union All Input 3].Columns[patientId]"
-                      cachedDataType="i4"
-                      cachedName="patientId"
-                      lineageId="Package\Transform and Load Billing Data\Load From Appointments with Prescriptions Data.Outputs[OLE DB Source Output].Columns[patientId]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Transform and Load Billing Data\Union All.Outputs[Union All Output 1].Columns[patientId]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Transform and Load Billing Data\Union All.Inputs[Union All Input 3].Columns[doctorId]"
-                      cachedDataType="i4"
-                      cachedName="doctorId"
-                      lineageId="Package\Transform and Load Billing Data\Load From Appointments with Prescriptions Data.Outputs[OLE DB Source Output].Columns[doctorId]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Transform and Load Billing Data\Union All.Outputs[Union All Output 1].Columns[doctorId]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Transform and Load Billing Data\Union All.Inputs[Union All Input 3].Columns[date]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="date"
-                      lineageId="Package\Transform and Load Billing Data\Load From Appointments with Prescriptions Data.Outputs[OLE DB Source Output].Columns[date]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Transform and Load Billing Data\Union All.Outputs[Union All Output 1].Columns[date]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Transform and Load Billing Data\Union All.Inputs[Union All Input 3].Columns[prescriptionId]"
-                      cachedDataType="numeric"
-                      cachedName="prescriptionId"
-                      cachedPrecision="18"
-                      lineageId="Package\Transform and Load Billing Data\Load From Appointments with Prescriptions Data.Outputs[OLE DB Source Output].Columns[prescriptionId]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Transform and Load Billing Data\Union All.Outputs[Union All Output 1].Columns[prescriptionId]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Transform and Load Billing Data\Union All.Inputs[Union All Input 3].Columns[CleanedDate]"
-                      cachedDataType="dbDate"
-                      cachedName="CleanedDate"
-                      lineageId="Package\Transform and Load Billing Data\Derived Column.Outputs[Derived Column Output].Columns[CleanedDate]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Transform and Load Billing Data\Union All.Outputs[Union All Output 1].Columns[CleanedDate]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Transform and Load Billing Data\Union All.Inputs[Union All Input 3].Columns[prescriptionId_converted]"
-                      cachedDataType="i4"
-                      cachedName="prescriptionId_converted"
-                      lineageId="Package\Transform and Load Billing Data\Data Conversion.Outputs[Data Conversion Output].Columns[prescriptionId_converted]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Transform and Load Billing Data\Union All.Outputs[Union All Output 1].Columns[prescriptionId_converted]}</property>
-                      </properties>
-                    </inputColumn>
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-                <input
-                  refId="Package\Transform and Load Billing Data\Union All.Inputs[Union All Input 4]"
-                  dangling="true"
-                  hasSideEffects="true"
-                  name="Union All Input 4">
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Transform and Load Billing Data\Union All.Outputs[Union All Output 1]"
-                  name="Union All Output 1">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Transform and Load Billing Data\Union All.Outputs[Union All Output 1].Columns[billingId]"
-                      dataType="i4"
-                      lineageId="Package\Transform and Load Billing Data\Union All.Outputs[Union All Output 1].Columns[billingId]"
-                      name="billingId" />
-                    <outputColumn
-                      refId="Package\Transform and Load Billing Data\Union All.Outputs[Union All Output 1].Columns[amount]"
-                      dataType="i4"
-                      lineageId="Package\Transform and Load Billing Data\Union All.Outputs[Union All Output 1].Columns[amount]"
-                      name="amount" />
-                    <outputColumn
-                      refId="Package\Transform and Load Billing Data\Union All.Outputs[Union All Output 1].Columns[paymentStatus]"
-                      dataType="wstr"
-                      length="50"
-                      lineageId="Package\Transform and Load Billing Data\Union All.Outputs[Union All Output 1].Columns[paymentStatus]"
-                      name="paymentStatus" />
-                    <outputColumn
-                      refId="Package\Transform and Load Billing Data\Union All.Outputs[Union All Output 1].Columns[paymentMethod]"
-                      dataType="wstr"
-                      length="50"
-                      lineageId="Package\Transform and Load Billing Data\Union All.Outputs[Union All Output 1].Columns[paymentMethod]"
-                      name="paymentMethod" />
-                    <outputColumn
-                      refId="Package\Transform and Load Billing Data\Union All.Outputs[Union All Output 1].Columns[appointmentId]"
-                      dataType="i4"
-                      lineageId="Package\Transform and Load Billing Data\Union All.Outputs[Union All Output 1].Columns[appointmentId]"
-                      name="appointmentId" />
-                    <outputColumn
-                      refId="Package\Transform and Load Billing Data\Union All.Outputs[Union All Output 1].Columns[patientId]"
-                      dataType="i4"
-                      lineageId="Package\Transform and Load Billing Data\Union All.Outputs[Union All Output 1].Columns[patientId]"
-                      name="patientId" />
-                    <outputColumn
-                      refId="Package\Transform and Load Billing Data\Union All.Outputs[Union All Output 1].Columns[doctorId]"
-                      dataType="i4"
-                      lineageId="Package\Transform and Load Billing Data\Union All.Outputs[Union All Output 1].Columns[doctorId]"
-                      name="doctorId" />
-                    <outputColumn
-                      refId="Package\Transform and Load Billing Data\Union All.Outputs[Union All Output 1].Columns[date]"
-                      dataType="wstr"
-                      length="50"
-                      lineageId="Package\Transform and Load Billing Data\Union All.Outputs[Union All Output 1].Columns[date]"
-                      name="date" />
-                    <outputColumn
-                      refId="Package\Transform and Load Billing Data\Union All.Outputs[Union All Output 1].Columns[prescriptionId]"
-                      dataType="numeric"
-                      lineageId="Package\Transform and Load Billing Data\Union All.Outputs[Union All Output 1].Columns[prescriptionId]"
-                      name="prescriptionId"
-                      precision="18" />
-                    <outputColumn
-                      refId="Package\Transform and Load Billing Data\Union All.Outputs[Union All Output 1].Columns[CleanedDate]"
-                      dataType="dbDate"
-                      lineageId="Package\Transform and Load Billing Data\Union All.Outputs[Union All Output 1].Columns[CleanedDate]"
-                      name="CleanedDate" />
-                    <outputColumn
-                      refId="Package\Transform and Load Billing Data\Union All.Outputs[Union All Output 1].Columns[prescriptionId_converted]"
-                      dataType="i4"
-                      lineageId="Package\Transform and Load Billing Data\Union All.Outputs[Union All Output 1].Columns[prescriptionId_converted]"
-                      name="prescriptionId_converted" />
-                    <outputColumn
-                      refId="Package\Transform and Load Billing Data\Union All.Outputs[Union All Output 1].Columns[date_id]"
-                      dataType="i4"
-                      lineageId="Package\Transform and Load Billing Data\Union All.Outputs[Union All Output 1].Columns[date_id]"
-                      name="date_id" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
           </components>
           <paths>
             <path
               refId="Package\Transform and Load Billing Data.Paths[Data Conversion Output]"
-              endId="Package\Transform and Load Billing Data\Multicast.Inputs[Multicast Input 1]"
-              name="Data Conversion Output"
-              startId="Package\Transform and Load Billing Data\Data Conversion.Outputs[Data Conversion Output]" />
-            <path
-              refId="Package\Transform and Load Billing Data.Paths[Data Conversion Output1]"
-              endId="Package\Transform and Load Billing Data\Load FactBilling.Inputs[OLE DB Destination Input]"
+              endId="Package\Transform and Load Billing Data\Derived Column 1.Inputs[Derived Column Input]"
               name="Data Conversion Output"
               startId="Package\Transform and Load Billing Data\Data Conversion 1.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Transform and Load Billing Data.Paths[Data Conversion Output1]"
+              endId="Package\Transform and Load Billing Data\Lookup for DimPatients.Inputs[Lookup Input]"
+              name="Data Conversion Output"
+              startId="Package\Transform and Load Billing Data\Data Conversion.Outputs[Data Conversion Output]" />
             <path
               refId="Package\Transform and Load Billing Data.Paths[Derived Column Output]"
               endId="Package\Transform and Load Billing Data\Data Conversion.Inputs[Data Conversion Input]"
               name="Derived Column Output"
               startId="Package\Transform and Load Billing Data\Derived Column.Outputs[Derived Column Output]" />
             <path
+              refId="Package\Transform and Load Billing Data.Paths[Derived Column Output1]"
+              endId="Package\Transform and Load Billing Data\Load FactBilling 1.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Transform and Load Billing Data\Derived Column 1.Outputs[Derived Column Output]" />
+            <path
               refId="Package\Transform and Load Billing Data.Paths[Lookup Match Output]"
-              endId="Package\Transform and Load Billing Data\Union All.Inputs[Union All Input 1]"
-              name="Lookup Match Output"
-              startId="Package\Transform and Load Billing Data\Lookup for DimDate.Outputs[Lookup Match Output]" />
-            <path
-              refId="Package\Transform and Load Billing Data.Paths[Lookup Match Output1]"
-              endId="Package\Transform and Load Billing Data\Union All.Inputs[Union All Input 2]"
-              name="Lookup Match Output"
-              startId="Package\Transform and Load Billing Data\Lookup for DimPrescription.Outputs[Lookup Match Output]" />
-            <path
-              refId="Package\Transform and Load Billing Data.Paths[Lookup Match Output2]"
-              endId="Package\Transform and Load Billing Data\Union All.Inputs[Union All Input 3]"
+              endId="Package\Transform and Load Billing Data\Lookup DimDoctors.Inputs[Lookup Input]"
               name="Lookup Match Output"
               startId="Package\Transform and Load Billing Data\Lookup for DimPatients.Outputs[Lookup Match Output]" />
             <path
-              refId="Package\Transform and Load Billing Data.Paths[Multicast Output 1]"
-              endId="Package\Transform and Load Billing Data\Lookup for DimPatients.Inputs[Lookup Input]"
-              name="Multicast Output 1"
-              startId="Package\Transform and Load Billing Data\Multicast.Outputs[Multicast Output 1]" />
-            <path
-              refId="Package\Transform and Load Billing Data.Paths[Multicast Output 2]"
-              endId="Package\Transform and Load Billing Data\Lookup for DimDate.Inputs[Lookup Input]"
-              name="Multicast Output 2"
-              startId="Package\Transform and Load Billing Data\Multicast.Outputs[Multicast Output 2]" />
-            <path
-              refId="Package\Transform and Load Billing Data.Paths[Multicast Output 3]"
+              refId="Package\Transform and Load Billing Data.Paths[Lookup Match Output1]"
               endId="Package\Transform and Load Billing Data\Lookup for DimPrescription.Inputs[Lookup Input]"
-              name="Multicast Output 3"
-              startId="Package\Transform and Load Billing Data\Multicast.Outputs[Multicast Output 3]" />
+              name="Lookup Match Output"
+              startId="Package\Transform and Load Billing Data\Lookup DimDoctors.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Transform and Load Billing Data.Paths[Lookup Match Output2]"
+              endId="Package\Transform and Load Billing Data\Lookup for DimDate.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\Transform and Load Billing Data\Lookup for DimPrescription.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Transform and Load Billing Data.Paths[Lookup Match Output3]"
+              endId="Package\Transform and Load Billing Data\Data Conversion 1.Inputs[Data Conversion Input]"
+              name="Lookup Match Output"
+              startId="Package\Transform and Load Billing Data\Lookup for DimDate.Outputs[Lookup Match Output]" />
             <path
               refId="Package\Transform and Load Billing Data.Paths[OLE DB Source Output]"
               endId="Package\Transform and Load Billing Data\Derived Column.Inputs[Derived Column Input]"
               name="OLE DB Source Output"
               startId="Package\Transform and Load Billing Data\Load From Appointments with Prescriptions Data.Outputs[OLE DB Source Output]" />
-            <path
-              refId="Package\Transform and Load Billing Data.Paths[Union All Output 1]"
-              endId="Package\Transform and Load Billing Data\Data Conversion 1.Inputs[Data Conversion Input]"
-              name="Union All Output 1"
-              startId="Package\Transform and Load Billing Data\Union All.Outputs[Union All Output 1]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -2027,24 +1699,7 @@ where [refTable].[prescription_id] = ?</property>
                 DTS:DataType="11">-1</DTS:VariableValue>
             </DTS:Variable>
           </DTS:Variables>
-          <DTS:Executables>
-            <DTS:Executable
-              DTS:refId="Package\Transform and Load Doctors Data.EventHandlers[OnPreExecute]\Execute SQL Task"
-              DTS:CreationName="Microsoft.ExecuteSQLTask"
-              DTS:Description="Execute SQL Task"
-              DTS:DTSID="{B564DCE2-5332-4F77-8545-C017882E4C61}"
-              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-              DTS:LocaleID="-1"
-              DTS:ObjectName="Execute SQL Task"
-              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
-              <DTS:Variables />
-              <DTS:ObjectData>
-                <SQLTask:SqlTaskData
-                  SQLTask:Connection="{632FFE60-2EA7-4F60-AFAC-2E036643B97A}"
-                  SQLTask:SqlStatementSource="truncate table dbo.DimDoctors" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-              </DTS:ObjectData>
-            </DTS:Executable>
-          </DTS:Executables>
+          <DTS:Executables />
         </DTS:EventHandler>
       </DTS:EventHandlers>
       <DTS:ObjectData>
@@ -3903,20 +3558,6 @@ where [refTable].[patient_id] = ?</property>
                   synchronousInputId="Package\Transform and Load Patients Data\Lookup.Inputs[Lookup Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Transform and Load Patients Data\Lookup.Outputs[Lookup Match Output].Columns[patient_sk]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Copy Column"
-                      lineageId="Package\Transform and Load Patients Data\Lookup.Outputs[Lookup Match Output].Columns[patient_sk]"
-                      name="patient_sk"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Specifies the column in the reference table from which a column is copied."
-                          name="CopyFromReferenceColumn">patient_sk</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
                       refId="Package\Transform and Load Patients Data\Lookup.Outputs[Lookup Match Output].Columns[address_lk]"
                       codePage="1252"
                       dataType="str"
@@ -4780,7 +4421,7 @@ where [refTable].[prescription_id] = ?</property>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="227.333333333334,41.3333333333334"
+          Size="232,42.6666666666667"
           Id="Package\Transform and Load Billing Data"
           TopLeft="288.333317579495,309.399997848471" />
         <NodeLayout
@@ -4865,30 +4506,30 @@ where [refTable].[prescription_id] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="368.033320174781,271.266665069593">
+          TopLeft="368.166653508114,270.999998402926">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="33.8999974047146,38.1333327788777"
+              EndConnector="36.1666640713806,38.3999994455447"
               Start="0,0"
-              End="33.8999974047146,30.6333327788777">
+              End="36.1666640713806,30.8999994455447">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,15.0666663894389" />
+                    End="0,15.1999997227723" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,15.0666663894389"
-                    Point2="0,19.0666663894389"
-                    Point3="4,19.0666663894389" />
+                    Point1="0,15.1999997227723"
+                    Point2="0,19.1999997227723"
+                    Point3="4,19.1999997227723" />
                   <mssgle:LineSegment
-                    End="29.8999974047146,19.0666663894389" />
+                    End="32.1666640713806,19.1999997227723" />
                   <mssgle:CubicBezierSegment
-                    Point1="29.8999974047146,19.0666663894389"
-                    Point2="33.8999974047146,19.0666663894389"
-                    Point3="33.8999974047146,23.0666663894389" />
+                    Point1="32.1666640713806,19.1999997227723"
+                    Point2="36.1666640713806,19.1999997227723"
+                    Point3="36.1666640713806,23.1999997227723" />
                   <mssgle:LineSegment
-                    End="33.8999974047146,30.6333327788777" />
+                    End="36.1666640713806,30.8999994455447" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4910,247 +4551,37 @@ where [refTable].[prescription_id] = ?</property>
           Id="Package\Transform and Load Billing Data\Load From Appointments with Prescriptions Data"
           TopLeft="382.16666097194,39.4999994114042" />
         <NodeLayout
-          Size="186.666666666667,41.3333333333334"
-          Id="Package\Transform and Load Billing Data\Lookup for DimPatients"
-          TopLeft="290.833328999579,304.999995455146" />
-        <NodeLayout
-          Size="119.333333333334,41.3333333333334"
-          Id="Package\Transform and Load Billing Data\Multicast"
-          TopLeft="476.66665956378,243.333329707384" />
-        <NodeLayout
-          Size="204,41.3333333333334"
-          Id="Package\Transform and Load Billing Data\Lookup for DimPrescription"
-          TopLeft="600.833324380219,292.333329583208" />
-        <NodeLayout
-          Size="170.666666666667,41.3333333333334"
-          Id="Package\Transform and Load Billing Data\Lookup for DimDate"
-          TopLeft="447.49999333173,357.499994672835" />
+          Size="164,42.6666666666667"
+          Id="Package\Transform and Load Billing Data\Load FactBilling 1"
+          TopLeft="430.468730756548,669.934204963938" />
         <NodeLayout
           Size="152.666666666667,41.3333333333334"
           Id="Package\Transform and Load Billing Data\Derived Column"
           TopLeft="460.833326466382,101.66666554908" />
         <NodeLayout
+          Size="204,41.3333333333334"
+          Id="Package\Transform and Load Billing Data\Lookup for DimPrescription"
+          TopLeft="297.083337958902,383.105258411112" />
+        <NodeLayout
           Size="156,41.3333333333334"
           Id="Package\Transform and Load Billing Data\Data Conversion"
           TopLeft="459.999993145466,167.499997504055" />
         <NodeLayout
-          Size="120,41.3333333333334"
-          Id="Package\Transform and Load Billing Data\Union All"
-          TopLeft="483.333326131105,433.499995268881" />
-        <EdgeLayout
-          Id="Package\Transform and Load Billing Data.Paths[OLE DB Source Output]"
-          TopLeft="534.16666097194,81.0999994114042">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="79.4666654944422,41.3666661376754"
-              Start="0,0"
-              End="71.9666654944422,41.3666661376754">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,37.3666661376754" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,37.3666661376754"
-                    Point2="0,41.3666661376754"
-                    Point3="4,41.3666661376754" />
-                  <mssgle:LineSegment
-                    End="71.9666654944422,41.3666661376754" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Transform and Load Billing Data.Paths[Multicast Output 3]"
-          TopLeft="595.86665956378,264.133329707384">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="106.966664816439,28.1999998758237"
-              Start="0,0"
-              End="106.966664816439,20.6999998758237">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="102.966664816439,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="102.966664816439,0"
-                    Point2="106.966664816439,0"
-                    Point3="106.966664816439,4" />
-                  <mssgle:LineSegment
-                    End="106.966664816439,20.6999998758237" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Transform and Load Billing Data.Paths[Multicast Output 2]"
-          TopLeft="534.483326447755,284.933329707384">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,72.5666649654507"
-              Start="0,0"
-              End="0,65.0666649654507">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,65.0666649654507" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Transform and Load Billing Data.Paths[Multicast Output 1]"
-          TopLeft="476.66665956378,264.133329707384">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-92.6333305642007,40.8666657477618"
-              Start="0,0"
-              End="-92.6333305642007,33.3666657477618">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-88.6333305642007,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-88.6333305642007,0"
-                    Point2="-92.6333305642007,0"
-                    Point3="-92.6333305642007,4" />
-                  <mssgle:LineSegment
-                    End="-92.6333305642007,33.3666657477618" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Transform and Load Billing Data.Paths[Lookup Match Output2]"
-          TopLeft="384.033328999579,346.599995455146">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="131.299997131526,86.8999998137353"
-              Start="0,0"
-              End="131.299997131526,79.3999998137353">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.6739129220013" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,52.6739129220013"
-                    Point2="0,56.6739129220013"
-                    Point3="4,56.6739129220013" />
-                  <mssgle:LineSegment
-                    End="127.299997131526,56.6739129220013" />
-                  <mssgle:CubicBezierSegment
-                    Point1="127.299997131526,56.6739129220013"
-                    Point2="131.299997131526,56.6739129220013"
-                    Point3="131.299997131526,60.6739129220013" />
-                  <mssgle:LineSegment
-                    End="131.299997131526,79.3999998137353" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="17.4586118470132,61.6739129220013,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Transform and Load Billing Data.Paths[Lookup Match Output1]"
-          TopLeft="702.833324380219,333.933329583208">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-131.499998249114,99.5666656856735"
-              Start="0,0"
-              End="-131.499998249114,92.0666656856735">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,60.9347819689175" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,60.9347819689175"
-                    Point2="0,64.9347819689175"
-                    Point3="-4,64.9347819689175" />
-                  <mssgle:LineSegment
-                    End="-127.499998249114,64.9347819689175" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-127.499998249114,64.9347819689175"
-                    Point2="-131.499998249114,64.9347819689175"
-                    Point3="-131.499998249114,68.9347819689175" />
-                  <mssgle:LineSegment
-                    End="-131.499998249114,92.0666656856735" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-113.941385843307,69.9347819689175,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Transform and Load Billing Data.Paths[Lookup Match Output]"
-          TopLeft="532.69999333173,399.099994672835">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="10.633332799375,34.4000005960464"
-              Start="0,0"
-              End="10.633332799375,26.9000005960464">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,13.2000002980232" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,13.2000002980232"
-                    Point2="0,17.2000002980232"
-                    Point3="4,17.2000002980232" />
-                  <mssgle:LineSegment
-                    End="6.63333279937501,17.2000002980232" />
-                  <mssgle:CubicBezierSegment
-                    Point1="6.63333279937501,17.2000002980232"
-                    Point2="10.633332799375,17.2000002980232"
-                    Point3="10.633332799375,21.2000002980232" />
-                  <mssgle:LineSegment
-                    End="10.633332799375,26.9000005960464" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-42.8747203190625,22.2000002980232,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          Size="168,42.6666666666667"
+          Id="Package\Transform and Load Billing Data\Data Conversion 1"
+          TopLeft="378.749983068557,520.912274982241" />
+        <NodeLayout
+          Size="170.666666666667,41.3333333333334"
+          Id="Package\Transform and Load Billing Data\Lookup for DimDate"
+          TopLeft="314.166665958861,444.622800733788" />
+        <NodeLayout
+          Size="186.666666666667,41.3333333333334"
+          Id="Package\Transform and Load Billing Data\Lookup for DimPatients"
+          TopLeft="304.583328384906,255.736838101309" />
+        <NodeLayout
+          Size="165.333333333334,42.6666666666667"
+          Id="Package\Transform and Load Billing Data\Derived Column 1"
+          TopLeft="445.833313403031,566.505843026271" />
         <EdgeLayout
           Id="Package\Transform and Load Billing Data.Paths[Derived Column Output]"
           TopLeft="537.616659805924,143.26666554908">
@@ -5175,18 +4606,24 @@ where [refTable].[prescription_id] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Transform and Load Billing Data.Paths[Data Conversion Output]"
-          TopLeft="537.133326354623,209.099997504055">
+          TopLeft="546.749983068557,542.245608315574">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,34.2333322033286"
+              EndConnector="-18.2500029988593,24.2602347106965"
               Start="0,0"
-              End="0,26.7333322033286">
+              End="-18.2500029988593,16.7602347106965">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,26.7333322033286" />
+                    End="-14.2500029988593,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-14.2500029988593,0"
+                    Point2="-18.2500029988593,0"
+                    Point3="-18.2500029988593,4" />
+                  <mssgle:LineSegment
+                    End="-18.2500029988593,16.7602347106965" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5195,28 +4632,26 @@ where [refTable].[prescription_id] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="156,42.6666666666667"
-          Id="Package\Transform and Load Billing Data\Load FactBilling"
-          TopLeft="463.214265006994,563.007512615281" />
-        <NodeLayout
-          Size="168,42.6666666666667"
-          Id="Package\Transform and Load Billing Data\Data Conversion 1"
-          TopLeft="454.999979659916,498.105257688798" />
         <EdgeLayout
-          Id="Package\Transform and Load Billing Data.Paths[Union All Output 1]"
-          TopLeft="541.16665289551,474.833328602214">
+          Id="Package\Transform and Load Billing Data.Paths[OLE DB Source Output]"
+          TopLeft="534.16666097194,80.8333327447375">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,23.2719290865832"
+              EndConnector="79.3333321611087,41.4999994710091"
               Start="0,0"
-              End="0,15.7719290865832">
+              End="71.8333321611087,41.4999994710091">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,15.7719290865832" />
+                    End="0,37.4999994710091" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,37.4999994710091"
+                    Point2="0,41.4999994710091"
+                    Point3="4,41.4999994710091" />
+                  <mssgle:LineSegment
+                    End="71.8333321611087,41.4999994710091" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5227,13 +4662,117 @@ where [refTable].[prescription_id] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Transform and Load Billing Data.Paths[Data Conversion Output1]"
-          TopLeft="454.999979659916,519.438591022131">
+          TopLeft="537.999993145466,208.833330837388">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="8.2142853470782,64.9022549264837"
+              EndConnector="-140.083331427227,46.9035072639205"
               Start="0,0"
-              End="0.714285347078203,64.9022549264837">
+              End="-140.083331427227,39.4035072639205">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.4517536319603" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.4517536319603"
+                    Point2="0,23.4517536319603"
+                    Point3="-4,23.4517536319603" />
+                  <mssgle:LineSegment
+                    End="-136.083331427227,23.4517536319603" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-136.083331427227,23.4517536319603"
+                    Point2="-140.083331427227,23.4517536319603"
+                    Point3="-140.083331427227,27.4517536319603" />
+                  <mssgle:LineSegment
+                    End="-140.083331427227,39.4035072639205" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="173.333333333334,42.6666666666667"
+          Id="Package\Transform and Load Billing Data\Lookup DimDoctors"
+          TopLeft="303.361111278749,318.701753038724" />
+        <EdgeLayout
+          Id="Package\Transform and Load Billing Data.Paths[Lookup Match Output]"
+          TopLeft="491.249995051573,276.403504767976">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-14.5555504394903,63.6315816040816"
+              Start="0,0"
+              End="-7.05555043949028,63.6315816040816">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="18.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="18.5,0"
+                    Point2="22.5,0"
+                    Point3="22.5,4" />
+                  <mssgle:LineSegment
+                    End="22.5,59.6315816040816" />
+                  <mssgle:CubicBezierSegment
+                    Point1="22.5,59.6315816040816"
+                    Point2="22.5,63.6315816040816"
+                    Point3="18.5,63.6315816040816" />
+                  <mssgle:LineSegment
+                    End="-7.05555043949028,63.6315816040816" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-25.69138671875,-17.609375,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Transform and Load Billing Data.Paths[Lookup Match Output1]"
+          TopLeft="476.694444612083,345.812864149835">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-77.6111066531808,37.2923942612766"
+              Start="0,0"
+              End="-77.6111066531808,29.7923942612766">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-73.6111066531808,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-73.6111066531808,0"
+                    Point2="-77.6111066531808,0"
+                    Point3="-77.6111066531808,4" />
+                  <mssgle:LineSegment
+                    End="-77.6111066531808,29.7923942612766" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-125.802493371931,-17.609375,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Transform and Load Billing Data.Paths[Lookup Match Output2]"
+          TopLeft="297.083337958902,403.771925077778">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="17.0833279999592,61.5175423226761"
+              Start="0,0"
+              End="9.58332799995924,61.5175423226761">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -5244,13 +4783,85 @@ where [refTable].[prescription_id] = ?</property>
                     Point2="-22.5,0"
                     Point3="-22.5,4" />
                   <mssgle:LineSegment
-                    End="-22.5,60.9022549264837" />
+                    End="-22.5,57.5175423226761" />
                   <mssgle:CubicBezierSegment
-                    Point1="-22.5,60.9022549264837"
-                    Point2="-22.5,64.9022549264837"
-                    Point3="-18.5,64.9022549264837" />
+                    Point1="-22.5,57.5175423226761"
+                    Point2="-22.5,61.5175423226761"
+                    Point3="-18.5,61.5175423226761" />
                   <mssgle:LineSegment
-                    End="0.714285347078203,64.9022549264837" />
+                    End="9.58332799995924,61.5175423226761" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-70.69138671875,-17.609375,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Transform and Load Billing Data.Paths[Lookup Match Output3]"
+          TopLeft="399.499999292194,485.956134067121">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="63.2499837763623,34.9561409151201"
+              Start="0,0"
+              End="63.2499837763623,27.4561409151201">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13.4780704575601" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.4780704575601"
+                    Point2="0,17.4780704575601"
+                    Point3="4,17.4780704575601" />
+                  <mssgle:LineSegment
+                    End="59.2499837763623,17.4780704575601" />
+                  <mssgle:CubicBezierSegment
+                    Point1="59.2499837763623,17.4780704575601"
+                    Point2="63.2499837763623,17.4780704575601"
+                    Point3="63.2499837763623,21.4780704575601" />
+                  <mssgle:LineSegment
+                    End="63.2499837763623,27.4561409151201" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-16.5663948305689,22.4780704575601,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Transform and Load Billing Data.Paths[Derived Column Output1]"
+          TopLeft="528.499980069697,609.172509692938">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-16.0312493131493,60.7616952710006"
+              Start="0,0"
+              End="-16.0312493131493,53.2616952710006">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.3808476355003" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26.3808476355003"
+                    Point2="0,30.3808476355003"
+                    Point3="-4,30.3808476355003" />
+                  <mssgle:LineSegment
+                    End="-12.0312493131493,30.3808476355003" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-12.0312493131493,30.3808476355003"
+                    Point2="-16.0312493131493,30.3808476355003"
+                    Point3="-16.0312493131493,34.3808476355003" />
+                  <mssgle:LineSegment
+                    End="-16.0312493131493,53.2616952710006" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5270,96 +4881,27 @@ where [refTable].[prescription_id] = ?</property>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Transform and Load Billing Data\Lookup for DimPatients">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string"></Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Transform and Load Billing Data\Lookup for DimPrescription">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[DimPrescription]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Transform and Load Billing Data\Lookup for DimDate">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[DimDate]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Transform and Load Doctors Data">
     <LayoutInfo>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="162.4,42.4"
-          Id="Package\Transform and Load Doctors Data\Load DimDoctors"
-          TopLeft="172.624990703539,286.947364697908" />
-        <NodeLayout
-          Size="216,42.4"
+          Size="216,42.6666666666667"
           Id="Package\Transform and Load Doctors Data\Extract from Doctors Staging"
           TopLeft="186.874991646037,38.3157890529844" />
         <NodeLayout
-          Size="112.8,41.6"
-          Id="Package\Transform and Load Doctors Data\Lookup"
-          TopLeft="220.999996706843,183.999997258186" />
-        <NodeLayout
-          Size="156,41.6"
+          Size="156,41.3333333333334"
           Id="Package\Transform and Load Doctors Data\Data Conversion"
           TopLeft="210.999996855855,108.999998375773" />
+        <NodeLayout
+          Size="162.666666666667,42.6666666666667"
+          Id="Package\Transform and Load Doctors Data\Load DimDoctors"
+          TopLeft="172.624990703539,286.947364697908" />
+        <NodeLayout
+          Size="112.666666666667,41.3333333333334"
+          Id="Package\Transform and Load Doctors Data\Lookup"
+          TopLeft="220.999996706843,183.999997258186" />
         <EdgeLayout
           Id="Package\Transform and Load Doctors Data.Paths[OLE DB Source Output]"
           TopLeft="291.937494250946,80.7157890529844">
@@ -5379,41 +4921,9 @@ where [refTable].[prescription_id] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Transform and Load Doctors Data.Paths[Data Conversion Output]"
-          TopLeft="288.999996855855,150.599998375773">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-11.6000001490116,33.399998882413"
-              Start="0,0"
-              End="-11.6000001490116,25.899998882413">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,12.6999994412065" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,12.6999994412065"
-                    Point2="0,16.6999994412065"
-                    Point3="-4,16.6999994412065" />
-                  <mssgle:LineSegment
-                    End="-7.60000014901163,16.6999994412065" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-7.60000014901163,16.6999994412065"
-                    Point2="-11.6000001490116,16.6999994412065"
-                    Point3="-11.6000001490116,20.6999994412065" />
-                  <mssgle:LineSegment
-                    End="-11.6000001490116,25.899998882413" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5452,6 +4962,42 @@ where [refTable].[prescription_id] = ?</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Transform and Load Doctors Data.Paths[Data Conversion Output]"
+          TopLeft="288.999996855855,150.599998375773">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-11.6000001490116,33.399998882413"
+              Start="0,0"
+              End="-11.6000001490116,25.899998882413">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,12.6999994412065" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12.6999994412065"
+                    Point2="0,16.6999994412065"
+                    Point3="-4,16.6999994412065" />
+                  <mssgle:LineSegment
+                    End="-7.60000014901163,16.6999994412065" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-7.60000014901163,16.6999994412065"
+                    Point2="-11.6000001490116,16.6999994412065"
+                    Point3="-11.6000001490116,20.6999994412065" />
+                  <mssgle:LineSegment
+                    End="-11.6000001490116,25.899998882413" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
@@ -5462,7 +5008,7 @@ where [refTable].[prescription_id] = ?</property>
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
           Size="168,42.6666666666667"
-          Id="Package\Transform and Load Doctors Data.EventHandlers[OnPreExecute]\Execute SQL Task"
+          Id="{B564DCE2-5332-4F77-8545-C017882E4C61}"
           TopLeft="504.999984949828,116.999996513128" />
       </GraphLayout>
     </LayoutInfo>
@@ -5522,25 +5068,85 @@ where [refTable].[prescription_id] = ?</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="152.8,41.6"
-          Id="Package\Transform and Load Patients Data\Derived Column"
-          TopLeft="321.666649091576,285.999998011192" />
+          Size="161.333333333334,41.3333333333334"
+          Id="Package\Transform and Load Patients Data\Derived Column 2"
+          TopLeft="759.259217775164,362.444442696704" />
         <NodeLayout
-          Size="114.4,42.4"
-          Id="Package\Transform and Load Patients Data\Lookup"
-          TopLeft="446.999986678362,201.999993979931" />
-        <NodeLayout
-          Size="217.6,42.4"
+          Size="217.333333333334,42.6666666666667"
           Id="Package\Transform and Load Patients Data\Extract from Patients Staging"
           TopLeft="415.999987602234,50.9999984800816" />
         <NodeLayout
-          Size="250.4,42.4"
-          Id="Package\Transform and Load Patients Data\Data type Conversion of StgPatients"
-          TopLeft="458.999986320734,127.999996185303" />
+          Size="167.333333333334,41.3333333333334"
+          Id="Package\Transform and Load Patients Data\OLE DB Command"
+          TopLeft="575.555524108588,509.440737376173" />
         <NodeLayout
-          Size="235.2,41.6"
+          Size="119.333333333334,41.3333333333334"
+          Id="Package\Transform and Load Patients Data\Multicast"
+          TopLeft="601.11107826785,360.229627302657" />
+        <NodeLayout
+          Size="114.666666666667,42.6666666666667"
+          Id="Package\Transform and Load Patients Data\Lookup"
+          TopLeft="446.999986678362,201.999993979931" />
+        <NodeLayout
+          Size="152.666666666667,41.3333333333334"
+          Id="Package\Transform and Load Patients Data\Derived Column"
+          TopLeft="321.666649091576,285.999998011192" />
+        <NodeLayout
+          Size="235.333333333334,41.3333333333334"
           Id="Package\Transform and Load Patients Data\Load DimPatients as New records"
           TopLeft="323.33331566718,372.666664075189" />
+        <NodeLayout
+          Size="161.333333333334,41.3333333333334"
+          Id="Package\Transform and Load Patients Data\Derived Column 1"
+          TopLeft="584.166634749209,431.874071972098" />
+        <NodeLayout
+          Size="270.666666666667,41.3333333333334"
+          Id="Package\Transform and Load Patients Data\Load DimPatients after considering SCDs"
+          TopLeft="651.444414241999,564.74073886577" />
+        <NodeLayout
+          Size="153.333333333334,41.3333333333334"
+          Id="Package\Transform and Load Patients Data\Conditional Split"
+          TopLeft="609.166633383269,279.066664726072" />
+        <NodeLayout
+          Size="250.666666666667,42.6666666666667"
+          Id="Package\Transform and Load Patients Data\Data type Conversion of StgPatients"
+          TopLeft="458.999986320734,127.999996185303" />
+        <EdgeLayout
+          Id="Package\Transform and Load Patients Data.Paths[ChangedPatient]"
+          TopLeft="685.966633383269,320.666664726072">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-25.2555551154194,39.5629625765851"
+              Start="0,0"
+              End="-25.2555551154194,32.0629625765851">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.7814812882925" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15.7814812882925"
+                    Point2="0,19.7814812882925"
+                    Point3="-4,19.7814812882925" />
+                  <mssgle:LineSegment
+                    End="-21.2555551154194,19.7814812882925" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-21.2555551154194,19.7814812882925"
+                    Point2="-25.2555551154194,19.7814812882925"
+                    Point3="-25.2555551154194,23.7814812882925" />
+                  <mssgle:LineSegment
+                    End="-25.2555551154194,32.0629625765851" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.1166838077097,24.7814812882925,70.9778125,11.6630859375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Transform and Load Patients Data.Paths[OLE DB Source Output]"
           TopLeft="524.666654268901,93.6666651467483">
@@ -5572,7 +5178,57 @@ where [refTable].[prescription_id] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Transform and Load Patients Data.Paths[Multicast Output 2]"
+          TopLeft="662.838856508529,401.829627302657">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30.0444446694407"
+              Start="0,0"
+              End="0,22.5444446694407">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.5444446694407" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Transform and Load Patients Data.Paths[Multicast Output 1]"
+          TopLeft="720.31107826785,382.13703499968">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="38.9481395073147,0"
+              Start="0,0"
+              End="31.4481395073147,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="31.4481395073147,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5612,78 +5268,6 @@ where [refTable].[prescription_id] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Transform and Load Patients Data.Paths[Derived Column Output]"
-          TopLeft="398.066649091576,327.599998011192">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="42.866666575604,45.0666660639969"
-              Start="0,0"
-              End="42.866666575604,37.5666660639969">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,18.5333330319985" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,18.5333330319985"
-                    Point2="0,22.5333330319985"
-                    Point3="4,22.5333330319985" />
-                  <mssgle:LineSegment
-                    End="38.866666575604,22.5333330319985" />
-                  <mssgle:CubicBezierSegment
-                    Point1="38.866666575604,22.5333330319985"
-                    Point2="42.866666575604,22.5333330319985"
-                    Point3="42.866666575604,26.5333330319985" />
-                  <mssgle:LineSegment
-                    End="42.866666575604,37.5666660639969" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Transform and Load Patients Data.Paths[Data Conversion Output]"
-          TopLeft="584.333319654068,170.66666285197">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-79.9999996423721,31.3333311279615"
-              Start="0,0"
-              End="-79.9999996423721,23.8333311279615">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,11.6666655639808" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,11.6666655639808"
-                    Point2="0,15.6666655639808"
-                    Point3="-4,15.6666655639808" />
-                  <mssgle:LineSegment
-                    End="-75.9999996423721,15.6666655639808" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-75.9999996423721,15.6666655639808"
-                    Point2="-79.9999996423721,15.6666655639808"
-                    Point3="-79.9999996423721,19.6666655639808" />
-                  <mssgle:LineSegment
-                    End="-79.9999996423721,23.8333311279615" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="153.6,41.6"
-          Id="Package\Transform and Load Patients Data\Conditional Split"
-          TopLeft="609.166633383269,279.066664726072" />
-        <EdgeLayout
           Id="Package\Transform and Load Patients Data.Paths[Lookup Match Output]"
           TopLeft="521.933320011695,244.399993979931">
           <EdgeLayout.Curve>
@@ -5719,128 +5303,6 @@ where [refTable].[prescription_id] = ?</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="119.2,41.6"
-          Id="Package\Transform and Load Patients Data\Multicast"
-          TopLeft="601.11107826785,360.229627302657" />
-        <EdgeLayout
-          Id="Package\Transform and Load Patients Data.Paths[ChangedPatient]"
-          TopLeft="685.966633383269,320.666664726072">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-25.2555551154194,39.5629625765851"
-              Start="0,0"
-              End="-25.2555551154194,32.0629625765851">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,15.7814812882925" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,15.7814812882925"
-                    Point2="0,19.7814812882925"
-                    Point3="-4,19.7814812882925" />
-                  <mssgle:LineSegment
-                    End="-21.2555551154194,19.7814812882925" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-21.2555551154194,19.7814812882925"
-                    Point2="-25.2555551154194,19.7814812882925"
-                    Point3="-25.2555551154194,23.7814812882925" />
-                  <mssgle:LineSegment
-                    End="-25.2555551154194,32.0629625765851" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.1166838077097,24.7814812882925,70.9778125,11.6630859375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="167.2,41.6"
-          Id="Package\Transform and Load Patients Data\OLE DB Command"
-          TopLeft="575.555524108588,509.440737376173" />
-        <NodeLayout
-          Size="161.6,41.6"
-          Id="Package\Transform and Load Patients Data\Derived Column 1"
-          TopLeft="584.166634749209,431.874071972098" />
-        <EdgeLayout
-          Id="Package\Transform and Load Patients Data.Paths[Multicast Output 2]"
-          TopLeft="662.838856508529,401.829627302657">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,30.0444446694407"
-              Start="0,0"
-              End="0,22.5444446694407">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,22.5444446694407" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Transform and Load Patients Data.Paths[Derived Column Output1]"
-          TopLeft="662.061079428898,473.474071972098">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,35.9666654040748"
-              Start="0,0"
-              End="0,28.4666654040748">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,28.4666654040748" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="161.6,41.6"
-          Id="Package\Transform and Load Patients Data\Derived Column 2"
-          TopLeft="759.259217775164,362.444442696704" />
-        <EdgeLayout
-          Id="Package\Transform and Load Patients Data.Paths[Multicast Output 1]"
-          TopLeft="720.31107826785,382.13703499968">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="38.9481395073147,0"
-              Start="0,0"
-              End="31.4481395073147,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="31.4481395073147,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="270.4,41.6"
-          Id="Package\Transform and Load Patients Data\Load DimPatients after considering SCDs"
-          TopLeft="651.444414241999,564.74073886577" />
         <EdgeLayout
           Id="Package\Transform and Load Patients Data.Paths[Derived Column Output2]"
           TopLeft="840.059217775164,404.044442696704">
@@ -5872,7 +5334,105 @@ where [refTable].[prescription_id] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Transform and Load Patients Data.Paths[Derived Column Output1]"
+          TopLeft="662.061079428898,473.474071972098">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,35.9666654040748"
+              Start="0,0"
+              End="0,28.4666654040748">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.4666654040748" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Transform and Load Patients Data.Paths[Derived Column Output]"
+          TopLeft="398.066649091576,327.599998011192">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="42.866666575604,45.0666660639969"
+              Start="0,0"
+              End="42.866666575604,37.5666660639969">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.5333330319985" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.5333330319985"
+                    Point2="0,22.5333330319985"
+                    Point3="4,22.5333330319985" />
+                  <mssgle:LineSegment
+                    End="38.866666575604,22.5333330319985" />
+                  <mssgle:CubicBezierSegment
+                    Point1="38.866666575604,22.5333330319985"
+                    Point2="42.866666575604,22.5333330319985"
+                    Point3="42.866666575604,26.5333330319985" />
+                  <mssgle:LineSegment
+                    End="42.866666575604,37.5666660639969" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Transform and Load Patients Data.Paths[Data Conversion Output]"
+          TopLeft="584.333319654068,170.66666285197">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-79.9999996423721,31.3333311279615"
+              Start="0,0"
+              End="-79.9999996423721,23.8333311279615">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,11.6666655639808" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,11.6666655639808"
+                    Point2="0,15.6666655639808"
+                    Point3="-4,15.6666655639808" />
+                  <mssgle:LineSegment
+                    End="-75.9999996423721,15.6666655639808" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-75.9999996423721,15.6666655639808"
+                    Point2="-79.9999996423721,15.6666655639808"
+                    Point3="-79.9999996423721,19.6666655639808" />
+                  <mssgle:LineSegment
+                    End="-79.9999996423721,23.8333311279615" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -5946,51 +5506,21 @@ where [refTable].[prescription_id] = ?</property>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="230.4,41.6"
+          Size="230.666666666667,41.3333333333334"
           Id="Package\Transform and Load Prescription Data\Extract from Prescription Staging"
           TopLeft="312.999995335936,55.999999165535" />
         <NodeLayout
-          Size="112.8,41.6"
+          Size="112.666666666667,41.3333333333334"
           Id="Package\Transform and Load Prescription Data\Lookup"
           TopLeft="357.999994665384,226.999996617436" />
         <NodeLayout
-          Size="236.8,41.6"
+          Size="236.666666666667,41.3333333333334"
           Id="Package\Transform and Load Prescription Data\Data Conversion for PrescriptionId"
           TopLeft="351.999994754791,156.999997660518" />
-        <EdgeLayout
-          Id="Package\Transform and Load Prescription Data.Paths[OLE DB Source Output]"
-          TopLeft="428.199995335936,97.599999165535">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="42.1999994188549,59.3999984949828"
-              Start="0,0"
-              End="42.1999994188549,51.8999984949828">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,25.6999992474914" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,25.6999992474914"
-                    Point2="0,29.6999992474914"
-                    Point3="4,29.6999992474914" />
-                  <mssgle:LineSegment
-                    End="38.1999994188549,29.6999992474914" />
-                  <mssgle:CubicBezierSegment
-                    Point1="38.1999994188549,29.6999992474914"
-                    Point2="42.1999994188549,29.6999992474914"
-                    Point3="42.1999994188549,33.6999992474914" />
-                  <mssgle:LineSegment
-                    End="42.1999994188549,51.8999984949828" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="177.333333333334,41.3333333333334"
+          Id="Package\Transform and Load Prescription Data\Load DimPrescription"
+          TopLeft="364.999994561076,308.999995395541" />
         <EdgeLayout
           Id="Package\Transform and Load Prescription Data.Paths[Data Conversion Output]"
           TopLeft="470.399994754791,198.599997660518">
@@ -6022,13 +5552,47 @@ where [refTable].[prescription_id] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="177.6,41.6"
-          Id="Package\Transform and Load Prescription Data\Load DimPrescription"
-          TopLeft="364.999994561076,308.999995395541" />
+        <EdgeLayout
+          Id="Package\Transform and Load Prescription Data.Paths[OLE DB Source Output]"
+          TopLeft="428.199995335936,97.599999165535">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="42.1999994188549,59.3999984949828"
+              Start="0,0"
+              End="42.1999994188549,51.8999984949828">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.6999992474914" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25.6999992474914"
+                    Point2="0,29.6999992474914"
+                    Point3="4,29.6999992474914" />
+                  <mssgle:LineSegment
+                    End="38.1999994188549,29.6999992474914" />
+                  <mssgle:CubicBezierSegment
+                    Point1="38.1999994188549,29.6999992474914"
+                    Point2="42.1999994188549,29.6999992474914"
+                    Point3="42.1999994188549,33.6999992474914" />
+                  <mssgle:LineSegment
+                    End="42.1999994188549,51.8999984949828" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Transform and Load Prescription Data.Paths[Lookup No Match Output]"
           TopLeft="414.399994665384,268.599996617436">
@@ -6117,8 +5681,20 @@ where [refTable].[prescription_id] = ?</property>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
+  <DtsEventHandler
+    design-time-name="Package\Transform and Load Billing Data.EventHandlers[OnPreExecute]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="168,42.6666666666667"
+          Id="Package\Transform and Load Billing Data.EventHandlers[OnPreExecute]\Execute SQL Task"
+          TopLeft="444.999986737967,140.999995797873" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
   <PipelineComponentMetadata
-    design-time-name="Package\Transform and Load Billing Data\Load FactBilling">
+    design-time-name="Package\Transform and Load Billing Data\Load FactBilling 1">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -6127,6 +5703,85 @@ where [refTable].[prescription_id] = ?</property>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Transform and Load Billing Data\Lookup for DimPrescription">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimPrescription]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Transform and Load Billing Data\Lookup for DimDate">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Transform and Load Billing Data\Lookup for DimPatients">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimPatients]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Transform and Load Billing Data\Lookup DimDoctors">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimDoctors]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
