@@ -1,0 +1,322 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="e9cf0bd6-a601-4d2e-b447-a29b06c0637e" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Health Care DW</ID>
+  <Name>Health Care DW</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Dimensions>
+    <Dimension dwd:design-time-name="111cf498-634e-4b3a-aaa5-4968c8f45ca8">
+      <ID>Fact Billing</ID>
+      <Name>Fact Billing</Name>
+      <DimensionID>Fact Billing</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="74b753dc-408a-46fd-b10e-440c17dcce59">
+          <AttributeID>Billing Id</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="0ce5cfa4-8ae8-4096-bbd1-4b8325675c1e">
+          <AttributeID>Patient Sk</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="387ccfad-c106-42e3-bdfc-1ee8de10f598">
+          <AttributeID>Doctor Id</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="a92ee36d-6fff-47fa-b39e-853f0bc38f07">
+          <AttributeID>Date Id</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="b5a1826f-2238-4b30-920c-5946abe9a66c">
+          <AttributeID>Prescription Id</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="95a5e84f-bee6-4a4f-9407-3bc76b382669">
+      <ID>Dim Patients</ID>
+      <Name>Dim Patients</Name>
+      <DimensionID>Dim Patients</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="5e665290-d8e1-44d3-95fa-f33860c121c6">
+          <AttributeID>Patient Sk</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="71795c42-ef6d-4edc-980b-62505ce4dba0">
+          <AttributeID>Patient Id</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="1f3f4509-6357-48c8-94e4-5d52b157653b">
+          <AttributeID>Name</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="24ce73e1-e1da-40da-9d7d-2a1677141b8d">
+          <AttributeID>Age</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="d0ace5f7-e0cc-4b4c-994c-1298568ad278">
+          <AttributeID>Address</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="77a4cd66-272f-4494-b1b0-7988f7fe0c24">
+          <AttributeID>Sickness</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="84a3702f-fab8-4680-aa1a-a3533453c0fc">
+          <AttributeID>Assigned Doctor</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="cce16aea-cd8e-466d-b511-864fd8e24040">
+          <AttributeID>Start Date</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="555627cc-83be-4a4a-9c71-c21c4989c9f8">
+          <AttributeID>End Date</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="48ebd149-6b48-405d-b21f-9a3accbb49d2">
+          <AttributeID>Is Current</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="b1c18335-124d-42e3-a9f7-0ea9245f51e8">
+      <ID>Dim Doctors</ID>
+      <Name>Dim Doctors</Name>
+      <DimensionID>Dim Doctors</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="de180d50-c894-4445-9fc0-31ea0fa0e13d">
+          <AttributeID>Doctor Id</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="6ecfbe62-8421-4446-a735-cdf445363175">
+          <AttributeID>Name</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="7317f62f-aa6d-4cbd-8e1f-df14961313b1">
+          <AttributeID>Specialization</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="cf9958db-5e77-4cd4-a823-3dbb7ff62be6">
+      <ID>Dim Date</ID>
+      <Name>Dim Date</Name>
+      <DimensionID>Dim Date</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="8319ef63-7953-4524-81fb-830e995c30a1">
+          <AttributeID>Date Id</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="ed5e1500-58d9-4063-b782-b57998885810">
+          <AttributeID>Day</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="f7f826b9-2e0f-49cb-b36e-8f67485f39c1">
+          <AttributeID>Month</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="01d1ebfb-dbbc-4c03-b4bf-68508d0a834c">
+          <AttributeID>Year</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="208269f4-0c7e-45ef-82f6-a08c24f0b621">
+          <AttributeID>Day Of Week</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="ebc96407-c602-4ccf-951d-75b5ae2f8c01">
+          <AttributeID>Day Name</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="f529601b-289e-4676-ad61-7e5a1b9b60f2">
+          <AttributeID>Month Name</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="906ad6a3-f487-48c8-9310-9526da2f0186">
+          <AttributeID>Quarter</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="397afe0b-fcee-49e3-b6be-3916ea134485">
+          <AttributeID>Is Weekend</AttributeID>
+        </Attribute>
+      </Attributes>
+      <Hierarchies>
+        <Hierarchy dwd:design-time-name="34826a87-1b05-4ccc-bf5d-2ac1fdaf44ad">
+          <HierarchyID>Hierarchy</HierarchyID>
+        </Hierarchy>
+      </Hierarchies>
+    </Dimension>
+    <Dimension dwd:design-time-name="b1478d0a-aec9-4af7-80ce-adcc14d2d14d">
+      <ID>Dim Prescription</ID>
+      <Name>Dim Prescription</Name>
+      <DimensionID>Dim Prescription</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="a6fb89ff-875f-4aaa-8ff2-b7ad85ad2f88">
+          <AttributeID>Prescription Id</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="50a06460-490a-46c7-ab2e-94ac81f17014">
+          <AttributeID>Medication</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+  </Dimensions>
+  <MeasureGroups>
+    <MeasureGroup dwd:design-time-name="ca2d6e11-640c-47cf-891d-743d50ddbbd2">
+      <ID>Fact Billing</ID>
+      <Name>Fact Billing</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="50094f00-3fa3-4eed-9e2c-1f6bca215a67">
+          <ID>Amount</ID>
+          <Name>Amount</Name>
+          <Source dwd:design-time-name="091b23fd-3019-43e5-ae08-7257397a405c">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="d701582f-42f3-463f-962d-cf70111832ce">
+              <TableID>dbo_FactBilling</TableID>
+              <ColumnID>amount</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="59faa105-1767-4bff-a17a-926b064babe6">
+          <ID>Txn Process Time Hours</ID>
+          <Name>Txn Process Time Hours</Name>
+          <Source dwd:design-time-name="34f07934-e928-4ed0-943b-71a1fb5c3dc2">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="5c6a8b63-0f2e-4b17-85a8-5822d80b21fe">
+              <TableID>dbo_FactBilling</TableID>
+              <ColumnID>txn_process_time_hours</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="cf0800af-ce7e-4b38-894e-93678e4e7817">
+          <ID>Fact Billing Count</ID>
+          <Name>Fact Billing Count</Name>
+          <AggregateFunction>Count</AggregateFunction>
+          <Source dwd:design-time-name="9484f511-7bde-4009-b499-314d39012ca9">
+            <DataType>Integer</DataType>
+            <DataSize>4</DataSize>
+            <Source xsi:type="RowBinding" dwd:design-time-name="d6bedc3e-12c4-4a75-987f-e6bb811b2a99">
+              <TableID>dbo_FactBilling</TableID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="DegenerateMeasureGroupDimension" dwd:design-time-name="5dc8e34c-ceb7-4289-ab89-f71b56a871f8">
+          <CubeDimensionID>Fact Billing</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="30a4bbeb-1faa-4f6d-aca0-ddeefb0a07f8">
+              <AttributeID>Billing Id</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="7bbd0ac7-4d26-4d13-9b27-e67c53e8eabd">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="794b29ae-7a0e-4d4b-9a6e-2ad64969298e">
+                    <TableID>dbo_FactBilling</TableID>
+                    <ColumnID>billing_id</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="fb2a9641-1537-4e26-9193-871bbd10f3a9">
+          <CubeDimensionID>Dim Patients</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="c2bbef34-bb16-449b-a6d6-d646d93bf1dc">
+              <AttributeID>Patient Sk</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="05dc6f98-6d6a-483f-805a-1c6af9ec9ceb">
+                  <DataType>Integer</DataType>
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="f070e817-66d5-404f-88d8-f7db87fc8088">
+                    <TableID>dbo_FactBilling</TableID>
+                    <ColumnID>patient_sk</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="5d0623f8-e8dc-4366-a93e-7c2154559381">
+          <CubeDimensionID>Dim Doctors</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="7801a218-bacd-4ad0-a0dc-87ae897d60b0">
+              <AttributeID>Doctor Id</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="c5164e90-2246-4619-ae63-3c56fa1925be">
+                  <DataType>Integer</DataType>
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="65165cc8-9c96-4a7b-afa9-3d7b6aca3704">
+                    <TableID>dbo_FactBilling</TableID>
+                    <ColumnID>doctor_id</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="54caf4af-0b32-4436-a0b5-ae634bce8a95">
+          <CubeDimensionID>Dim Date</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="feddf114-cdb1-4446-a98c-e40048c99d56">
+              <AttributeID>Date Id</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="49c5eb1d-cc31-4bbd-bda0-88df9acdab04">
+                  <DataType>Integer</DataType>
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="4f1e190f-854d-4328-913e-2e02f1f6c743">
+                    <TableID>dbo_FactBilling</TableID>
+                    <ColumnID>date_id</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="6c2a7006-55ce-479b-8b33-03df95a56f42">
+          <CubeDimensionID>Dim Prescription</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="1938887d-fb46-493b-8bd9-556d53188f84">
+              <AttributeID>Prescription Id</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="cd7f024d-42d0-491e-bc46-b5b3daa19340">
+                  <DataType>Integer</DataType>
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="12a8e01b-888d-4be1-9291-42e81205b7b8">
+                    <TableID>dbo_FactBilling</TableID>
+                    <ColumnID>prescription_id</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+  </MeasureGroups>
+  <Source dwd:design-time-name="6247e89d-e239-4753-a263-1c36d8a1ecc9">
+    <DataSourceViewID>Health Care DW</DataSourceViewID>
+  </Source>
+</Cube>
